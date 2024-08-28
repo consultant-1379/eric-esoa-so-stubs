@@ -1,0 +1,323 @@
+{
+  "workflow": "undeploy",
+  "serviceExecutionPlan": {
+    "operations": [
+      {
+        "id": "NETWORK_FUNCTION_1.Standard.stop.8202",
+        "name": "stop",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NETWORK_FUNCTION_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NETWORK_FUNCTION_1.Standard.delete.8203",
+        "name": "delete",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NETWORK_FUNCTION_1",
+        "implementation": "workflow/enabler",
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [
+          {
+            "raw_value": {
+              "key1": {
+                "get_input": "vnf_name"
+              },
+              "key2": {
+                "get_property": [
+                  "NETWORK_SERVICE",
+                  "name"
+                ]
+              },
+              "key3": {
+                "get_attribute": [
+                  "NETWORK_SERVICE",
+                  "SO_NS::nsStringAttr1"
+                ]
+              }
+            },
+            "required": true,
+            "type": null,
+            "name": "mapOpInput2",
+            "value": {
+              "key3": {
+                "get_attribute": [
+                  "NETWORK_SERVICE",
+                  "SO_NS::nsStringAttr1"
+                ]
+              },
+              "key2": "ns1",
+              "key1": "vnf1"
+            }
+          },
+          {
+            "raw_value": {
+              "key1": "value",
+              "key2": {
+                "key3": { "get_attribute": ["NETWORK_SERVICE", "SO_NS::nsMapAttr1"]}
+              }
+            },
+            "required": true,
+            "type": null,
+            "name": "mapOpInput1",
+            "value": {
+              "key1": "value",
+              "key2": {
+                "key3": { "get_attribute": ["NETWORK_SERVICE", "SO_NS::nsMapAttr1"]}
+              }
+            }
+          },
+          {
+            "raw_value":
+            [
+              { "get_input": "vnf_name"  },
+              { "get_property": ["NETWORK_SERVICE", "name"]  },
+              { "get_attribute": ["NETWORK_SERVICE", "SO_NS::nsStringAttr1"]}
+            ],
+            "required": true,
+            "type": null,
+            "name": "listOpInput2",
+            "value": [
+              "vnf1",
+              "ns1",
+              { "get_attribute": ["NETWORK_SERVICE", "SO_NS::nsStringAttr1"]}
+            ]
+          },
+          {
+            "raw_value": [
+              {
+                "get_attribute": [
+                  "SELF",
+                  "name"
+                ]
+              },
+              {
+                "get_property": [
+                  "SELF",
+                  "name"
+                ]
+              }
+            ],
+            "required": true,
+            "type": null,
+            "name": "listOpInput3",
+            "value": null
+          },
+          {
+            "raw_value": {
+              "get_attribute": [
+                "NETWORK_SERVICE",
+                "SO_NS::nsListAttr1"
+              ]
+            },
+            "required": true,
+            "type": null,
+            "name": "listOpInput1",
+            "value": {
+              "get_attribute": [
+                "NETWORK_SERVICE",
+                "SO_NS::nsListAttr1"
+              ]
+            }
+          },
+          {
+            "raw_value": {
+              "get_attribute": [
+                "NETWORK_SERVICE",
+                "SO_NS::nsBooleanAttr1"
+              ]
+            },
+            "required": true,
+            "type": null,
+            "name": "booleanOpInput1",
+            "value": {
+              "get_attribute": [
+                "NETWORK_SERVICE",
+                "SO_NS::nsBooleanAttr1"
+              ]
+            }
+          },
+          {
+            "raw_value": {
+              "get_attribute": [
+                "NETWORK_SERVICE",
+                "SO_NS::nsIntAttr1"
+              ]
+            },
+            "required": true,
+            "type": null,
+            "name": "intOpInput1",
+            "value": {
+              "get_attribute": [
+                "NETWORK_SERVICE",
+                "SO_NS::nsIntAttr1"
+              ]
+            }
+          },
+          {
+            "raw_value": {
+              "concat": [
+                {
+                  "get_input": "vnf_name"
+                },
+                {
+                  "get_property": [
+                    "NETWORK_SERVICE",
+                    "name"
+                  ]
+                },
+                {
+                  "get_attribute": [
+                    "NETWORK_SERVICE",
+                    "SO_NS::nsStringAttr1"
+                  ]
+                }
+              ]
+            },
+            "required": true,
+            "type": null,
+            "name": "stringOpInput2",
+            "value": {
+              "concat": [
+                "vnf_111",
+                "ns_111",
+                {
+                  "get_attribute": [
+                    "NETWORK_SERVICE",
+                    "SO_NS::nsStringAttr1"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "raw_value": {
+              "get_attribute": [
+                "NETWORK_SERVICE",
+                "SO_NS::nsStringAttr1"
+              ]
+            },
+            "required": true,
+            "type": null,
+            "name": "stringOpInput1",
+            "value":  {
+              "get_attribute": [
+                "NETWORK_SERVICE",
+                "SO_NS::nsStringAttr1"
+              ]
+            }
+          }
+        ],
+        "dependency_operations": [
+          "NETWORK_FUNCTION_1.Standard.stop.8202"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "VIM_ZONE_1.Standard.stop.8206",
+        "name": "stop",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "VIM_ZONE_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NETWORK_FUNCTION_1.Standard.delete.8203"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "VIM_ZONE_1.Standard.delete.8207",
+        "name": "delete",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "VIM_ZONE_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "VIM_ZONE_1.Standard.stop.8206"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NETWORK_SERVICE_1.Standard.stop.8210",
+        "name": "stop",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NETWORK_SERVICE_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NETWORK_FUNCTION_1.Standard.delete.8203"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NETWORK_SERVICE_1.Standard.delete.8211",
+        "name": "delete",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NETWORK_SERVICE_1",
+        "implementation": "workflow/enabler",
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NETWORK_SERVICE_1.Standard.stop.8210"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NFVO_SUBSYSTEM_1.Standard.stop.8214",
+        "name": "stop",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NFVO_SUBSYSTEM_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NETWORK_SERVICE_1.Standard.delete.8211"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NFVO_SUBSYSTEM_1.Standard.delete.8215",
+        "name": "delete",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NFVO_SUBSYSTEM_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NFVO_SUBSYSTEM_1.Standard.stop.8214"
+        ],
+        "failure_dependency_operations": []
+      }
+    ]
+  }
+}

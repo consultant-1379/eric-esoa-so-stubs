@@ -1,0 +1,53 @@
+{
+    "serviceExecutionPlan": {
+        "operations": [
+            {
+                "activity": "call_operation",
+                "dependency_operations": [],
+                "failure_dependency_operations": [],
+                "id": "VNF_1.Standard.create.418",
+                "implementation": "camunda/enabler",
+                "inputs": [],
+                "interface": "Standard",
+                "name": "create",
+                "node": "VNF_1",
+                "post_state": null,
+                "pre_state": null,
+                "type": "node"
+            },
+            {
+                "activity": "call_operation",
+                "dependency_operations": [
+                    "VNF_1.Standard.create.418"
+                ],
+                "failure_dependency_operations": [],
+                "id": "VNF_1.Standard.configure.419",
+                "implementation": null,
+                "inputs": [],
+                "interface": "Standard",
+                "name": "configure",
+                "node": "VNF_1",
+                "post_state": null,
+                "pre_state": null,
+                "type": "node"
+            },
+            {
+                "activity": "call_operation",
+                "dependency_operations": [
+                    "VNF_1.Standard.configure.419"
+                ],
+                "failure_dependency_operations": [],
+                "id": "VNF_1.Standard.start.420",
+                "implementation": null,
+                "inputs": [],
+                "interface": "Standard",
+                "name": "start",
+                "node": "VNF_1",
+                "post_state": null,
+                "pre_state": null,
+                "type": "node"
+            }
+        ]
+    },
+    "workflow": "deploy"
+}

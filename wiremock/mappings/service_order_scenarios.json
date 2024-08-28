@@ -1,0 +1,57 @@
+{
+  "mappings": [
+    {
+      "scenarioName": "SERVICE_ORDER",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/completeServiceOrder"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_completed.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions": {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/completed_event.json",
+          "serviceInstanceId": "NetworkService_000001-Service-ocrs-resourceFacingService-revisionGroupKey-1"
+        }
+      }
+    },
+    {
+      "scenarioName": "SERVICE_ORDER",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/cancelServiceOrder"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_cancelled.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions": {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/cancelled_event.json",
+          "serviceInstanceId": "NetworkService_000001-Service-ocrs-resourceFacingService-revisionGroupKey-1"
+        }
+      }
+    },
+    {
+      "scenarioName": "SERVICE_ORDER",
+      "requiredScenarioState": "FAILED",
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/completeServiceOrder"
+      },
+      "response": {
+        "status": 400
+      }
+    }
+  ]
+}

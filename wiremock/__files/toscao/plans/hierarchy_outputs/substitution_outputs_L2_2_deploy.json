@@ -1,0 +1,126 @@
+{
+  "workflow": "deploy",
+  "serviceExecutionPlan": {
+    "operations": [
+      {
+        "id": "NFVO_SUBSYSTEM_1.Standard.create.1973",
+        "name": "create",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NFVO_SUBSYSTEM_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NFVO_SUBSYSTEM_1.Standard.configure.1974",
+        "name": "configure",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NFVO_SUBSYSTEM_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NFVO_SUBSYSTEM_1.Standard.create.1973"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NFVO_SUBSYSTEM_1.Standard.start.1975",
+        "name": "start",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NFVO_SUBSYSTEM_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NFVO_SUBSYSTEM_1.Standard.configure.1974"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NETWORK_SERVICE_1.Standard.create.1978",
+        "name": "create",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NETWORK_SERVICE_1",
+        "implementation": "camunda/enabler",
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [
+          {
+            "name" : "mapInput1",
+            "value" : null,
+            "required" : false,
+            "raw_value" : {
+              "key1": {"get_attribute": ["NSSI_1_1", "GROUP1::stringAttribute1"]}, "key2": {"get_property": ["NFVO_SUBSYSTEM_1", "name"]}
+            }
+          },
+          {
+            "name" : "listInput1",
+            "value" : null,
+            "required" : false,
+            "raw_value" : [
+              {"get_attribute": ["NSSI_1_1", "GROUP1::stringAttribute1"]}, {"get_property": ["NFVO_SUBSYSTEM_1", "name"]}
+            ]
+          },
+          {
+            "name" : "stringInput1",
+            "value" : null,
+            "required" : false,
+            "raw_value" : {
+              "concat": [{"get_attribute": ["NSSI_1_1", "GROUP1::stringAttribute1"]}, "-", {"get_property": ["NFVO_SUBSYSTEM_1", "name"]}]
+            }
+          }
+        ],
+        "dependency_operations": [
+          "NFVO_SUBSYSTEM_1.Standard.start.1975"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NETWORK_SERVICE_1.Standard.configure.1979",
+        "name": "configure",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NETWORK_SERVICE_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NETWORK_SERVICE_1.Standard.create.1978"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NETWORK_SERVICE_1.Standard.start.1980",
+        "name": "start",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NETWORK_SERVICE_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NETWORK_SERVICE_1.Standard.configure.1979"
+        ],
+        "failure_dependency_operations": []
+      }
+    ]
+  }
+}

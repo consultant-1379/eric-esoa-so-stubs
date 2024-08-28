@@ -1,0 +1,12 @@
+{
+  "id": 657,
+  "name": "JT_TMF645",
+  "type": "CONFIG_TEMPLATE",
+  "owner": "eo-user",
+  "originalFileName": "JT_TMF645.j2",
+  "description": "null",
+  "referenceId": "JT_TMF645",
+  "createdAt": "2021-05-31T12:50:20.270+0000",
+  "viewable": true,
+  "originalFileContent": "{\n\t\"SBI\":{\n\t\t\"qualifyBody\":{\n\t\t\t\"name\": \"TMF645 Managed Device\",\n\t\t\t\"description\":\"TMF645_service_qualification\",\n\"serviceQualificationItem\":[\n\n{\n\"service\":{\n\"name\": \"TMF645_service\",\n\"description\":\t\"ServiceQualificationTesting\",\n\"serviceSpecification\": {\"id\":\"b90979a7-0817-42dc-84ce-7e65e9e19448\",\"version\":\"1.0\"},\n\"serviceCharacteristic\": [{\"name\":\"coreFunction\",\"value\":\"ceSdwanRouting_qualification_check_service1673969834839\"},{\"name\":\"deviceType\",\"value\":\"router_qualification_check_service1673969834839\"},{\"name\":\"serviceTier\",\"value\":\"basic_qualification_check_service1673969834839\"},{\"name\":\"latency\",\"value\":9000}]\n}\n}\n]\n},\n\"SBIproperties\":{\n\"systemName\":\"NaaS\",\n\"max_polling_retries\": 200,\n\"polling_interval\":2,\n\"timeout\":3000,\n\"methods\":{\n\"qualify\":{\n\"method\":\"POST\",\n\"url\":\"__fromSystem(URL)/serviceQualificationManagement/v4/checkServiceQualification\",\n\"body\":\"__fromJSON(qualifyBody)\",\n\"response_parser\":{\n\"id\":\".id\",\n\"qualificationResult\":\".qualificationResult\",\n\"state\":\".state\"\n\n},\n\"response_ok\":\"checkResponses('__fromResponse(id)',[])\",\n\"response_fail\":\"checkResponses('__fromResponse(id)',[])\",\n\"outputs\":{\n\"id\":\"id\",\n\"qualificationResult\":\"qualificationResult\",\n\"state\":\"state\"\n\n}\n}\n},\n\"headers\":{\n\"X-Correlation-ID\":\"__randomUUID()\",\n\"X-Latest-Version\":\"v4.0.0\",\n\"X-Service-Version\": \"v3.0.0\",\n\"X-Group-ID\":\"ePilot\",\n\"Authorization\":\"Bearer __fromSystem(access_token)\",\n\"Content-Type\":\"application/json\",\n\"Accept\":\"*/*\"\n}\n}\n}\n} "
+}

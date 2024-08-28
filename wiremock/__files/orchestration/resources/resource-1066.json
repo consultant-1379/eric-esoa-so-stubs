@@ -1,0 +1,64 @@
+{
+  "id": "1066",
+  "name": "CloudService_2_1",
+  "state": "Creating",
+  "creationDate": "2021-06-08T12:48:09.724Z",
+  "resourceType": null,
+  "resourceSubtype": null,
+  "serviceRef": "725",
+  "context": {
+    "jinjaFile": "Jinja_TMF641_v4_telstra",
+    "tosca_name": "CloudService",
+    "orderId": null,
+    "serviceSpecification": [{
+      "href": "Cloud Access Service",
+      "name": "Cloud Access Service",
+      "version": "v1.0"
+    }],
+    "description": "Service order description",
+    "externalId": "ExternalId",
+    "relatedParty": [{
+      "role": "Customer",
+      "id": "composite",
+      "__referredType": "composite"
+    }],
+    "filtersFile": "TMF641_filter",
+    "externalReference": [{
+      "externalReferenceType": "CompositeService",
+      "name": "Ericsson"
+    }],
+    "serviceOrderItem": [{
+      "action": "add"
+    }],
+    "domainManager": "NaaS",
+    "service": [{
+      "state": "active",
+      "description": "Cloud Access Service"
+    }],
+    "subdomain": "cloud",
+    "state": "initial",
+    "category": "TMF resource",
+    "serviceId": null,
+    "tosca_id": "CloudService_2_1",
+    "serviceCharacteristic": [{
+      "name": "latency",
+      "value": "10"
+    }, {
+      "name": "Bandwidth",
+      "value": "11"
+    }, {
+      "name": "Availability",
+      "value": "12"
+    }, {
+      "name": "NumberOfDevices",
+      "value": "1"
+    }, {
+      "name": "Location",
+      "value": "30855"
+    }]
+  },
+  "workflows": {},
+  "dependingResourceIds": [],
+  "dependentResourceIds": [],
+  "subsystems": []
+}

@@ -1,0 +1,19 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/catalog-manager/v1/artifacts?query=name==ranSlice_sbiTemplate_ENM;type==CONFIG_TEMPLATE"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "items": [],
+      "links": null,
+      "query": {
+        "query-params": "query=[name==ranSlice_sbiTemplate_ENM;type==CONFIG_TEMPLATE]"
+      }
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

@@ -1,0 +1,485 @@
+{
+    "id": "{{request.pathSegments.[5]}}",
+    "href": "serviceInventory/v4/service/{{request.pathSegments.[5]}}",
+    "name": "test_basic_template_23",
+    "description": "test_basic_template_23",
+    "serviceType": "ServiceTemplate_NSSI_Basic_Core_rev_b_000035:Service",
+    "category": "RFS",
+    "startDate": "2021-06-24T00:00:00.000Z",
+    "serviceSpecification": {
+        "id": "334",
+        "href": "ond/servicecomponentdefinition/334",
+        "name": "Service",
+        "version": "1"
+    },
+    "supportingResource": [
+        {
+            "id": "99",
+            "href": "ocrs/resourcefacingservice/99",
+            "name": "test_basic_template_23",
+            "@relationshipName": "ESD_RFS",
+            "@resource": {
+                "type": "ocrs/resourcefacingservice",
+                "id": 99,
+                "href": "ocrs/resourcefacingservice/99",
+                "serviceType": "ServiceTemplate_NSSI_Basic_Core_rev_b_000035:Service",
+                "revisionNumber": 1,
+                "name": "test_basic_template_23",
+                "createdOn": "2021-06-24T16:21:57.030Z",
+                "createdBy": "arabian",
+                "inServiceDate": "2021-06-24T00:00:00.000Z",
+                "scheduledDate": "2021-06-24T16:21:43.448Z",
+                "status": "ACTIVE",
+                "lastModifiedOn": "2021-06-24T16:23:06.317Z",
+                "lastModifiedBy": "arabian",
+                "versionNumber": 2,
+                "revisionGroupKey": {
+                    "type": "revisionGroupKey",
+                    "keyValue": 691
+                },
+                "key": {
+                    "type": "ocrs/resourcefacingserviceKey",
+                    "keyValue": 99
+                }
+            }
+        },
+        {
+            "id": "389",
+            "href": "ocrs/servicemembership/389",
+            "name": "nsConnection",
+            "@relationshipName": "ESD_nsConnection_MEMBERSHIP",
+            "@resource": {
+                "type": "ocrs/servicemembership",
+                "id": 389,
+                "href": "ocrs/servicemembership/389",
+                "instanceIndex": 1,
+                "revisionNumber": 1,
+                "name": "nsConnection",
+                "createdOn": "2021-06-24T16:22:01.541Z",
+                "createdBy": "arabian",
+                "inServiceDate": "2021-06-24T00:00:00.000Z",
+                "scheduledDate": "2021-06-24T16:21:43.448Z",
+                "status": "ACTIVE",
+                "lastModifiedOn": "2021-06-24T16:23:06.064Z",
+                "lastModifiedBy": "arabian",
+                "versionNumber": 2,
+                "revisionGroupKey": {
+                    "type": "revisionGroupKey",
+                    "keyValue": 697
+                },
+                "key": {
+                    "type": "ocrs/servicemembershipKey",
+                    "keyValue": 389
+                }
+            }
+        },
+        {
+            "id": "388",
+            "href": "ocrs/servicemembership/388",
+            "name": "vimZone",
+            "@relationshipName": "ESD_vimZone_MEMBERSHIP",
+            "@resource": {
+                "type": "ocrs/servicemembership",
+                "id": 388,
+                "href": "ocrs/servicemembership/388",
+                "instanceIndex": 1,
+                "revisionNumber": 1,
+                "name": "vimZone",
+                "createdOn": "2021-06-24T16:22:00.498Z",
+                "createdBy": "arabian",
+                "inServiceDate": "2021-06-24T00:00:00.000Z",
+                "scheduledDate": "2021-06-24T16:21:43.448Z",
+                "status": "ACTIVE",
+                "lastModifiedOn": "2021-06-24T16:23:05.815Z",
+                "lastModifiedBy": "arabian",
+                "versionNumber": 2,
+                "revisionGroupKey": {
+                    "type": "revisionGroupKey",
+                    "keyValue": 696
+                },
+                "key": {
+                    "type": "ocrs/servicemembershipKey",
+                    "keyValue": 388
+                }
+            }
+        },
+        {
+            "id": "387",
+            "href": "ocrs/servicemembership/387",
+            "name": "nsSubsystem",
+            "@relationshipName": "ESD_nsSubsystem_MEMBERSHIP",
+            "@resource": {
+                "type": "ocrs/servicemembership",
+                "id": 387,
+                "href": "ocrs/servicemembership/387",
+                "instanceIndex": 1,
+                "revisionNumber": 1,
+                "name": "nsSubsystem",
+                "createdOn": "2021-06-24T16:21:59.470Z",
+                "createdBy": "arabian",
+                "inServiceDate": "2021-06-24T00:00:00.000Z",
+                "scheduledDate": "2021-06-24T16:21:43.448Z",
+                "status": "ACTIVE",
+                "lastModifiedOn": "2021-06-24T16:23:05.563Z",
+                "lastModifiedBy": "arabian",
+                "versionNumber": 2,
+                "revisionGroupKey": {
+                    "type": "revisionGroupKey",
+                    "keyValue": 695
+                },
+                "key": {
+                    "type": "ocrs/servicemembershipKey",
+                    "keyValue": 387
+                }
+            }
+        },
+        {
+            "id": "386",
+            "href": "ocrs/servicemembership/386",
+            "name": "ns",
+            "@relationshipName": "ESD_ns_MEMBERSHIP",
+            "@resource": {
+                "type": "ocrs/servicemembership",
+                "id": 386,
+                "href": "ocrs/servicemembership/386",
+                "instanceIndex": 1,
+                "revisionNumber": 1,
+                "name": "ns",
+                "createdOn": "2021-06-24T16:21:58.757Z",
+                "createdBy": "arabian",
+                "inServiceDate": "2021-06-24T00:00:00.000Z",
+                "scheduledDate": "2021-06-24T16:21:43.448Z",
+                "status": "ACTIVE",
+                "lastModifiedOn": "2021-06-24T16:23:05.311Z",
+                "lastModifiedBy": "arabian",
+                "versionNumber": 2,
+                "revisionGroupKey": {
+                    "type": "revisionGroupKey",
+                    "keyValue": 694
+                },
+                "key": {
+                    "type": "ocrs/servicemembershipKey",
+                    "keyValue": 386
+                }
+            }
+        },
+        {
+            "id": "385",
+            "href": "ocrs/servicemembership/385",
+            "name": "vnf_a",
+            "@relationshipName": "ESD_vnf_a_MEMBERSHIP",
+            "@resource": {
+                "type": "ocrs/servicemembership",
+                "id": 385,
+                "href": "ocrs/servicemembership/385",
+                "instanceIndex": 1,
+                "revisionNumber": 1,
+                "name": "vnf_a",
+                "createdOn": "2021-06-24T16:21:57.994Z",
+                "createdBy": "arabian",
+                "inServiceDate": "2021-06-24T00:00:00.000Z",
+                "scheduledDate": "2021-06-24T16:21:43.448Z",
+                "status": "ACTIVE",
+                "lastModifiedOn": "2021-06-24T16:23:05.060Z",
+                "lastModifiedBy": "arabian",
+                "versionNumber": 2,
+                "revisionGroupKey": {
+                    "type": "revisionGroupKey",
+                    "keyValue": 693
+                },
+                "key": {
+                    "type": "ocrs/servicemembershipKey",
+                    "keyValue": 385
+                }
+            }
+        },
+        {
+            "id": "384",
+            "href": "ocrs/servicemembership/384",
+            "name": "vnf_b",
+            "@relationshipName": "ESD_vnf_b_MEMBERSHIP",
+            "@resource": {
+                "type": "ocrs/servicemembership",
+                "id": 384,
+                "href": "ocrs/servicemembership/384",
+                "instanceIndex": 1,
+                "revisionNumber": 1,
+                "name": "vnf_b",
+                "createdOn": "2021-06-24T16:21:57.289Z",
+                "createdBy": "arabian",
+                "inServiceDate": "2021-06-24T00:00:00.000Z",
+                "scheduledDate": "2021-06-24T16:21:43.448Z",
+                "status": "ACTIVE",
+                "lastModifiedOn": "2021-06-24T16:23:04.807Z",
+                "lastModifiedBy": "arabian",
+                "versionNumber": 2,
+                "revisionGroupKey": {
+                    "type": "revisionGroupKey",
+                    "keyValue": 692
+                },
+                "key": {
+                    "type": "ocrs/servicemembershipKey",
+                    "keyValue": 384
+                }
+            }
+        },
+        {
+            "id": "1",
+            "href": "ctg/relatedparty/1",
+            "name": "connection1",
+            "@relationshipName": "nsConnection",
+            "@resource": {
+                "type": "ctg/relatedparty",
+                "id": 1,
+                "href": "ctg/relatedparty/1",
+                "role": "Customer",
+                "revisionNumber": 1,
+                "status": "ACTIVE",
+                "lastModifiedOn": "2021-06-23T14:30:48.409Z",
+                "lastModifiedBy": "sysadm",
+                "name": "connection1",
+                "createdOn": "2021-06-23T14:30:48.409Z",
+                "createdBy": "sysadm",
+                "versionNumber": 1,
+                "revisionGroupKey": {
+                    "type": "revisionGroupKey",
+                    "keyValue": 507
+                },
+                "key": {
+                    "type": "ctg/relatedpartyKey",
+                    "keyValue": 1
+                }
+            }
+        },
+        {
+            "id": "12",
+            "href": "ctv/vimzone/12",
+            "name": "some_vim_zone",
+            "@relationshipName": "vimZone",
+            "@resource": {
+                "type": "ctv/vimzone",
+                "id": 12,
+                "href": "ctv/vimzone/12",
+                "name": "some_vim_zone",
+                "revisionNumber": 1,
+                "status": "ACTIVE",
+                "lastModifiedOn": "2021-05-25T09:59:14.875Z",
+                "lastModifiedBy": "sysadm",
+                "createdOn": "2021-05-25T09:59:14.875Z",
+                "createdBy": "sysadm",
+                "versionNumber": 1,
+                "revisionGroupKey": {
+                    "type": "revisionGroupKey",
+                    "keyValue": 37
+                },
+                "_type": "Ericsson - Cloud Execution Environment (CEE)",
+                "key": {
+                    "type": "ctv/vimzoneKey",
+                    "keyValue": 12
+                }
+            }
+        },
+        {
+            "id": "2",
+            "href": "ctc/subsystemref/2",
+            "name": "ecm",
+            "@relationshipName": "nsSubsystem",
+            "@resource": {
+                "accessId": "connection1",
+                "type": "ctc/subsystemreference",
+                "id": 2,
+                "href": "ctc/subsystemref/2",
+                "externalId": "190",
+                "revisionNumber": 1,
+                "createdOn": "2021-05-25T10:53:32.396Z",
+                "createdBy": "sysadm",
+                "status": "operating",
+                "lastModifiedOn": "2021-05-25T11:02:33.675Z",
+                "lastModifiedBy": "sysadm",
+                "name": "ecm",
+                "versionNumber": 2,
+                "revisionGroupKey": {
+                    "type": "revisionGroupKey",
+                    "keyValue": 39
+                },
+                "key": {
+                    "type": "ctc/subsystemreferenceKey",
+                    "keyValue": 2
+                }
+            }
+        },
+        {
+            "id": "169",
+            "href": "ctv/virtnetworkserv/169",
+            "name": "ns_basic_16",
+            "@relationshipName": "ns",
+            "@resource": {
+                "type": "ctv/virtualnetworkservice",
+                "id": 169,
+                "href": "ctv/virtnetworkserv/169",
+                "dynamicAttributes": [
+                    {
+                        "attributeKey": 140,
+                        "groupName": "SO_RESOURCE",
+                        "attributeName": "resourceType",
+                        "stringAttributeValue": "NetworkService",
+                        "attributeDefinitionId": 19
+                    },
+                    {
+                        "attributeKey": 141,
+                        "groupName": "SO_NS",
+                        "attributeName": "nsdId",
+                        "stringAttributeValue": "nsdId-1",
+                        "attributeDefinitionId": 17
+                    },
+                    {
+                        "attributeKey": 142,
+                        "groupName": "SO_NS",
+                        "attributeName": "vdcId",
+                        "stringAttributeValue": "testVdcId",
+                        "attributeDefinitionId": 18
+                    },
+                    {
+                        "attributeKey": 13,
+                        "groupName": "SO_RESOURCE",
+                        "attributeName": "customTemplates",
+                        "listAttributeValue": [
+                            {
+                                "name": "additionalParamsForNsTemplate",
+                                "catalogRef": "additionalParamsForNsConfig"
+                            }
+                        ],
+                        "attributeDefinitionId": 8
+                    }
+                ],
+                "externalId": "testId",
+                "name": "ns_basic_16",
+                "description": "basic test",
+                "revisionNumber": 1,
+                "inServiceDate": "2021-06-24T00:00:00.000Z",
+                "scheduledDate": "2021-06-24T16:21:43.448Z",
+                "status": "ACTIVE",
+                "lastModifiedOn": "2021-06-24T16:23:04.402Z",
+                "lastModifiedBy": "arabian",
+                "createdOn": "2021-06-24T16:22:02.538Z",
+                "createdBy": "arabian",
+                "versionNumber": 4,
+                "revisionGroupKey": {
+                    "type": "revisionGroupKey",
+                    "keyValue": 698
+                },
+                "key": {
+                    "type": "ctv/virtualnetworkserviceKey",
+                    "keyValue": 169
+                }
+            }
+        },
+        {
+            "id": "170",
+            "href": "ctv/vnf/170",
+            "name": "vnf_b_16",
+            "@relationshipName": "vnf_b",
+            "@resource": {
+                "type": "ctv/virtualnetworkfunction",
+                "id": 170,
+                "href": "ctv/vnf/170",
+                "dynamicAttributes": [
+                    {
+                        "attributeKey": 57,
+                        "groupName": "SO_RESOURCE",
+                        "attributeName": "resourceType",
+                        "stringAttributeValue": "NetworkFunction",
+                        "attributeDefinitionId": 19
+                    },
+                    {
+                        "attributeKey": 58,
+                        "groupName": "SO_RESOURCE",
+                        "attributeName": "customTemplates",
+                        "listAttributeValue": [
+                            {
+                                "name": "additionalParamsForVnfTemplate",
+                                "catalogRef": "additionalParamsForVnfOneTemplate"
+                            }
+                        ],
+                        "attributeDefinitionId": 8
+                    }
+                ],
+                "name": "vnf_b_16",
+                "revisionNumber": 1,
+                "inServiceDate": "2021-06-24T00:00:00.000Z",
+                "scheduledDate": "2021-06-24T16:21:43.448Z",
+                "status": "ACTIVE",
+                "lastModifiedOn": "2021-06-24T16:23:03.796Z",
+                "lastModifiedBy": "arabian",
+                "createdOn": "2021-06-24T16:22:04.076Z",
+                "createdBy": "arabian",
+                "versionNumber": 2,
+                "revisionGroupKey": {
+                    "type": "revisionGroupKey",
+                    "keyValue": 699
+                },
+                "key": {
+                    "type": "ctv/virtualnetworkfunctionKey",
+                    "keyValue": 170
+                }
+            }
+        },
+        {
+            "id": "171",
+            "href": "ctv/vnf/171",
+            "name": "vnf_a_16",
+            "@relationshipName": "vnf_a",
+            "@resource": {
+                "type": "ctv/virtualnetworkfunction",
+                "id": 171,
+                "href": "ctv/vnf/171",
+                "dynamicAttributes": [
+                    {
+                        "attributeKey": 112,
+                        "groupName": "SO_RESOURCE",
+                        "attributeName": "resourceType",
+                        "stringAttributeValue": "NetworkFunction",
+                        "attributeDefinitionId": 40
+                    },
+                    {
+                        "attributeKey": 9,
+                        "groupName": "SO_VNF",
+                        "attributeName": "vnfInstanceName",
+                        "stringAttributeValue": "vnfInstanceName0",
+                        "attributeDefinitionId": 7
+                    },
+                    {
+                        "attributeKey": 58,
+                        "groupName": "SO_RESOURCE",
+                        "attributeName": "customTemplates",
+                        "listAttributeValue": [
+                            {
+                                "name": "day0ConfigTemplate",
+                                "catalogRef": "day0VnfOneConfig"
+                            }
+                        ],
+                        "attributeDefinitionId": 8
+                    }
+                ],
+                "name": "vnf_a_16",
+                "revisionNumber": 1,
+                "inServiceDate": "2021-06-24T00:00:00.000Z",
+                "scheduledDate": "2021-06-24T16:21:43.448Z",
+                "status": "ACTIVE",
+                "lastModifiedOn": "2021-06-24T16:23:03.796Z",
+                "lastModifiedBy": "arabian",
+                "createdOn": "2021-06-24T16:22:04.076Z",
+                "createdBy": "arabian",
+                "versionNumber": 2,
+                "revisionGroupKey": {
+                    "type": "revisionGroupKey",
+                    "keyValue": 700
+                },
+                "key": {
+                    "type": "ctv/virtualnetworkfunctionKey",
+                    "keyValue": 171
+                }
+            }
+        }
+    ]
+}

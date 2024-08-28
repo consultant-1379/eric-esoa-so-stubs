@@ -1,0 +1,38 @@
+{
+    "id": "Service_L3_2",
+    "serviceExecutionPlan": {
+        "operations": [
+            {
+                "activity": "call_operation",
+                "dependency_operations": [],
+                "failure_dependency_operations": [],
+                "id": "VNF_1.Standard.stop.425",
+                "implementation": null,
+                "inputs": [],
+                "interface": "Standard",
+                "name": "stop",
+                "node": "VNF_1",
+                "post_state": null,
+                "pre_state": null,
+                "type": "node"
+            },
+            {
+                "activity": "call_operation",
+                "dependency_operations": [
+                    "VNF_1.Standard.stop.425"
+                ],
+                "failure_dependency_operations": [],
+                "id": "VNF_1.Standard.delete.426",
+                "implementation": null,
+                "inputs": [],
+                "interface": "Standard",
+                "name": "delete",
+                "node": "VNF_1",
+                "post_state": null,
+                "pre_state": null,
+                "type": "node"
+            }
+        ]
+    },
+    "workflow": "undeploy"
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "_id": "virtNetworkServ",
+    "shortBundleId": "ctv",
+    "objectTypeId": 158
+  },
+  {
+    "_id": "vnf",
+    "shortBundleId": "ctv",
+    "objectTypeId": 159
+  },
+  {
+    "_id": "vimZone",
+    "shortBundleId": "ctv",
+    "objectTypeId": 160
+  }
+]

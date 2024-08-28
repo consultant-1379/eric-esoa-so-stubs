@@ -1,0 +1,128 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice?invariantId=ac9c4794-b12f-4a49-a89c-8694a9decd96"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs.json",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+          "serviceName": "service_custom_type_1",
+          "status": "active",
+          "invariantId": "ac9c4794-b12f-4a49-a89c-8694a9decd96",
+          "id": 217
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/serviceOrder?fields=id",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalId == '45387729-dd42-4313-8c33-3aa8860ba13b')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalVersion == '1.0')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service[?(@.name == 'service_custom_type_1')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0][?(@.action == 'modify')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_assigned.json",
+        "transformerParameters": {
+          "orderId": "601"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions": {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/assigned_event.json",
+          "serviceInstanceId": "ServiceTemplate_000099-Service-ocrs-resourceFacingService-revisionGroupKey-1526"
+        }
+      }
+    },
+    {
+      "scenarioName": "MODIFY",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/service-instances/ServiceTemplate_000099-Service-ocrs-resourceFacingService-revisionGroupKey-1526"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/custom_node_type/custom_node_type_instance_modify.json",
+        "transformerParameters": {
+          "serviceName": "service_custom_type_1"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v2.7/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id == 'ServiceTemplate_000099-Service-ocrs-resourceFacingService-revisionGroupKey-1526')]"},
+          {"matchesJsonPath" : "$[?(@.workflow == 'modify')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/custom_node_type/custom_node_type_modify.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "MODIFY_GET_RFS",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice?revisionGroupKey=1526"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs.json",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+          "serviceName": "service_custom_type_1",
+          "revision": 2,
+          "id": 217,
+          "invariantId": "ac9c4794-b12f-4a49-a89c-8694a9decd96"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/completeServiceOrder",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrder[?(@.id == '601')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_completed.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions": {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/completed_event.json",
+          "serviceInstanceId": "ServiceTemplate_000099-Service-ocrs-resourceFacingService-revisionGroupKey-1526"
+        }
+      }
+    }
+  ]
+}

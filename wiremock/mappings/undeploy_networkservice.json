@@ -1,0 +1,79 @@
+{
+  "mappings": [
+    {
+      "scenarioName": "UNDEPLOY",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/serviceOrder?fields=id",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalId == '0a073524-6333-424c-93a3-d2f13ff19189')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalVersion == '1.0')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service[?(@.name contains 'service')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0][?(@.action == 'delete')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_assigned.json",
+        "transformerParameters": {
+          "orderId": "2"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/assigned_event.json",
+          "serviceInstanceId": "NetworkService_000001-Service-ocrs-resourceFacingService-revisionGroupKey-1"
+        }
+      }
+    },
+    {
+      "scenarioName": "UNDEPLOY",
+      "requiredScenarioState": "ASSIGN_FAILED",
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/serviceOrder?fields=id",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalId == '0a073524-6333-424c-93a3-d2f13ff19189')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalVersion == '1.0')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service[?(@.name contains 'service')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0][?(@.action == 'delete')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_assigned.json",
+        "transformerParameters": {
+          "orderId": "2"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/assigned_failed_event.json",
+          "serviceInstanceId": ""
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/ocrs\/resourcefacingservice\/.*\\?fs=dynAttrs"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs_dynattrs.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    }
+  ]
+}

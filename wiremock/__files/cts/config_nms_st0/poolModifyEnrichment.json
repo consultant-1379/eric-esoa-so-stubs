@@ -1,0 +1,661 @@
+[ {
+  "type" : "ctw/gnbdu",
+  "id" : 1527,
+  "href" : "ctw/gnbdu/1527",
+  "name" : "plmnInfoPool",
+  "revisionNumber" : 1,
+  "createdOn" : "2023-04-18T09:35:43.014Z",
+  "createdBy" : "sysadm",
+  "status" : "operating",
+  "lastModifiedOn" : "2023-04-18T10:07:41.766Z",
+  "lastModifiedBy" : "sysadm",
+  "revisionGroupKey" : {
+    "type" : "revisionGroupKey",
+    "keyValue" : 20894
+  },
+  "versionNumber" : 6,
+  "key" : {
+    "type" : "ctw/gnbduKey",
+    "keyValue" : 1527
+  },
+  "nrCells" : [ {
+    "mode" : "LOADED",
+    "value" : {
+      "type" : "ctw/nrcell",
+      "id" : 1876,
+      "href" : "ctw/nrcell/1876",
+      "name" : "plmnInfoPool_3",
+      "createdOn" : "2023-04-20T11:40:27.845Z",
+      "createdBy" : "sysadm",
+      "status" : "operating",
+      "lastModifiedOn" : "2023-04-20T16:52:39.384Z",
+      "lastModifiedBy" : "sysadm",
+      "versionNumber" : 4,
+      "revisionNumber" : 1,
+      "administrativeState" : "UNLOCKED",
+      "operationalState" : "ENABLED",
+      "revisionGroupKey" : {
+        "type" : "revisionGroupKey",
+        "keyValue" : 25301
+      },
+      "localCellIdNci" : 280423,
+      "trackingAreaCode" : 28042,
+      "key" : {
+        "type" : "ctw/nrcellKey",
+        "keyValue" : 1876
+      },
+      "plmnInfoList" : [ {
+        "mode" : "LOADED",
+        "value" : {
+          "type" : "ctw/plmninfo",
+          "id" : 380,
+          "href" : "ctw/plmninfo/380",
+          "plmn_mcc" : 280,
+          "plmn_mnc" : "42",
+          "revisionNumber" : 1,
+          "lastModifiedOn" : "2023-04-24T10:32:31.246Z",
+          "lastModifiedBy" : "sysadm",
+          "createdOn" : "2023-04-21T07:10:46.432Z",
+          "createdBy" : "sysadm",
+          "name" : "280_42_1_1002",
+          "inServiceDate" : "2023-04-24T00:00:00.000Z",
+          "scheduledDate" : "2024-05-18T00:01:29.863Z",
+          "status" : "operating",
+          "versionNumber" : 2,
+          "revisionGroupKey" : {
+            "type" : "revisionGroupKey",
+            "keyValue" : 26405
+          },
+          "key" : {
+            "type" : "ctw/plmninfoKey",
+            "keyValue" : 380
+          },
+          "sNSSAI_SST" : 1,
+          "sNSSAI_SD" : "1002",
+          "resourcePartitionMembers" : [ {
+            "mode" : "LOADED",
+            "value" : {
+              "type" : "ctw/resourcepartitionmember",
+              "id" : 1997,
+              "href" : "ctw/resourcepartitionmember/1997",
+              "dynamicAttributes" : [ {
+                "attributeKey" : 382,
+                "groupName" : "ExternalRef",
+                "attributeName" : "id",
+                "stringAttributeValue" : "1",
+                "attributeDefinitionId" : 511
+              } ],
+              "name" : "plmnInfoPool,1,plmnInfoPoolDedicated_dedicated,plmnInfoPoolDedicated_ranGnbduBaseServices_SC",
+              "revisionNumber" : 1,
+              "scheduledDate" : "2024-05-18T00:01:29.863Z",
+              "status" : "planning",
+              "createdOn" : "2023-04-24T10:46:08.492Z",
+              "createdBy" : "sysadm",
+              "lastModifiedOn" : "2023-04-24T10:46:08.492Z",
+              "lastModifiedBy" : "sysadm",
+              "versionNumber" : 1,
+              "revisionGroupKey" : {
+                "type" : "revisionGroupKey",
+                "keyValue" : 26866
+              },
+              "key" : {
+                "type" : "ctw/resourcepartitionmemberKey",
+                "keyValue" : 1997
+              },
+              "resourcePartition" : [ {
+                "mode" : "LOADED",
+                "value" : {
+                  "type" : "ctw/resourcepartition",
+                  "id" : 1996,
+                  "href" : "ctw/resourcepartition/1996",
+                  "name" : "plmnInfoPool,1,plmnInfoPoolDedicated_dedicated",
+                  "comments" : "added for nssi service plmnInfoPoolDedicated_ranGnbduBaseServices_SC",
+                  "revisionNumber" : 1,
+                  "scheduledDate" : "2024-05-18T00:01:29.863Z",
+                  "status" : "planning",
+                  "createdOn" : "2023-04-24T10:46:08.449Z",
+                  "createdBy" : "sysadm",
+                  "lastModifiedOn" : "2023-04-24T10:46:08.449Z",
+                  "lastModifiedBy" : "sysadm",
+                  "versionNumber" : 1,
+                  "revisionGroupKey" : {
+                    "type" : "revisionGroupKey",
+                    "keyValue" : 26865
+                  },
+                  "key" : {
+                    "type" : "ctw/resourcepartitionKey",
+                    "keyValue" : 1996
+                  },
+                  "fiveQISet" : [ {
+                    "mode" : "LOADED",
+                    "value" : {
+                      "type" : "ctw/fiveqiset",
+                      "id" : 221,
+                      "href" : "ctw/fiveqiset/221",
+                      "dynamicAttributes" : [ {
+                        "attributeKey" : 378,
+                        "groupName" : "ExternalRef",
+                        "attributeName" : "id",
+                        "stringAttributeValue" : "1",
+                        "attributeDefinitionId" : 511
+                      }, {
+                        "attributeKey" : 379,
+                        "groupName" : "ModelData",
+                        "attributeName" : "isModelData",
+                        "booleanAttributeValue" : false,
+                        "attributeDefinitionId" : 494
+                      } ],
+                      "supportedFunction" : "gnbdu",
+                      "isDefaultSet" : false,
+                      "revisionNumber" : 1,
+                      "inServiceDate" : "2023-04-24T00:00:00.000Z",
+                      "scheduledDate" : "2024-05-18T00:01:29.863Z",
+                      "status" : "operating",
+                      "createdOn" : "2023-04-21T07:10:49.826Z",
+                      "createdBy" : "sysadm",
+                      "lastModifiedOn" : "2023-04-24T10:32:44.188Z",
+                      "lastModifiedBy" : "sysadm",
+                      "name" : "plmnInfoPool,plmnInfoPoolQoS",
+                      "versionNumber" : 2,
+                      "revisionGroupKey" : {
+                        "type" : "revisionGroupKey",
+                        "keyValue" : 26433
+                      },
+                      "key" : {
+                        "type" : "ctw/fiveqisetKey",
+                        "keyValue" : 221
+                      }
+                    }
+                  } ]
+                }
+              } ]
+            }
+          } ]
+        }
+      }, {
+        "mode" : "LOADED",
+        "value" : {
+          "type" : "ctw/plmninfo",
+          "id" : 383,
+          "href" : "ctw/plmninfo/383",
+          "plmn_mcc" : 280,
+          "plmn_mnc" : "42",
+          "revisionNumber" : 1,
+          "lastModifiedOn" : "2023-04-24T11:52:47.127Z",
+          "lastModifiedBy" : "sysadm",
+          "createdOn" : "2023-04-24T11:52:47.127Z",
+          "createdBy" : "sysadm",
+          "name" : "280_42_1_1003",
+          "scheduledDate" : "2024-05-18T00:01:29.863Z",
+          "status" : "planning",
+          "versionNumber" : 1,
+          "revisionGroupKey" : {
+            "type" : "revisionGroupKey",
+            "keyValue" : 26870
+          },
+          "key" : {
+            "type" : "ctw/plmninfoKey",
+            "keyValue" : 383
+          },
+          "sNSSAI_SST" : 1,
+          "sNSSAI_SD" : "1003"
+        }
+      }, {
+        "mode" : "LOADED",
+        "value" : {
+          "type" : "ctw/plmninfo",
+          "id" : 381,
+          "href" : "ctw/plmninfo/381",
+          "plmn_mcc" : 280,
+          "plmn_mnc" : "42",
+          "revisionNumber" : 1,
+          "lastModifiedOn" : "2023-04-24T10:32:31.253Z",
+          "lastModifiedBy" : "sysadm",
+          "createdOn" : "2023-04-21T07:10:46.461Z",
+          "createdBy" : "sysadm",
+          "name" : "280_42_1_1001",
+          "inServiceDate" : "2023-04-24T00:00:00.000Z",
+          "scheduledDate" : "2024-05-18T00:01:29.863Z",
+          "status" : "operating",
+          "versionNumber" : 2,
+          "revisionGroupKey" : {
+            "type" : "revisionGroupKey",
+            "keyValue" : 26406
+          },
+          "key" : {
+            "type" : "ctw/plmninfoKey",
+            "keyValue" : 381
+          },
+          "sNSSAI_SST" : 1,
+          "sNSSAI_SD" : "1001"
+        }
+      } ]
+    }
+  }, {
+    "mode" : "LOADED",
+    "value" : {
+      "type" : "ctw/nrcell",
+      "id" : 1529,
+      "href" : "ctw/nrcell/1529",
+      "name" : "plmnInfoPool_1",
+      "createdOn" : "2023-04-18T09:44:52.830Z",
+      "createdBy" : "sysadm",
+      "status" : "operating",
+      "lastModifiedOn" : "2023-04-18T09:46:49.515Z",
+      "lastModifiedBy" : "sysadm",
+      "versionNumber" : 3,
+      "revisionNumber" : 1,
+      "administrativeState" : "UNLOCKED",
+      "operationalState" : "ENABLED",
+      "revisionGroupKey" : {
+        "type" : "revisionGroupKey",
+        "keyValue" : 20896
+      },
+      "localCellIdNci" : 280421,
+      "trackingAreaCode" : 28042,
+      "key" : {
+        "type" : "ctw/nrcellKey",
+        "keyValue" : 1529
+      },
+      "plmnInfoList" : [ {
+        "mode" : "LOADED",
+        "value" : {
+          "type" : "ctw/plmninfo",
+          "id" : 381,
+          "href" : "ctw/plmninfo/381",
+          "plmn_mcc" : 280,
+          "plmn_mnc" : "42",
+          "revisionNumber" : 1,
+          "lastModifiedOn" : "2023-04-24T10:32:31.253Z",
+          "lastModifiedBy" : "sysadm",
+          "createdOn" : "2023-04-21T07:10:46.461Z",
+          "createdBy" : "sysadm",
+          "name" : "280_42_1_1001",
+          "inServiceDate" : "2023-04-24T00:00:00.000Z",
+          "scheduledDate" : "2024-05-18T00:01:29.863Z",
+          "status" : "operating",
+          "versionNumber" : 2,
+          "revisionGroupKey" : {
+            "type" : "revisionGroupKey",
+            "keyValue" : 26406
+          },
+          "key" : {
+            "type" : "ctw/plmninfoKey",
+            "keyValue" : 381
+          },
+          "sNSSAI_SST" : 1,
+          "sNSSAI_SD" : "1001"
+        }
+      }, {
+        "mode" : "LOADED",
+        "value" : {
+          "type" : "ctw/plmninfo",
+          "id" : 380,
+          "href" : "ctw/plmninfo/380",
+          "plmn_mcc" : 280,
+          "plmn_mnc" : "42",
+          "revisionNumber" : 1,
+          "lastModifiedOn" : "2023-04-24T10:32:31.246Z",
+          "lastModifiedBy" : "sysadm",
+          "createdOn" : "2023-04-21T07:10:46.432Z",
+          "createdBy" : "sysadm",
+          "name" : "280_42_1_1002",
+          "inServiceDate" : "2023-04-24T00:00:00.000Z",
+          "scheduledDate" : "2024-05-18T00:01:29.863Z",
+          "status" : "operating",
+          "versionNumber" : 2,
+          "revisionGroupKey" : {
+            "type" : "revisionGroupKey",
+            "keyValue" : 26405
+          },
+          "key" : {
+            "type" : "ctw/plmninfoKey",
+            "keyValue" : 380
+          },
+          "sNSSAI_SST" : 1,
+          "sNSSAI_SD" : "1002",
+          "resourcePartitionMembers" : [ {
+            "mode" : "LOADED",
+            "value" : {
+              "type" : "ctw/resourcepartitionmember",
+              "id" : 1997,
+              "href" : "ctw/resourcepartitionmember/1997",
+              "dynamicAttributes" : [ {
+                "attributeKey" : 382,
+                "groupName" : "ExternalRef",
+                "attributeName" : "id",
+                "stringAttributeValue" : "1",
+                "attributeDefinitionId" : 511
+              } ],
+              "name" : "plmnInfoPool,1,plmnInfoPoolDedicated_dedicated,plmnInfoPoolDedicated_ranGnbduBaseServices_SC",
+              "revisionNumber" : 1,
+              "scheduledDate" : "2024-05-18T00:01:29.863Z",
+              "status" : "planning",
+              "createdOn" : "2023-04-24T10:46:08.492Z",
+              "createdBy" : "sysadm",
+              "lastModifiedOn" : "2023-04-24T10:46:08.492Z",
+              "lastModifiedBy" : "sysadm",
+              "versionNumber" : 1,
+              "revisionGroupKey" : {
+                "type" : "revisionGroupKey",
+                "keyValue" : 26866
+              },
+              "key" : {
+                "type" : "ctw/resourcepartitionmemberKey",
+                "keyValue" : 1997
+              },
+              "resourcePartition" : [ {
+                "mode" : "LOADED",
+                "value" : {
+                  "type" : "ctw/resourcepartition",
+                  "id" : 1996,
+                  "href" : "ctw/resourcepartition/1996",
+                  "name" : "plmnInfoPool,1,plmnInfoPoolDedicated_dedicated",
+                  "comments" : "added for nssi service plmnInfoPoolDedicated_ranGnbduBaseServices_SC",
+                  "revisionNumber" : 1,
+                  "scheduledDate" : "2024-05-18T00:01:29.863Z",
+                  "status" : "planning",
+                  "createdOn" : "2023-04-24T10:46:08.449Z",
+                  "createdBy" : "sysadm",
+                  "lastModifiedOn" : "2023-04-24T10:46:08.449Z",
+                  "lastModifiedBy" : "sysadm",
+                  "versionNumber" : 1,
+                  "revisionGroupKey" : {
+                    "type" : "revisionGroupKey",
+                    "keyValue" : 26865
+                  },
+                  "key" : {
+                    "type" : "ctw/resourcepartitionKey",
+                    "keyValue" : 1996
+                  },
+                  "fiveQISet" : [ {
+                    "mode" : "LOADED",
+                    "value" : {
+                      "type" : "ctw/fiveqiset",
+                      "id" : 221,
+                      "href" : "ctw/fiveqiset/221",
+                      "dynamicAttributes" : [ {
+                        "attributeKey" : 378,
+                        "groupName" : "ExternalRef",
+                        "attributeName" : "id",
+                        "stringAttributeValue" : "1",
+                        "attributeDefinitionId" : 511
+                      }, {
+                        "attributeKey" : 379,
+                        "groupName" : "ModelData",
+                        "attributeName" : "isModelData",
+                        "booleanAttributeValue" : false,
+                        "attributeDefinitionId" : 494
+                      } ],
+                      "supportedFunction" : "gnbdu",
+                      "isDefaultSet" : false,
+                      "revisionNumber" : 1,
+                      "inServiceDate" : "2023-04-24T00:00:00.000Z",
+                      "scheduledDate" : "2024-05-18T00:01:29.863Z",
+                      "status" : "operating",
+                      "createdOn" : "2023-04-21T07:10:49.826Z",
+                      "createdBy" : "sysadm",
+                      "lastModifiedOn" : "2023-04-24T10:32:44.188Z",
+                      "lastModifiedBy" : "sysadm",
+                      "name" : "plmnInfoPool,plmnInfoPoolQoS",
+                      "versionNumber" : 2,
+                      "revisionGroupKey" : {
+                        "type" : "revisionGroupKey",
+                        "keyValue" : 26433
+                      },
+                      "key" : {
+                        "type" : "ctw/fiveqisetKey",
+                        "keyValue" : 221
+                      }
+                    }
+                  } ]
+                }
+              } ]
+            }
+          } ]
+        }
+      }, {
+        "mode" : "LOADED",
+        "value" : {
+          "type" : "ctw/plmninfo",
+          "id" : 383,
+          "href" : "ctw/plmninfo/383",
+          "plmn_mcc" : 280,
+          "plmn_mnc" : "42",
+          "revisionNumber" : 1,
+          "lastModifiedOn" : "2023-04-24T11:52:47.127Z",
+          "lastModifiedBy" : "sysadm",
+          "createdOn" : "2023-04-24T11:52:47.127Z",
+          "createdBy" : "sysadm",
+          "name" : "280_42_1_1003",
+          "scheduledDate" : "2024-05-18T00:01:29.863Z",
+          "status" : "planning",
+          "versionNumber" : 1,
+          "revisionGroupKey" : {
+            "type" : "revisionGroupKey",
+            "keyValue" : 26870
+          },
+          "key" : {
+            "type" : "ctw/plmninfoKey",
+            "keyValue" : 383
+          },
+          "sNSSAI_SST" : 1,
+          "sNSSAI_SD" : "1003"
+        }
+      } ]
+    }
+  }, {
+    "mode" : "LOADED",
+    "value" : {
+      "type" : "ctw/nrcell",
+      "id" : 1530,
+      "href" : "ctw/nrcell/1530",
+      "name" : "plmnInfoPool_2",
+      "createdOn" : "2023-04-18T09:45:28.258Z",
+      "createdBy" : "sysadm",
+      "status" : "operating",
+      "lastModifiedOn" : "2023-04-18T09:47:03.670Z",
+      "lastModifiedBy" : "sysadm",
+      "versionNumber" : 2,
+      "revisionNumber" : 1,
+      "administrativeState" : "UNLOCKED",
+      "operationalState" : "ENABLED",
+      "revisionGroupKey" : {
+        "type" : "revisionGroupKey",
+        "keyValue" : 20897
+      },
+      "localCellIdNci" : 280422,
+      "trackingAreaCode" : 28042,
+      "key" : {
+        "type" : "ctw/nrcellKey",
+        "keyValue" : 1530
+      },
+      "plmnInfoList" : [ {
+        "mode" : "LOADED",
+        "value" : {
+          "type" : "ctw/plmninfo",
+          "id" : 381,
+          "href" : "ctw/plmninfo/381",
+          "plmn_mcc" : 280,
+          "plmn_mnc" : "42",
+          "revisionNumber" : 1,
+          "lastModifiedOn" : "2023-04-24T10:32:31.253Z",
+          "lastModifiedBy" : "sysadm",
+          "createdOn" : "2023-04-21T07:10:46.461Z",
+          "createdBy" : "sysadm",
+          "name" : "280_42_1_1001",
+          "inServiceDate" : "2023-04-24T00:00:00.000Z",
+          "scheduledDate" : "2024-05-18T00:01:29.863Z",
+          "status" : "operating",
+          "versionNumber" : 2,
+          "revisionGroupKey" : {
+            "type" : "revisionGroupKey",
+            "keyValue" : 26406
+          },
+          "key" : {
+            "type" : "ctw/plmninfoKey",
+            "keyValue" : 381
+          },
+          "sNSSAI_SST" : 1,
+          "sNSSAI_SD" : "1001"
+        }
+      }, {
+        "mode" : "LOADED",
+        "value" : {
+          "type" : "ctw/plmninfo",
+          "id" : 380,
+          "href" : "ctw/plmninfo/380",
+          "plmn_mcc" : 280,
+          "plmn_mnc" : "42",
+          "revisionNumber" : 1,
+          "lastModifiedOn" : "2023-04-24T10:32:31.246Z",
+          "lastModifiedBy" : "sysadm",
+          "createdOn" : "2023-04-21T07:10:46.432Z",
+          "createdBy" : "sysadm",
+          "name" : "280_42_1_1002",
+          "inServiceDate" : "2023-04-24T00:00:00.000Z",
+          "scheduledDate" : "2024-05-18T00:01:29.863Z",
+          "status" : "operating",
+          "versionNumber" : 2,
+          "revisionGroupKey" : {
+            "type" : "revisionGroupKey",
+            "keyValue" : 26405
+          },
+          "key" : {
+            "type" : "ctw/plmninfoKey",
+            "keyValue" : 380
+          },
+          "sNSSAI_SST" : 1,
+          "sNSSAI_SD" : "1002",
+          "resourcePartitionMembers" : [ {
+            "mode" : "LOADED",
+            "value" : {
+              "type" : "ctw/resourcepartitionmember",
+              "id" : 1997,
+              "href" : "ctw/resourcepartitionmember/1997",
+              "dynamicAttributes" : [ {
+                "attributeKey" : 382,
+                "groupName" : "ExternalRef",
+                "attributeName" : "id",
+                "stringAttributeValue" : "1",
+                "attributeDefinitionId" : 511
+              } ],
+              "name" : "plmnInfoPool,1,plmnInfoPoolDedicated_dedicated,plmnInfoPoolDedicated_ranGnbduBaseServices_SC",
+              "revisionNumber" : 1,
+              "scheduledDate" : "2024-05-18T00:01:29.863Z",
+              "status" : "planning",
+              "createdOn" : "2023-04-24T10:46:08.492Z",
+              "createdBy" : "sysadm",
+              "lastModifiedOn" : "2023-04-24T10:46:08.492Z",
+              "lastModifiedBy" : "sysadm",
+              "versionNumber" : 1,
+              "revisionGroupKey" : {
+                "type" : "revisionGroupKey",
+                "keyValue" : 26866
+              },
+              "key" : {
+                "type" : "ctw/resourcepartitionmemberKey",
+                "keyValue" : 1997
+              },
+              "resourcePartition" : [ {
+                "mode" : "LOADED",
+                "value" : {
+                  "type" : "ctw/resourcepartition",
+                  "id" : 1996,
+                  "href" : "ctw/resourcepartition/1996",
+                  "name" : "plmnInfoPool,1,plmnInfoPoolDedicated_dedicated",
+                  "comments" : "added for nssi service plmnInfoPoolDedicated_ranGnbduBaseServices_SC",
+                  "revisionNumber" : 1,
+                  "scheduledDate" : "2024-05-18T00:01:29.863Z",
+                  "status" : "planning",
+                  "createdOn" : "2023-04-24T10:46:08.449Z",
+                  "createdBy" : "sysadm",
+                  "lastModifiedOn" : "2023-04-24T10:46:08.449Z",
+                  "lastModifiedBy" : "sysadm",
+                  "versionNumber" : 1,
+                  "revisionGroupKey" : {
+                    "type" : "revisionGroupKey",
+                    "keyValue" : 26865
+                  },
+                  "key" : {
+                    "type" : "ctw/resourcepartitionKey",
+                    "keyValue" : 1996
+                  },
+                  "fiveQISet" : [ {
+                    "mode" : "LOADED",
+                    "value" : {
+                      "type" : "ctw/fiveqiset",
+                      "id" : 221,
+                      "href" : "ctw/fiveqiset/221",
+                      "dynamicAttributes" : [ {
+                        "attributeKey" : 378,
+                        "groupName" : "ExternalRef",
+                        "attributeName" : "id",
+                        "stringAttributeValue" : "1",
+                        "attributeDefinitionId" : 511
+                      }, {
+                        "attributeKey" : 379,
+                        "groupName" : "ModelData",
+                        "attributeName" : "isModelData",
+                        "booleanAttributeValue" : false,
+                        "attributeDefinitionId" : 494
+                      } ],
+                      "supportedFunction" : "gnbdu",
+                      "isDefaultSet" : false,
+                      "revisionNumber" : 1,
+                      "inServiceDate" : "2023-04-24T00:00:00.000Z",
+                      "scheduledDate" : "2024-05-18T00:01:29.863Z",
+                      "status" : "operating",
+                      "createdOn" : "2023-04-21T07:10:49.826Z",
+                      "createdBy" : "sysadm",
+                      "lastModifiedOn" : "2023-04-24T10:32:44.188Z",
+                      "lastModifiedBy" : "sysadm",
+                      "name" : "plmnInfoPool,plmnInfoPoolQoS",
+                      "versionNumber" : 2,
+                      "revisionGroupKey" : {
+                        "type" : "revisionGroupKey",
+                        "keyValue" : 26433
+                      },
+                      "key" : {
+                        "type" : "ctw/fiveqisetKey",
+                        "keyValue" : 221
+                      }
+                    }
+                  } ]
+                }
+              } ]
+            }
+          } ]
+        }
+      }, {
+        "mode" : "LOADED",
+        "value" : {
+          "type" : "ctw/plmninfo",
+          "id" : 383,
+          "href" : "ctw/plmninfo/383",
+          "plmn_mcc" : 280,
+          "plmn_mnc" : "42",
+          "revisionNumber" : 1,
+          "lastModifiedOn" : "2023-04-24T11:52:47.127Z",
+          "lastModifiedBy" : "sysadm",
+          "createdOn" : "2023-04-24T11:52:47.127Z",
+          "createdBy" : "sysadm",
+          "name" : "280_42_1_1003",
+          "scheduledDate" : "2024-05-18T00:01:29.863Z",
+          "status" : "planning",
+          "versionNumber" : 1,
+          "revisionGroupKey" : {
+            "type" : "revisionGroupKey",
+            "keyValue" : 26870
+          },
+          "key" : {
+            "type" : "ctw/plmninfoKey",
+            "keyValue" : 383
+          },
+          "sNSSAI_SST" : 1,
+          "sNSSAI_SD" : "1003"
+        }
+      } ]
+    }
+  } ]
+} ]

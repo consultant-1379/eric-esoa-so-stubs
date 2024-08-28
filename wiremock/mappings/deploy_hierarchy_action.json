@@ -1,0 +1,480 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/serviceOrder?fields=id",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalId == '1cf052a2-66dc-4c09-98fe-cb951c74e1f7')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalVersion == '1.0')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service[?(@.name == 'service_h2')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0][?(@.action == 'add')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_assigned.json",
+        "transformerParameters": {
+          "orderId": "200"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/assigned_event.json",
+          "serviceInstanceId": "Service_L1_2_000001-Service-ocrs-resourceFacingService-revisionGroupKey-2"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/service-instances/Service_L1_2_000001-Service-ocrs-resourceFacingService-revisionGroupKey-2"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/hierarchy_action/substitution_action_L1_instance.json",
+        "transformerParameters": {
+          "serviceName": "service_h2"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/service-instances/Service_L2_2_000001-Service-ocrs-resourceFacingService-revisionGroupKey-3?topLevelServiceId=Service_L1_2_000001-Service-ocrs-resourceFacingService-revisionGroupKey-2"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/hierarchy_action/substitution_action_L2_instance.json",
+        "transformerParameters": {
+          "serviceName": "service_h2_L2"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/service-instances/Service_L3_1_000001-Service-ocrs-resourceFacingService-revisionGroupKey-4?topLevelServiceId=Service_L1_2_000001-Service-ocrs-resourceFacingService-revisionGroupKey-2"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/hierarchy_action/substitution_action_L3_1_instance.json",
+        "transformerParameters": {
+          "serviceName": "service_h2_L2_L3_1"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/service-instances/Service_L3_2_000001-Service-ocrs-resourceFacingService-revisionGroupKey-5?topLevelServiceId=Service_L1_2_000001-Service-ocrs-resourceFacingService-revisionGroupKey-2"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/hierarchy_action/substitution_action_L3_2_instance.json",
+        "transformerParameters": {
+          "serviceName": "service_h2_L2_L3_2"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice/3?fs=dynAttrs"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs.json",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+            "id": "3"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice/4?fs=dynAttrs"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs.json",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+            "id": "4"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice/5?fs=dynAttrs"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs.json",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+            "id": "5"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts?query=invariantUUID==1cf052a2-66dc-4c09-98fe-cb951c74e1f7;type==SERVICE_MODEL;version==1.0&listInternalArtifacts=true"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "items": [
+            {
+              "id": "200",
+              "name": "Service_L1_2",
+              "invariantUUID": "1cf052a2-66dc-4c09-98fe-cb951c74e1f7",
+              "version": "1.0",
+              "type": "SERVICE_MODEL"
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts/200/download?archive=false"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "catalog/service-models/substitution_action_L1_model_200.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts?query=invariantUUID==47ebc2b0-8396-4d1a-8f71-3c8cf908726f;type==SERVICE_MODEL;version==1.0&listInternalArtifacts=true"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "items": [
+            {
+              "id": "201",
+              "name": "Service_L2_2",
+              "invariantUUID": "47ebc2b0-8396-4d1a-8f71-3c8cf908726f",
+              "version": "1.0",
+              "type": "SERVICE_MODEL"
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts/201/download?archive=false"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "catalog/service-models/substitution_action_L2_model_201.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts?query=invariantUUID==7ab581fb-d385-412f-99c0-bb64129ed106;type==SERVICE_MODEL;version==1.0&listInternalArtifacts=true"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "items": [
+            {
+              "id": "202",
+              "name": "Service_L3_1",
+              "invariantUUID": "7ab581fb-d385-412f-99c0-bb64129ed106",
+              "version": "1.0",
+              "type": "SERVICE_MODEL"
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts/202/download?archive=false"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "catalog/service-models/substitution_action_L3_1_model_202.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts?query=invariantUUID==d9339c2a-26b4-4545-bd07-52b602ebfbab;type==SERVICE_MODEL;version==1.0&listInternalArtifacts=true"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "items": [
+            {
+              "id": "202",
+              "name": "Service_L3_2",
+              "invariantUUID": "d9339c2a-26b4-4545-bd07-52b602ebfbab",
+              "version": "1.0",
+              "type": "SERVICE_MODEL"
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts/203/download?archive=false"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "catalog/service-models/substitution_action_L3_2_model_203.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v2.7/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id == 'Service_L1_2_000001-Service-ocrs-resourceFacingService-revisionGroupKey-2')]"},
+          {"matchesJsonPath" : "$[?(@.workflow == 'deploy')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/hierarchy_action/substitution_action_L1_deploy.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v2.7/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id == 'Service_L2_2_000001-Service-ocrs-resourceFacingService-revisionGroupKey-3')]"},
+          {"matchesJsonPath" : "$[?(@.workflow == 'deploy')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/hierarchy_action/substitution_action_L2_deploy.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v2.7/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id == 'Service_L3_1_000001-Service-ocrs-resourceFacingService-revisionGroupKey-4')]"},
+          {"matchesJsonPath" : "$[?(@.workflow == 'deploy')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/hierarchy_action/substitution_action_L3_1_deploy.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v2.7/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id == 'Service_L3_2_000001-Service-ocrs-resourceFacingService-revisionGroupKey-5')]"},
+          {"matchesJsonPath" : "$[?(@.workflow == 'deploy')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/hierarchy_action/substitution_action_L3_2_deploy.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "DEPLOY",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v2.7/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id == 'Service_L3_1_000001-Service-ocrs-resourceFacingService-revisionGroupKey-4')]"},
+          {"matchesJsonPath" : "$[?(@.workflow == 'Attach')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/hierarchy_action/substitution_action_L3_1_attach.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "DEPLOY",
+      "requiredScenarioState": "ATTACH_OPERATION_ERROR",
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v2.7/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id == 'Service_L3_1_000001-Service-ocrs-resourceFacingService-revisionGroupKey-4')]"},
+          {"matchesJsonPath" : "$[?(@.workflow == 'Attach')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/hierarchy_action/substitution_action_L3_1_attach_error.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice?revisionGroupKey=2"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs.json",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+          "serviceName": "service_h2",
+          "id": "2"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice?revisionGroupKey=3"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs.json",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+          "serviceName": "service_h2_L2",
+          "id": "3"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice?revisionGroupKey=4"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs.json",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+          "serviceName": "service_h2_L2_L3_1",
+          "id": "4"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice?revisionGroupKey=5"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs.json",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+          "serviceName": "service_h2_L2_L3_2",
+          "id": "5"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/completeServiceOrder",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrder[?(@.id == '200')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_completed.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/completed_event.json",
+          "serviceInstanceId": "Service_L1_2_000001-Service-ocrs-resourceFacingService-revisionGroupKey-2"
+        }
+      }
+    }
+  ]
+}

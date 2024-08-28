@@ -1,0 +1,99 @@
+{
+  "workflow": "deploy",
+  "serviceExecutionPlan": {
+    "operations": [
+      {
+        "id": "NSSI_1_1.Standard.create.1924",
+        "name": "create",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NSSI_1_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NSSI_1_1.Standard.configure.1925",
+        "name": "configure",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NSSI_1_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NSSI_1_1.Standard.create.1924"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NSSI_1_1.Standard.start.1926",
+        "name": "start",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NSSI_1_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NSSI_1_1.Standard.configure.1925"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NSSI_2_1.Standard.create.1919",
+        "name": "create",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NSSI_2_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NSSI_2_1.Standard.configure.1920",
+        "name": "configure",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NSSI_2_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NSSI_2_1.Standard.create.1919"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NSSI_2_1.Standard.start.1921",
+        "name": "start",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NSSI_2_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NSSI_2_1.Standard.configure.1920"
+        ],
+        "failure_dependency_operations": []
+      }
+    ]
+  }
+}

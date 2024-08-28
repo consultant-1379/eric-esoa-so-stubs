@@ -1,0 +1,36 @@
+{
+  "name": "Attach",
+  "creTime": "2022-09-01 12:13:45.765635",
+  "node": {
+    "interface": [
+      {
+        "name": "Attach",
+        "operations": [
+          {
+            "name": "preAttach",
+            "pre-state": "preReconfiguring",
+            "post-state": "preReconfigured",
+            "filter": {}
+          },
+          {
+            "name": "attach",
+            "pre-state": "reconfiguring",
+            "post-state": "reconfigured",
+            "filter": {}
+          },
+          {
+            "name": "postAttach",
+            "pre-state": "postReconfiguring",
+            "post-state": "postReconfigured",
+            "filter": {}
+          }
+        ]
+      }
+    ]
+  },
+  "relationships": {
+    "interface": null,
+    "operations": []
+  },
+  "dependency_type": "forward"
+}

@@ -1,0 +1,19 @@
+{
+  "mappings": [
+    {
+      "request" : {
+        "url" : "/oss-core-ws/rest/granite-sdk-core/authenticationService/loginWithGraniteCredentials",
+        "method" : "POST"
+      },
+      "response" : {
+        "status" : 200,
+        "body" : "{\"userName\":\"sysadm\",\"databaseHostName\":\"localhost\",\"databaseName\":\"eai_install\",\"webAuthenticationToken\":\"1df0e27d-b331-4ef2-b367-af1118f71b5e\",\"locale\":\"\"}",
+        "headers" : {
+          "Content-Type" : "application/json"
+        },
+        "transformers" : [ "response-template" ]
+      },
+      "priority" : 1
+    }
+  ]
+}

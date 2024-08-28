@@ -1,0 +1,53 @@
+{
+	"workflow": "modify",
+	"serviceExecutionPlan": {
+		"operations": [
+			{
+				"id": "networkService_1.Standard.start.9490",
+				"name": "start",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "networkService_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [],
+				"failure_dependency_operations": []
+			},
+			{
+				"id": "networkService_1.Standard.configure.9491",
+				"name": "configure",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "networkService_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [
+					"networkService_1.Standard.start.9490"
+				],
+				"failure_dependency_operations": []
+			},
+			{
+				"id": "networkService_1.Standard.create.9492",
+				"name": "create",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "networkService_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [
+					"networkService_1.Standard.configure.9491"
+				],
+				"failure_dependency_operations": []
+			}
+		]
+	}
+}

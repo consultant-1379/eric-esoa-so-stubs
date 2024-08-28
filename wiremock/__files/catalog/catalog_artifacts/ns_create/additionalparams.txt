@@ -1,0 +1,1 @@
+{ "vnf_a.name": "{{trim '{{' }}vnf_a.name{{ trim '}}' }}", "vnf_b.name": "{{trim '{{' }}vnf_b.name{{ trim '}}' }}"}

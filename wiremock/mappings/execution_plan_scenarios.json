@@ -1,0 +1,409 @@
+{
+  "mappings": [
+    {
+      "scenarioName": "EXECUTION_PLAN",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v4/service-execution-plan",
+        "bodyPatterns": [
+          {
+            "matchesJsonPath": "$[?(@.id contains 'NetworkService_000001-Service-ocrs-resourceFacingService-revisionGroupKey-')]"
+          },
+          {
+            "matchesJsonPath": "$[?(@.workflow contains 'deploy')]"
+          }
+        ]
+      },
+      "response": {
+        "status": 200,
+        "transformers": ["response-template"],
+        "bodyFileName": "toscao/plans/networkservice/network_service_{{jsonPath request.body '$.workflow'}}.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "EXECUTION_PLAN",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v4/service-execution-plan",
+        "bodyPatterns": [
+          {
+            "matchesJsonPath": "$[?(@.id contains 'Service_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-')]"
+          },
+          {
+            "matchesJsonPath": "$[?(@.workflow contains 'modify')]"
+          }
+        ]
+      },
+      "response": {
+        "status": 200,
+        "transformers": ["response-template"],
+        "bodyFileName": "toscao/plans/modify/modify_service_modify.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "EXECUTION_PLAN",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v4/service-execution-plan",
+        "bodyPatterns": [
+          {
+            "matchesJsonPath": "$[?(@.id contains 'Service_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-')]"
+          },
+          {
+            "matchesJsonPath": "$[?(@.workflow contains 'deploy')]"
+          }
+        ]
+      },
+      "response": {
+        "status": 200,
+        "transformers": ["response-template"],
+        "bodyFileName": "toscao/plans/modify/modify_service_{{jsonPath request.body '$.workflow'}}.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "EXECUTION_PLAN",
+      "requiredScenarioState": "EXECUTION_PLAN_ERROR",
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v4/service-execution-plan",
+        "bodyPatterns": [
+          {
+            "matchesJsonPath": "$[?(@.id contains 'NetworkService_000001-Service-ocrs-resourceFacingService-revisionGroupKey-')]"
+          },
+          {
+            "matchesJsonPath": "$[?(@.workflow contains 'deploy')]"
+          }
+        ]
+      },
+      "response": {
+        "status": 404
+      }
+    },
+
+    {
+      "scenarioName": "EXECUTION_PLAN",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v4/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id contains 'Service_L1_000001-Service-ocrs-resourceFacingService-revisionGroupKey-')]"},
+          {"matchesJsonPath" : "$[?(@.workflow contains 'deploy')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/hierarchy/substitution_L1_{{jsonPath request.body '$.workflow'}}.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+
+    {
+      "scenarioName": "EXECUTION_PLAN",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v4/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id contains 'Service_L2_000001-Service-ocrs-resourceFacingService-revisionGroupKey-')]"},
+          {"matchesJsonPath" : "$[?(@.workflow contains 'deploy')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/hierarchy/substitution_L2_{{jsonPath request.body '$.workflow'}}.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "EXECUTION_PLAN",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v4/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id contains 'Service_L3_000001-Service-ocrs-resourceFacingService-revisionGroupKey-')]"},
+          {"matchesJsonPath" : "$[?(@.workflow contains 'deploy')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/hierarchy/substitution_L3_{{jsonPath request.body '$.workflow'}}.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "EXECUTION_PLAN",
+      "requiredScenarioState": "OPERATION_ERROR",
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v4/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id contains 'Service_L3_000001-Service-ocrs-resourceFacingService-revisionGroupKey-8')]"},
+          {"matchesJsonPath" : "$[?(@.workflow contains 'deploy')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/hierarchy/substitution_L3_deploy_error.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "EXECUTION_PLAN",
+      "requiredScenarioState": "OPERATION_CANCELLED",
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v4/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id contains 'Service_L3_000001-Service-ocrs-resourceFacingService-revisionGroupKey-8')]"},
+          {"matchesJsonPath" : "$[?(@.workflow contains 'deploy')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/hierarchy/substitution_L3_deploy_cancelled.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v4/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id contains 'Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-')]"},
+          {"matchesJsonPath" : "$[?(@.workflow =~ /^(modify|deploy|undeploy)$/)]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/modify_hierarchy/modify_hierarchy_L1_{{jsonPath request.body '$.workflow'}}.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v4/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id contains 'Service_L2_1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-')]"},
+          {"matchesJsonPath" : "$[?(@.workflow =~ /^(modify|deploy|undeploy)$/)]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/modify_hierarchy/modify_hierarchy_L2_1_{{jsonPath request.body '$.workflow'}}.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v4/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id contains 'Service_L2_2_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-')]"},
+          {"matchesJsonPath" : "$[?(@.workflow =~ /^(modify|deploy|undeploy)$/)]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/modify_hierarchy/modify_hierarchy_L2_2_{{jsonPath request.body '$.workflow'}}.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v4/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id contains 'Service_L3_1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-')]"},
+          {"matchesJsonPath" : "$[?(@.workflow =~ /^(modify|deploy|undeploy)$/)]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/modify_hierarchy/modify_hierarchy_L3_1_{{jsonPath request.body '$.workflow'}}.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v4/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id contains 'Service_L3_2_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-')]"},
+          {"matchesJsonPath" : "$[?(@.workflow =~ /^(modify|deploy|undeploy)$/)]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/modify_hierarchy/modify_hierarchy_L3_2_{{jsonPath request.body '$.workflow'}}.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v4/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id contains 'Service_L3_2_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-')]"},
+          {"matchesJsonPath" : "$[?(@.workflow =~ /^(modify|deploy|undeploy)$/)]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/modify_hierarchy/modify_hierarchy_L3_2_{{jsonPath request.body '$.workflow'}}.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v4/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id contains 'Service_L3_2_v2_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-')]"},
+          {"matchesJsonPath" : "$[?(@.workflow =~ /^(modify|deploy|undeploy)$/)]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/modify_hierarchy/modify_hierarchy_L3_2_{{jsonPath request.body '$.workflow'}}.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "MODIFY_GET_PLAN",
+      "requiredScenarioState": "OPERATION_ERROR",
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v4/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id contains 'Service_L3_2_v2_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-')]"},
+          {"matchesJsonPath" : "$[?(@.workflow =~ /^(modify|deploy|undeploy)$/)]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/modify_hierarchy/modify_hierarchy_L3_2_v2_modify_error.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+
+    
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v2.7/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id == 'NetworkService_000001-Service-ocrs-resourceFacingService-revisionGroupKey-1')]"},
+          {"matchesJsonPath" : "$[?(@.workflow == 'deploy')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/networkservice/network_service_deploy.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "DEPLOY",
+      "requiredScenarioState": "OPERATION_ERROR",
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v2.7/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id == 'NetworkService_000001-Service-ocrs-resourceFacingService-revisionGroupKey-1')]"},
+          {"matchesJsonPath" : "$[?(@.workflow == 'deploy')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/networkservice/network_service_deploy_operation_error.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "DEPLOY",
+      "requiredScenarioState": "OPERATION_INCIDENT",
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v2.7/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id contains 'NetworkService_000001-Service-ocrs-resourceFacingService-revisionGroupKey-')]"},
+          {"matchesJsonPath" : "$[?(@.workflow == 'deploy')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/networkservice/network_service_deploy_operation_incident.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+
+
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v2.7/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id contains 'NetworkService_000001-Service-ocrs-resourceFacingService-revisionGroupKey-')]"},
+          {"matchesJsonPath" : "$[?(@.workflow == 'undeploy')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/networkservice/network_service_undeploy.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "UNDEPLOY",
+      "requiredScenarioState": "OPERATION_ERROR",
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v2.7/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id contains 'NetworkService_000001-Service-ocrs-resourceFacingService-revisionGroupKey-')]"},
+          {"matchesJsonPath" : "$[?(@.workflow == 'undeploy')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/networkservice/network_service_undeploy_error.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    }
+  ]
+}

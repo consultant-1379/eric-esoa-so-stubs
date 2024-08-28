@@ -1,0 +1,49 @@
+[
+  {
+    "name": "SO_RESOURCE",
+    "dynamicAttributeDefinitions": [
+      {
+        "mode": "LOADED",
+        "value": {
+          "name": "resourceType",
+          "dataType": "STRING"
+        }
+      },
+      {
+        "mode": "LOADED",
+        "value": {
+          "name": "stringProp1",
+          "dataType": "STRING"
+        }
+      },
+      {
+        "mode": "LOADED",
+        "value": {
+          "name": "intProp1",
+          "dataType": "INTEGER"
+        }
+      },
+      {
+        "mode": "LOADED",
+        "value": {
+          "name": "booleanProp1",
+          "dataType": "BOOLEAN"
+        }
+      },
+      {
+        "mode": "LOADED",
+        "value": {
+          "name": "listProp1",
+          "dataType": "LIST"
+        }
+      },
+      {
+        "mode": "LOADED",
+        "value": {
+          "name": "mapProp1",
+          "dataType": "MAP"
+        }
+      }
+    ]
+  }
+]

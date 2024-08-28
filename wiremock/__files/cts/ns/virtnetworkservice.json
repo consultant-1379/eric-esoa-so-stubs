@@ -1,0 +1,161 @@
+{
+    "type": "ctv/virtualnetworkservice",
+    "id": 169,
+    "href": "ctv/virtnetworkserv/169",
+    "externalId": "testId",
+    "name": "ns_basic_16",
+    "description": "basic test",
+    "revisionNumber": 1,
+    "inServiceDate": "2021-06-24T00:00:00.000Z",
+    "scheduledDate": "2021-06-24T16:21:43.448Z",
+    "status": "ACTIVE",
+    "lastModifiedOn": "2021-06-24T16:23:04.402Z",
+    "lastModifiedBy": "arabian",
+    "createdOn": "2021-06-24T16:22:02.538Z",
+    "createdBy": "arabian",
+    "versionNumber": 4,
+    "revisionGroupKey": {
+        "type": "revisionGroupKey",
+        "keyValue": 698
+    },
+    "key": {
+        "type": "ctv/virtualnetworkserviceKey",
+        "keyValue": 169
+    },
+    "dynamicAttributes": [
+        {
+            "attributeKey": 8,
+            "groupName": "SO_RESOURCE",
+            "attributeName": "stringProp1",
+            "stringAttributeValue": "value1",
+            "attributeDefinitionId": 4
+        },
+        {
+            "attributeKey": 9,
+            "groupName": "SO_NS",
+            "attributeName": "nsdId",
+            "stringAttributeValue": "nsdId123",
+            "attributeDefinitionId": 7
+        },
+        {
+            "attributeKey": 10,
+            "groupName": "SO_RESOURCE",
+            "attributeName": "intProp1",
+            "longAttributeValue": 100,
+            "attributeDefinitionId": 9
+        },
+        {
+            "attributeKey": 11,
+            "groupName": "SO_NS",
+            "attributeName": "vdcName",
+            "stringAttributeValue": "vdc123",
+            "attributeDefinitionId": 11
+        },
+        {
+            "attributeKey": 12,
+            "groupName": "SO_RESOURCE",
+            "attributeName": "booleanProp1",
+            "booleanAttributeValue": true,
+            "attributeDefinitionId": 13
+        },
+        {
+            "attributeKey": 13,
+            "groupName": "SO_RESOURCE",
+            "attributeName": "customTemplates",
+            "listAttributeValue": [
+                {
+                    "name": "additionalParamsForNsTemplate",
+                    "catalogRef": "additionalParamsForNsConfig"
+                }
+            ],
+            "attributeDefinitionId": 8
+        }
+    ],
+    "vnfs": [
+        {
+            "mode": "LOADED",
+            "value": {
+                "type": "ctv/virtualnetworkfunction",
+                "id": 170,
+                "href": "ctv/vnf/170",
+                "revisionGroupKey": {
+                    "type": "revisionGroupKey",
+                    "keyValue": 699
+                },
+                "key": {
+                    "type": "ctv/virtualnetworkfunctionKey",
+                    "keyValue": 170
+                }
+            }
+        },
+        {
+            "mode": "LOADED",
+            "value": {
+                "type": "ctv/virtualnetworkfunction",
+                "id": 171,
+                "href": "ctv/vnf/171",
+                "revisionGroupKey": {
+                    "type": "revisionGroupKey",
+                    "keyValue": 700
+                },
+                "key": {
+                    "type": "ctv/virtualnetworkfunctionKey",
+                    "keyValue": 171
+                }
+            }
+        }
+    ],
+    "subsystemReferences": [
+        {
+            "mode": "LOADED",
+            "value": {
+                "type": "ctc/subsystemreference",
+                "href": "ctc/subsystemref/2",
+                "revisionGroupKey": {
+                    "type": "revisionGroupKey",
+                    "keyValue": 39
+                },
+                "key": {
+                    "type": "ctc/subsystemreferenceKey",
+                    "keyValue": 2
+                }
+            }
+        }
+    ],
+    "vimZone": [
+      {
+        "mode": "LOADED",
+        "value": {
+            "type": "ctv/vimzone",
+            "id": 12,
+            "href": "ctv/vimzone/12",
+            "revisionGroupKey": {
+                "type": "revisionGroupKey",
+                "keyValue": 37
+            },
+            "key": {
+                "type": "ctv/vimzoneKey",
+                "keyValue": 12
+            }
+        }
+    }
+    ],
+    "relatedParty": [
+        {
+            "mode": "LOADED",
+            "value": {
+                "type": "ctg/relatedparty",
+                "id": 1,
+                "href": "ctg/relatedparty/1",
+                "revisionGroupKey": {
+                    "type": "revisionGroupKey",
+                    "keyValue": 507
+                },
+                "key": {
+                    "type": "ctg/relatedpartyKey",
+                    "keyValue": 1
+                }
+            }
+        }
+    ]
+}

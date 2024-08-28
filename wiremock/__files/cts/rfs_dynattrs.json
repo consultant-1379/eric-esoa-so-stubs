@@ -1,0 +1,8 @@
+{
+	"id": 1,
+    "type": "ocrs/resourcefacingservice",
+    "href": "ocrs/resourcefacingservice/1",
+    "revisionNumber": 1,
+    "name": "service1",
+    "status": "reserved"
+}

@@ -1,0 +1,284 @@
+[
+  {
+    "id": "23",
+    "name": "SO_VNF",
+    "href":  "oaf/dynamicattributegroupdefinition/23",
+    "label": "VNF",
+    "key": {
+      "type": "oaf/dynamicattributegroupdefinitionKey",
+      "keyValue": 23
+    },
+    "dynamicAttributeDefinitions": [
+      {
+        "mode": "LOADED",
+        "value": {
+          "type": "oaf/dynamicattributedefinition",
+          "id": 175,
+          "href": "oaf/dynamicattributedefinition/175",
+          "name": "vimZoneName",
+          "label": "vimZoneName",
+          "description": "Initially created from onboarded TOSCA Service Model",
+          "dataType": "STRING",
+          "key": {
+            "type": "oaf/dynamicattributedefinitionKey",
+            "keyValue": 175
+          },
+          "dynamicAttributeGroupDefinition": [
+            {
+              "mode": "ADDED",
+              "value": {
+                "type": "oaf/dynamicattributegroupdefinition",
+                "id": 23,
+                "href": "oaf/dynamicattributegroupdefinition/23",
+                "key": {
+                  "type": "oaf/dynamicattributegroupdefinitionKey",
+                  "keyValue": 23
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "mode": "LOADED",
+        "value": {
+          "type": "oaf/dynamicattributedefinition",
+          "id": 176,
+          "href": "oaf/dynamicattributedefinition/176",
+          "name": "vnfStringProp1",
+          "label": "vnfStringProp1",
+          "description": "Initially created from onboarded TOSCA Service Model",
+          "dataType": "STRING",
+          "key": {
+            "type": "oaf/dynamicattributedefinitionKey",
+            "keyValue": 176
+          },
+          "dynamicAttributeGroupDefinition": [
+            {
+              "mode": "ADDED",
+              "value": {
+                "type": "oaf/dynamicattributegroupdefinition",
+                "id": 23,
+                "href": "oaf/dynamicattributegroupdefinition/23",
+                "key": {
+                  "type": "oaf/dynamicattributegroupdefinitionKey",
+                  "keyValue": 23
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "mode": "LOADED",
+        "value": {
+          "type": "oaf/dynamicattributedefinition",
+          "id": 177,
+          "href": "oaf/dynamicattributedefinition/177",
+          "name": "vnfStringProp2",
+          "label": "vnfStringProp2",
+          "description": "Initially created from onboarded TOSCA Service Model",
+          "dataType": "STRING",
+          "key": {
+            "type": "oaf/dynamicattributedefinitionKey",
+            "keyValue": 177
+          },
+          "dynamicAttributeGroupDefinition": [
+            {
+              "mode": "ADDED",
+              "value": {
+                "type": "oaf/dynamicattributegroupdefinition",
+                "id": 23,
+                "href": "oaf/dynamicattributegroupdefinition/23",
+                "key": {
+                  "type": "oaf/dynamicattributegroupdefinitionKey",
+                  "keyValue": 23
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "mode": "LOADED",
+        "value": {
+          "type": "oaf/dynamicattributedefinition",
+          "id": 178,
+          "href": "oaf/dynamicattributedefinition/178",
+          "name": "vnfIntProp1",
+          "label": "vnfIntProp1",
+          "description": "Initially created from onboarded TOSCA Service Model",
+          "dataType": "INTEGER",
+          "key": {
+            "type": "oaf/dynamicattributedefinitionKey",
+            "keyValue": 178
+          },
+          "dynamicAttributeGroupDefinition": [
+            {
+              "mode": "ADDED",
+              "value": {
+                "type": "oaf/dynamicattributegroupdefinition",
+                "id": 23,
+                "href": "oaf/dynamicattributegroupdefinition/23",
+                "key": {
+                  "type": "oaf/dynamicattributegroupdefinitionKey",
+                  "keyValue": 23
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "mode": "LOADED",
+        "value": {
+          "type": "oaf/dynamicattributedefinition",
+          "id": 179,
+          "href": "oaf/dynamicattributedefinition/179",
+          "name": "vnfBooleanProp1",
+          "label": "vnfBooleanProp1",
+          "description": "Initially created from onboarded TOSCA Service Model",
+          "dataType": "BOOLEAN",
+          "key": {
+            "type": "oaf/dynamicattributedefinitionKey",
+            "keyValue": 179
+          },
+          "dynamicAttributeGroupDefinition": [
+            {
+              "mode": "ADDED",
+              "value": {
+                "type": "oaf/dynamicattributegroupdefinition",
+                "id": 23,
+                "href": "oaf/dynamicattributegroupdefinition/23",
+                "key": {
+                  "type": "oaf/dynamicattributegroupdefinitionKey",
+                  "keyValue": 23
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "mode": "LOADED",
+        "value": {
+          "type": "oaf/dynamicattributedefinition",
+          "id": 180,
+          "href": "oaf/dynamicattributedefinition/180",
+          "name": "vnfListProp1",
+          "label": "vnfListProp1",
+          "description": "Initially created from onboarded TOSCA Service Model",
+          "dataType": "LIST",
+          "key": {
+            "type": "oaf/dynamicattributedefinitionKey",
+            "keyValue": 180
+          },
+          "dynamicAttributeGroupDefinition": [
+            {
+              "mode": "ADDED",
+              "value": {
+                "type": "oaf/dynamicattributegroupdefinition",
+                "id": 23,
+                "href": "oaf/dynamicattributegroupdefinition/23",
+                "key": {
+                  "type": "oaf/dynamicattributegroupdefinitionKey",
+                  "keyValue": 23
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "mode": "LOADED",
+        "value": {
+          "type": "oaf/dynamicattributedefinition",
+          "id": 181,
+          "href": "oaf/dynamicattributedefinition/181",
+          "name": "vnfListProp2",
+          "label": "vnfListProp2",
+          "description": "Initially created from onboarded TOSCA Service Model",
+          "dataType": "LIST",
+          "key": {
+            "type": "oaf/dynamicattributedefinitionKey",
+            "keyValue": 181
+          },
+          "dynamicAttributeGroupDefinition": [
+            {
+              "mode": "ADDED",
+              "value": {
+                "type": "oaf/dynamicattributegroupdefinition",
+                "id": 23,
+                "href": "oaf/dynamicattributegroupdefinition/23",
+                "key": {
+                  "type": "oaf/dynamicattributegroupdefinitionKey",
+                  "keyValue": 23
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "mode": "LOADED",
+        "value": {
+          "type": "oaf/dynamicattributedefinition",
+          "id": 181,
+          "href": "oaf/dynamicattributedefinition/181",
+          "name": "vnfMapProp1",
+          "label": "vnfMapProp1",
+          "description": "Initially created from onboarded TOSCA Service Model",
+          "dataType": "MAP",
+          "key": {
+            "type": "oaf/dynamicattributedefinitionKey",
+            "keyValue": 181
+          },
+          "dynamicAttributeGroupDefinition": [
+            {
+              "mode": "ADDED",
+              "value": {
+                "type": "oaf/dynamicattributegroupdefinition",
+                "id": 23,
+                "href": "oaf/dynamicattributegroupdefinition/23",
+                "key": {
+                  "type": "oaf/dynamicattributegroupdefinitionKey",
+                  "keyValue": 23
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "mode": "LOADED",
+        "value": {
+          "type": "oaf/dynamicattributedefinition",
+          "id": 182,
+          "href": "oaf/dynamicattributedefinition/182",
+          "name": "vnfMapProp2",
+          "label": "vnfMapProp2",
+          "description": "Initially created from onboarded TOSCA Service Model",
+          "dataType": "MAP",
+          "key": {
+            "type": "oaf/dynamicattributedefinitionKey",
+            "keyValue": 182
+          },
+          "dynamicAttributeGroupDefinition": [
+            {
+              "mode": "ADDED",
+              "value": {
+                "type": "oaf/dynamicattributegroupdefinition",
+                "id": 23,
+                "href": "oaf/dynamicattributegroupdefinition/23",
+                "key": {
+                  "type": "oaf/dynamicattributegroupdefinitionKey",
+                  "keyValue": 23
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

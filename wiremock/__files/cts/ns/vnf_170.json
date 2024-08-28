@@ -1,0 +1,62 @@
+{
+  "type": "ctv/virtualnetworkfunction",
+  "id": 170,
+  "href": "ctv/vnf/170",
+  "dynamicAttributes": [
+    {
+      "attributeKey": 57,
+      "groupName": "SO_RESOURCE",
+      "attributeName": "resourceType",
+      "stringAttributeValue": "NetworkFunction",
+      "attributeDefinitionId": 19
+    },
+    {
+      "attributeKey": 58,
+      "groupName": "SO_RESOURCE",
+      "attributeName": "customTemplates",
+      "listAttributeValue": [
+        {
+          "name": "additionalParamsForVnfTemplate",
+          "catalogRef": "additionalParamsForVnfOneTemplate"
+        }
+      ],
+      "attributeDefinitionId": 8
+    }
+  ],
+  "vimZone": [
+    {
+      "mode": "LOADED",
+      "value": {
+        "type": "ctv/vimzone",
+        "id": 12,
+        "href": "ctv/vimzone/12",
+        "revisionGroupKey": {
+          "type": "revisionGroupKey",
+          "keyValue": 37
+        },
+        "key": {
+          "type": "ctv/vimzoneKey",
+          "keyValue": 12
+        }
+      }
+    }
+  ],
+  "externalId": "MeContext=vnf_2_501",
+  "name": "vnf_b_16",
+  "revisionNumber": 1,
+  "scheduledDate": "2021-01-11T21:00:00.000Z",
+  "status": "planning",
+  "lastModifiedOn": "2021-11-01T17:12:44.008Z",
+  "lastModifiedBy": "sysadm",
+  "createdOn": "2021-11-01T17:12:44.008Z",
+  "createdBy": "sysadm",
+  "versionNumber": 1,
+  "revisionGroupKey": {
+    "type": "revisionGroupKey",
+    "keyValue": 494
+  },
+  "key": {
+    "type": "ctv/virtualnetworkfunctionKey",
+    "keyValue": 170
+  }
+}

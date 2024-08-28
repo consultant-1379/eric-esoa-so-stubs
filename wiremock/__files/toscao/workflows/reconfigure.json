@@ -1,0 +1,36 @@
+{
+  "name": "reconfigure",
+  "creTime": "2022-09-02 12:48:21.718592",
+  "node": {
+    "interface": [
+      {
+        "name": "Reconfigure",
+        "operations": [
+          {
+            "name": "preReconfigure",
+            "pre-state": "pre-reconfigure-start",
+            "post-state": "pre-reconfigure-completed",
+            "filter": {}
+          },
+          {
+            "name": "reconfigure",
+            "pre-state": "reconfigure-start",
+            "post-state": "reconfigure-completed",
+            "filter": {}
+          },
+          {
+            "name": "postReconfigure",
+            "pre-state": "post-reconfigure-start",
+            "post-state": "post-reconfigure-completed",
+            "filter": {}
+          }
+        ]
+      }
+    ]
+  },
+  "relationships": {
+    "interface": null,
+    "operations": []
+  },
+  "dependency_type": "forward"
+}

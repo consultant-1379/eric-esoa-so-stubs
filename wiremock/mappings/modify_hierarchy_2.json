@@ -1,0 +1,393 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/serviceOrder?fields=id",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalId == '0a073524-6333-424c-93a3-d2f13ff19189')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalVersion == '1.0')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service[?(@.name =~ /^(hierarchy_modify.*)$/)]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0][?(@.action =~ /^(modify|add|delete)$/)]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_assigned.json",
+        "transformerParameters": {
+          "orderId": "401"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/assigned_event.json",
+          "serviceInstanceId": "Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-200"
+        }
+      }
+    },
+    {
+      "scenarioName": "MODIFY",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/service-instances\/Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify_hierarchy/modify_hierarchy_L1_instance_add.json",
+        "transformerParameters": {
+          "serviceName": "modify_hierarchy_1"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "MODIFY",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/service-instances\/Service_L2_1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-201\\?topLevelServiceId=Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify_hierarchy/modify_hierarchy_L2_1_instance_add.json",
+        "transformerParameters": {
+          "serviceName": "Service_L2_1"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+
+    {
+      "scenarioName": "MODIFY",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/service-instances\/Service_L2_2_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-202\\?topLevelServiceId=Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify_hierarchy/modify_hierarchy_L2_2_instance_add.json",
+        "transformerParameters": {
+          "serviceName": "Service_L2_2"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "MODIFY",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/service-instances\/Service_L3_1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-203\\?topLevelServiceId=Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify_hierarchy/modify_hierarchy_L3_1_instance_add.json",
+        "transformerParameters": {
+          "serviceName": "Service_L3_1"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "MODIFY",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/service-instances\/Service_L3_2_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-204\\?topLevelServiceId=Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify_hierarchy/modify_hierarchy_L3_2_instance_add.json",
+        "transformerParameters": {
+          "serviceName": "Service_L3_2"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+
+    {
+      "scenarioName": "MODIFY",
+      "requiredScenarioState": "modify",
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/service-instances\/Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify_hierarchy/modify_hierarchy_L1_instance_modify.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "MODIFY",
+      "requiredScenarioState": "modify",
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/service-instances\/Service_L2_1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-201\\?topLevelServiceId=Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify_hierarchy/modify_hierarchy_L2_1_instance_modify.json",
+        "transformerParameters": {
+          "serviceName": "Service_L2_1"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+
+    {
+      "scenarioName": "MODIFY",
+      "requiredScenarioState": "modify",
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/service-instances\/Service_L2_2_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-202\\?topLevelServiceId=Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify_hierarchy/modify_hierarchy_L2_2_instance_modify.json",
+        "transformerParameters": {
+          "serviceName": "Service_L2_2"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "MODIFY",
+      "requiredScenarioState": "modify",
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/service-instances\/Service_L3_1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-203\\?topLevelServiceId=Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify_hierarchy/modify_hierarchy_L3_1_instance_modify.json",
+        "transformerParameters": {
+          "serviceName": "Service_L3_1"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "MODIFY",
+      "requiredScenarioState": "modify",
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/service-instances\/Service_L3_2_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-204\\?topLevelServiceId=Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify_hierarchy/modify_hierarchy_L3_2_instance_modify.json",
+        "transformerParameters": {
+          "serviceName": "Service_L3_2"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+
+    {
+      "scenarioName": "MODIFY",
+      "requiredScenarioState": "modify",
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/service-instances\/Service_L3_2_v2_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-205\\?topLevelServiceId=Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify_hierarchy/modify_hierarchy_L3_2_instance_modify.json",
+        "transformerParameters": {
+          "serviceName": "Service_L3_2"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+
+    {
+      "scenarioName": "MODIFY",
+      "requiredScenarioState": "undeploy",
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/service-instances\/Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify_hierarchy/modify_hierarchy_L1_instance_modify.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "MODIFY",
+      "requiredScenarioState": "undeploy",
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/service-instances\/Service_L2_1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-201\\?topLevelServiceId=Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify_hierarchy/modify_hierarchy_L2_1_instance_modify.json",
+        "transformerParameters": {
+          "serviceName": "Service_L2_1"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+
+    {
+      "scenarioName": "MODIFY",
+      "requiredScenarioState": "undeploy",
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/service-instances\/Service_L2_2_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-202\\?topLevelServiceId=Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify_hierarchy/modify_hierarchy_L2_2_instance_modify.json",
+        "transformerParameters": {
+          "serviceName": "Service_L2_2"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "MODIFY",
+      "requiredScenarioState": "undeploy",
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/service-instances\/Service_L3_1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-203\\?topLevelServiceId=Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify_hierarchy/modify_hierarchy_L3_1_instance_modify.json",
+        "transformerParameters": {
+          "serviceName": "Service_L3_1"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "MODIFY",
+      "requiredScenarioState": "undeploy",
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/service-instances\/Service_L3_2_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-204\\?topLevelServiceId=Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify_hierarchy/modify_hierarchy_L3_2_instance_modify.json",
+        "transformerParameters": {
+          "serviceName": "Service_L3_2"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+
+    {
+      "scenarioName": "MODIFY",
+      "requiredScenarioState": "undeploy",
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/service-instances\/Service_L3_2_v2_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-205\\?topLevelServiceId=Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify_hierarchy/modify_hierarchy_L3_2_instance_modify.json",
+        "transformerParameters": {
+          "serviceName": "Service_L3_2"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice/204?fs=dynAttrs"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs.json",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+            "id": "204"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts?query=invariantUUID==c7401117-e0ea-46b4-8e6f-3860317fec44;type==SERVICE_MODEL;version==1.0&listInternalArtifacts=true"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "items": [
+            {
+              "id": "305",
+              "name": "Service_L3_2_v2_modify",
+              "invariantUUID": "c7401117-e0ea-46b4-8e6f-3860317fec44e",
+              "version": "1.0",
+              "type": "SERVICE_MODEL"
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts/305/download?archive=false"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "catalog/service-models/modify_hierarchy_L3_2_v2_model_305.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    }
+  ]
+}

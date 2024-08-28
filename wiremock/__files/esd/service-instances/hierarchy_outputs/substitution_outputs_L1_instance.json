@@ -1,0 +1,209 @@
+{
+  "id" : "{{request.pathSegments.[3]}}",
+  "creTime" : "2021-10-11T10:31:41.597Z",
+  "name" : "{{parameters.serviceName}}",
+  "serviceModelID" : "85fdba21-5d59-46a9-b1ad-9e70dff81a59",
+  "catalogInvariantUUID" : "e9ef437c-19df-4f42-bd55-39ae93db8135",
+  "catalogVersion" : "1.0",
+  "catalogId" : 6,
+  "metadata" : {
+    "template_name" : null,
+    "template_author" : null,
+    "template_version" : null,
+    "category" : "CORE",
+    "serviceType" : "NSI"
+  },
+  "substitutingModelIDs" : [ ],
+  "state" : "TO BE DEPLOYED",
+  "workflows" : [ ],
+  "topology" : {
+    "inputs" : [ {
+      "name" : "ns1_name",
+      "value" : "ns1",
+      "required" : true,
+      "type" : "string"
+    }, {
+      "name" : "ns2_name",
+      "value" : "ns2",
+      "required" : true,
+      "type" : "string"
+    } ],
+    "policies" : [ ],
+    "outputs" : [ ],
+    "relationshipTemplates" : [ ],
+    "nodes" : [ {
+      "name" : "NSSI_1_1",
+      "state" : "initial",
+      "action" : "add",
+      "instanceIDs" : [ "Service_L2_1_outputs_000001-Service-ocrs-resourceFacingService-revisionGroupKey-14" ],
+      "directives" : [ "substitute" ],
+      "artifacts" : [ ],
+      "interfaces" : [ {
+        "name" : "Standard",
+        "inputs" : [ ],
+        "operations" : [ {
+          "name" : "delete",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "stop",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "start",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "configure",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "create",
+          "inputs" : [ ],
+          "implementation" : null
+        } ],
+        "notifications" : [ ]
+      } ],
+      "nodetype" : "com.ericsson.so.nodes.NSSI_A",
+      "parent_type" : "tosca.nodes.Root",
+      "nodeproperties" : [ {
+        "name" : "nssi_ns_name",
+        "value" : null,
+        "required" : true,
+        "type" : "string",
+        "raw_value" : {
+          "get_input" : "ns1_name"
+        }
+      }, {
+        "name" : "type",
+        "value" : null,
+        "required" : true,
+        "type" : "string",
+        "raw_value" : "NSSI_A"
+      } ],
+      "nodeattributes" : [ {
+        "name" : "tosca_name",
+        "value" : "NSSI_1",
+        "type" : "string",
+        "description" : "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+        "raw_value" : "NSSI_1"
+      }, {
+        "name" : "GROUP1::listAttribute1",
+        "value" : null,
+        "type" : "list",
+        "raw_value" : null
+      }, {
+        "name" : "state",
+        "value" : "initial",
+        "type" : "string",
+        "description" : "The state of the node instance.",
+        "raw_value" : "initial"
+      }, {
+        "name" : "GROUP1::intAttribute1",
+        "value" : null,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "GROUP1::booleanAttribute1",
+        "value" : null,
+        "type" : "boolean",
+        "raw_value" : null
+      }, {
+        "name" : "tosca_id",
+        "value" : "NSSI_1_1",
+        "type" : "string",
+        "description" : "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+        "raw_value" : "NSSI_1_1"
+      }, {
+        "name" : "GROUP1::stringAttribute1",
+        "value" : null,
+        "type" : "string",
+        "raw_value" : null
+      } ],
+      "relationship" : [ ]
+    }, {
+      "name" : "NSSI_2_1",
+      "state" : "initial",
+      "action" : "add",
+      "instanceIDs" : [ "Service_L2_2_outputs_000001-Service-ocrs-resourceFacingService-revisionGroupKey-15" ],
+      "directives" : [ "substitute" ],
+      "artifacts" : [ ],
+      "interfaces" : [ {
+        "name" : "Standard",
+        "inputs" : [ ],
+        "operations" : [ {
+          "name" : "delete",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "stop",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "start",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "configure",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "create",
+          "inputs" : [ ],
+          "implementation" : null
+        } ],
+        "notifications" : [ ]
+      } ],
+      "nodetype" : "com.ericsson.so.nodes.NSSI_B",
+      "parent_type" : "tosca.nodes.Root",
+      "nodeproperties" : [ {
+        "name" : "stringProp2",
+        "value" : {
+          "get_attribute": ["NSSI_1_1", "GROUP1::stringAttribute1"]
+        },
+        "required" : false,
+        "type" : "string",
+        "raw_value" : {
+          "get_attribute": ["NSSI_1", "GROUP1::stringAttribute1"]
+        },
+        "value_expression" : {
+          "get_attribute": ["NSSI_1_1", "GROUP1::stringAttribute1"]
+        }
+      }, {
+        "name" : "nssi_ns_name",
+        "value" : null,
+        "required" : true,
+        "type" : "string",
+        "raw_value" : {
+          "get_input" : "ns2_name"
+        }
+      }, {
+        "name" : "type",
+        "value" : null,
+        "required" : true,
+        "type" : "string",
+        "raw_value" : "NSSI_B"
+      } ],
+      "nodeattributes" : [ {
+        "name" : "tosca_id",
+        "value" : "NSSI_2_1",
+        "type" : "string",
+        "description" : "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+        "raw_value" : "NSSI_2_1"
+      }, {
+        "name" : "tosca_name",
+        "value" : "NSSI_2",
+        "type" : "string",
+        "description" : "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+        "raw_value" : "NSSI_2"
+      }, {
+        "name" : "state",
+        "value" : "initial",
+        "type" : "string",
+        "description" : "The state of the node instance.",
+        "raw_value" : "initial"
+      } ],
+      "relationship" : [ ]
+    } ]
+  }
+}

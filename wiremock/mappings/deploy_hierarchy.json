@@ -1,0 +1,308 @@
+{
+  "mappings": [
+    {
+      "scenarioName": "DEPLOY",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/serviceOrder?fields=id",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalId == '0a073524-6333-424c-93a3-d2f13ff19189')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalVersion == '1.0')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service[?(@.name contains 'h1')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0][?(@.action == 'add')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_assigned.json",
+        "transformerParameters": {
+          "orderId": "100"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/assigned_event.json",
+          "serviceInstanceId": "Service_L1_000001-Service-ocrs-resourceFacingService-revisionGroupKey-6"
+        }
+      }
+    },
+    {
+      "scenarioName": "DEPLOY",
+      "requiredScenarioState": "ASSIGN_FAILED",
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/serviceOrder?fields=id",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalId == '0a073524-6333-424c-93a3-d2f13ff19189')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalVersion == '1.0')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service[?(@.name contains 'h1')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0][?(@.action == 'add')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_assigned.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/assigned_failed_event.json",
+          "serviceInstanceId": ""
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/service-instances\/Service_L1_000001-Service-ocrs-resourceFacingService-revisionGroupKey-.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/hierarchy/substitution_L1_instance.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/service-instances\/Service_L2_000001-Service-ocrs-resourceFacingService-revisionGroupKey-7\\?topLevelServiceId=Service_L1_000001-Service-ocrs-resourceFacingService-revisionGroupKey-.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/hierarchy/substitution_L2_instance.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/service-instances\/Service_L3_000001-Service-ocrs-resourceFacingService-revisionGroupKey-8\\?topLevelServiceId=Service_L1_000001-Service-ocrs-resourceFacingService-revisionGroupKey-.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/hierarchy/substitution_L3_instance.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts?query=invariantUUID==07f5070c-76c0-4ab3-a52e-9d6dbadee009;type==SERVICE_MODEL;version==1.0&listInternalArtifacts=true"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "items": [
+            {
+              "id": "100",
+              "name": "Service_L1",
+              "invariantUUID": "07f5070c-76c0-4ab3-a52e-9d6dbadee009",
+              "version": "1.0",
+              "type": "SERVICE_MODEL"
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts/100/download?archive=false"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "catalog/service-models/substitution_L1_model_100.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts?query=invariantUUID==87f5070c-76c0-4ab3-a52e-9d6dbadee009;type==SERVICE_MODEL;version==1.0&listInternalArtifacts=true"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "items": [
+            {
+              "id": "101",
+              "name": "Service_L2",
+              "invariantUUID": "87f5070c-76c0-4ab3-a52e-9d6dbadee009",
+              "version": "1.0",
+              "type": "SERVICE_MODEL"
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts/101/download?archive=false"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "catalog/service-models/substitution_L2_model_101.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts?query=invariantUUID==0a073524-6333-424c-93a3-d2f13ff19167;type==SERVICE_MODEL;version==1.0&listInternalArtifacts=true"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "items": [
+            {
+              "id": "102",
+              "name": "Service_L3",
+              "invariantUUID": "0a073524-6333-424c-93a3-d2f13ff19167",
+              "version": "1.0",
+              "type": "SERVICE_MODEL"
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts/102/download?archive=false"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "catalog/service-models/substitution_L3_model_102.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+ 
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice?revisionGroupKey=6"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs1.json",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+          "serviceName": "service_h1",
+          "id": "6"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice?revisionGroupKey=7"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs1.json",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+          "serviceName": "service_h1_L2",
+          "id": 7
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice?revisionGroupKey=8"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs1.json",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+          "serviceName": "service_h1_L2_L3",
+          "id": "8"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/completeServiceOrder",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrder[?(@.id == '100')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_completed.json",
+        "headers": {
+        "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/completed_event.json",
+          "serviceInstanceId": "Service_L1_000001-Service-ocrs-resourceFacingService-revisionGroupKey-6"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/cancelServiceOrder",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrder[?(@.id == '100')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_cancelled.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/cancelled_event.json",
+          "serviceInstanceId": "Service_L1_000001-Service-ocrs-resourceFacingService-revisionGroupKey-6"
+        }
+      }
+    }
+  ]
+}

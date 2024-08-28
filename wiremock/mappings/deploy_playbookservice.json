@@ -1,0 +1,262 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/serviceOrder?fields=id",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalId == 'd291a942-027c-4ec7-8456-c1b562a89f4b')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalVersion == '1.0')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service[?(@.name == 'playbook_service1')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0][?(@.action == 'add')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_assigned.json",
+        "transformerParameters": {
+          "orderId": "300"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/assigned_event.json",
+          "serviceInstanceId": "PlaybookService_000001-Service-ocrs-resourceFacingService-revisionGroupKey-9"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/service-instances/PlaybookService_000001-Service-ocrs-resourceFacingService-revisionGroupKey-9"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/playbook_service_instance.json",
+        "transformerParameters": {
+          "serviceName": "playbook_service1"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts?query=invariantUUID==d291a942-027c-4ec7-8456-c1b562a89f4b;type==SERVICE_MODEL;version==1.0&listInternalArtifacts=true"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "items": [
+            {
+              "id": "1",
+              "name": "NetworkService_Playbook",
+              "invariantUUID": "d291a942-027c-4ec7-8456-c1b562a89f4b",
+              "version": "1.0",
+              "type": "SERVICE_MODEL"
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts/2/download?archive=false"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "catalog/service-models/network_service_model_1.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v2.7/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id == 'PlaybookService_000001-Service-ocrs-resourceFacingService-revisionGroupKey-9')]"},
+          {"matchesJsonPath" : "$[?(@.workflow == 'deploy')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/playbook/playbook_service_deploy.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts?query=name==sample_playbook;type==PLAYBOOK;version==1.0&listInternalArtifacts=false"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "items": [
+            {
+              "id": "1000",
+              "name": "sample_playbook",
+              "invariantUUID": "747fd69c-01df-4bec-bf77-73ff5ca905ed",
+              "version": "1.0",
+              "type": "PLAYBOOK"
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts?query=name==day1Template1;type==CONFIG_TEMPLATE&listInternalArtifacts=false"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "items": [
+            {
+              "id": "1001",
+              "name": "day1Template1",
+              "invariantUUID": "3cef9148-e889-42f7-bd71-11b20fa2c8d8",
+              "type": "CONFIG_TEMPLATE"
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/subsystem-manager/v1/subsystems"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "subsystems/subsystems.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice?revisionGroupKey=9"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs.json",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+          "serviceName": "playbook_service1",
+          "id": "9",
+          "invariantId": "64595d66-6125-4d72-bf8d-3afa4c5f9887"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice?invariantId=64595d66-6125-4d72-bf8d-3afa4c5f9887"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs.json",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+          "serviceName": "playbook_service1",
+          "id":"9",
+          "invariantId": "64595d66-6125-4d72-bf8d-3afa4c5f9887"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice/9?fs=dynAttrs"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs.json",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+          "serviceName": "playbook_service1",
+          "id": "9",
+          "invariantId": "64595d66-6125-4d72-bf8d-3afa4c5f9887"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ctv/vnf/136?fs=dynAttrs&fs.subsystemReferences"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/vnf_136.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ctv/vnf/137?fs=dynAttrs&fs.subsystemReferences"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/vnf_137.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/completeServiceOrder",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrder[?(@.id == '300')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_completed.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/completed_event.json",
+          "serviceInstanceId": "PlaybookService_000001-Service-ocrs-resourceFacingService-revisionGroupKey-9"
+        }
+      }
+    }
+  ]
+}

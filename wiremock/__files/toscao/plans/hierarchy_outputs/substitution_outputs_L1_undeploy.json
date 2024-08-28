@@ -1,0 +1,67 @@
+{
+  "workflow": "undeploy",
+  "serviceExecutionPlan": {
+    "operations": [
+      {
+        "id": "NSSI_1_1.Standard.stop.1931",
+        "name": "stop",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NSSI_1_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NSSI_1_1.Standard.delete.1932",
+        "name": "delete",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NSSI_1_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NSSI_1_1.Standard.stop.1931"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NSSI_2_1.Standard.stop.1935",
+        "name": "stop",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NSSI_2_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NSSI_2_1.Standard.delete.1936",
+        "name": "delete",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NSSI_2_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NSSI_2_1.Standard.stop.1935"
+        ],
+        "failure_dependency_operations": []
+      }
+    ]
+  }
+}

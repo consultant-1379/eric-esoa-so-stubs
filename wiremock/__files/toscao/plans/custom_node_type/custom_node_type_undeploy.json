@@ -1,0 +1,37 @@
+{
+  "workflow": "undeploy",
+  "serviceExecutionPlan": {
+    "operations": [
+      {
+        "id": "Node_1_1.Standard.stop.7014",
+        "name": "stop",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "Node_1_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "Node_1_1.Standard.delete.7015",
+        "name": "delete",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "Node_1_1",
+        "implementation": "workflow/enabler",
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "Node_1_1.Standard.stop.7014"
+        ],
+        "failure_dependency_operations": []
+      }
+    ]
+  }
+}

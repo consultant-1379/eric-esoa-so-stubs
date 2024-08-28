@@ -1,0 +1,80 @@
+{
+  "mappings": [
+
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts?query=invariantUUID==0a073524-6333-424c-93a3-d2f13ff19189;type==SERVICE_MODEL;version==1.0&listInternalArtifacts=true"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "items": [
+            {
+              "id": "3",
+              "name": "NetworkService_Modify",
+              "invariantUUID": "0a073524-6333-424c-93a3-d2f13ff19189",
+              "version": "1.0",
+              "type": "SERVICE_MODEL"
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts/3/download?archive=false"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "catalog/service-models/modify_service_model_3.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v2.7/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id == 'Service_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-10')]"},
+          {"matchesJsonPath" : "$[?(@.workflow == 'deploy')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/modify/modify_service_deploy.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/completeServiceOrder",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrder[?(@.id == '500')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_completed.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/completed_event.json",
+          "serviceInstanceId": "Service_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-10"
+        }
+      }
+    }
+  ]
+}

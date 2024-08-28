@@ -1,0 +1,41 @@
+{{#if (contains request.url 'revisionGroupKey')}}[{{/if}}
+{{#if (contains request.url 'invariantId')}}[{{/if}}
+{
+    "type": "ocrs/resourcefacingservice",
+    "id": "14",
+{{#if parameters.invariantId }}
+    "invariantId": "{{parameters.invariantId}}",
+{{else}}
+    "invariantId": "{{randomValue type='UUID'}}",
+{{/if}}
+    "href": "ocrs/resourcefacingservice/14",
+    "serviceType": "MyServiceType_000001:Service",
+    "revisionNumber": 1,
+    "name": "{{parameters.serviceName}}",
+    "createdOn": "2021-11-01T17:12:43.864Z",
+    "createdBy": "sysadm",
+    "scheduledDate": "2021-01-11T21:00:00.000Z",
+    "status": "reserved",
+    "lastModifiedOn": "2021-11-01T17:12:43.864Z",
+    "lastModifiedBy": "sysadm",
+    "versionNumber": 1,
+    "revisionGroupKey": {
+      "type": "revisionGroupKey",
+      "keyValue": 14
+    },
+    "dynamicAttributes": [
+        {
+        "attributeKey": 182,
+        "groupName": "GROUP1",
+        "attributeName": "stringAttribute1",
+        "stringAttributeValue": "value1",
+        "attributeDefinitionId": 19
+        }
+    ],
+    "key": {
+      "type": "ocrs/resourcefacingserviceKey",
+      "keyValue": 14
+    }
+  }
+{{#if (contains request.url 'revisionGroupKey')}}]{{/if}}
+{{#if (contains request.url 'invariantId')}}]{{/if}}

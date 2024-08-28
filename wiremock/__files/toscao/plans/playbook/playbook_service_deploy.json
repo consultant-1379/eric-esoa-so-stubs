@@ -1,0 +1,432 @@
+{
+  "workflow": "deploy",
+  "serviceExecutionPlan": {
+    "operations": [
+      {
+        "id": "vimZone_1.Standard.create.774",
+        "name": "create",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vimZone_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vimZone_1.Standard.configure.775",
+        "name": "configure",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vimZone_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "vimZone_1.Standard.create.774"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vimZone_1.Standard.start.776",
+        "name": "start",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vimZone_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "vimZone_1.Standard.configure.775"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "nsSubsystem_1.Standard.create.779",
+        "name": "create",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "nsSubsystem_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "nsSubsystem_1.Standard.configure.780",
+        "name": "configure",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "nsSubsystem_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "nsSubsystem_1.Standard.create.779"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "nsSubsystem_1.Standard.start.781",
+        "name": "start",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "nsSubsystem_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "nsSubsystem_1.Standard.configure.780"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "nsConnection_1.Standard.create.784",
+        "name": "create",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "nsConnection_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "nsConnection_1.Standard.configure.785",
+        "name": "configure",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "nsConnection_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "nsConnection_1.Standard.create.784"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "nsConnection_1.Standard.start.786",
+        "name": "start",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "nsConnection_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "nsConnection_1.Standard.configure.785"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "networkService_1.Standard.create.789",
+        "name": "create",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "networkService_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "nsSubsystem_1.Standard.start.781",
+          "nsConnection_1.Standard.start.786"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "networkService_1.Standard.configure.790",
+        "name": "configure",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "networkService_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "networkService_1.Standard.create.789"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "networkService_1.Standard.start.791",
+        "name": "start",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "networkService_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "networkService_1.Standard.configure.790"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vnf_2_1.Standard.create.794",
+        "name": "create",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vnf_2_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "vimZone_1.Standard.start.776",
+          "networkService_1.Standard.start.791"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vnf_2_1.Standard.configure.795",
+        "name": "configure",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vnf_2_1",
+        "implementation": {
+          "primary": {
+            "description": null,
+            "checksum": null,
+            "artifact_version": "1.0",
+            "file": "sample_playbook",
+            "checksum_algorithm": null,
+            "deploy_path": null,
+            "type": "com.ericsson.so.artifacts.Implementation.Playbook",
+            "properties": [
+              {
+                "raw_value": "sample_playbook.yml",
+                "required": true,
+                "type": "string",
+                "name": "entry_playbook",
+                "value": "sample_playbook.yml"
+              }
+            ]
+          }
+        },
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [
+          {
+            "raw_value": [
+              {
+                "catalogRef": "enmConfig",
+                "name": "vnfTemplate1"
+              }
+            ],
+            "required": true,
+            "type": null,
+            "name": "customTemplates",
+            "value": [
+              {
+                "catalogRef": "enmConfig",
+                "name": "vnfTemplate1"
+              }
+            ]
+          },
+          {
+            "raw_value": [
+              "enm"
+            ],
+            "required": true,
+            "type": null,
+            "name": "playbook_inputs",
+            "value": {
+              "extra-vars": {
+                "input1": "value1"
+              },
+              "become_user": "admin",
+              "key1": "value1",
+              "destination_directory": "/opt/script/config",
+              "become": "",
+              "additional_subsystems": [
+                "enm"
+              ]
+            }
+          }
+        ],
+        "dependency_operations": [
+          "vnf_2_1.Standard.create.794"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vnf_2_1.Standard.start.796",
+        "name": "start",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vnf_2_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "vnf_2_1.Standard.configure.795"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vnf_1_1.Standard.create.799",
+        "name": "create",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vnf_1_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "nsSubsystem_1.Standard.start.781",
+          "vimZone_1.Standard.start.776",
+          "networkService_1.Standard.start.791"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vnf_1_1.Standard.configure.800",
+        "name": "configure",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vnf_1_1",
+        "implementation": {
+          "primary": {
+            "description": null,
+            "checksum": null,
+            "artifact_version": "1.0",
+            "file": "sample_playbook",
+            "checksum_algorithm": null,
+            "deploy_path": null,
+            "type": "com.ericsson.so.artifacts.Implementation.Playbook",
+            "properties": [
+              {
+                "raw_value": "sample_playbook.yml",
+                "required": true,
+                "type": "string",
+                "name": "entry_playbook",
+                "value": "sample_playbook.yml"
+              }
+            ]
+          }
+        },
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [
+          {
+            "raw_value": [],
+            "required": true,
+            "type": null,
+            "name": "playbook_inputs",
+            "value": {
+              "extra-vars": {
+                "input1": "value1"
+              },
+              "become_user": "admin",
+              "key1": "value1",
+              "destination_directory": "/opt/script/config",
+              "become": "",
+              "additional_subsystems": []
+            }
+          }
+        ],
+        "dependency_operations": [
+          "vnf_1_1.Standard.create.799"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vnf_1_1.Standard.start.801",
+        "name": "start",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vnf_1_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "vnf_1_1.Standard.configure.800"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "enmSubsystem_1.Standard.create.804",
+        "name": "create",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "enmSubsystem_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "enmSubsystem_1.Standard.configure.805",
+        "name": "configure",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "enmSubsystem_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "enmSubsystem_1.Standard.create.804"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "enmSubsystem_1.Standard.start.806",
+        "name": "start",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "enmSubsystem_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "enmSubsystem_1.Standard.configure.805"
+        ],
+        "failure_dependency_operations": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "workflow": "modify",
+  "serviceExecutionPlan": {
+    "operations": [
+      {
+        "id": "networkService_1.Modify.pre_modify.66",
+        "name": "pre_modify",
+        "interface": "Modify",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "networkService_1",
+        "implementation": "workflow/enabler",
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "networkService_1.Modify.modify.67",
+        "name": "modify",
+        "interface": "Modify",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "networkService_1",
+        "implementation": "workflow/enabler",
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "networkService_1.Modify.pre_modify.66"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vnf_1_1.Modify.pre_modify.70",
+        "name": "pre_modify",
+        "interface": "Modify",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vnf_1_1",
+        "implementation": "workflow/enabler",
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "networkService_1.Modify.modify.67"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vnf_1_1.Modify.modify.71",
+        "name": "modify",
+        "interface": "Modify",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vnf_1_1",
+        "implementation": "workflow/failed",
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "vnf_1_1.Modify.pre_modify.70"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vnf_2_1.Modify.pre_modify.74",
+        "name": "pre_modify",
+        "interface": "Modify",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vnf_2_1",
+        "implementation": "workflow/enabler",
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "networkService_1.Modify.modify.67"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vnf_2_1.Modify.modify.75",
+        "name": "modify",
+        "interface": "Modify",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vnf_2_1",
+        "implementation": "workflow/enabler",
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "vnf_2_1.Modify.pre_modify.74"
+        ],
+        "failure_dependency_operations": []
+      }
+    ]
+  }
+}

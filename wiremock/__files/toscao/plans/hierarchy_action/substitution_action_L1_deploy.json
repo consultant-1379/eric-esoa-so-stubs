@@ -1,0 +1,53 @@
+{
+  "workflow": "deploy",
+  "serviceExecutionPlan": {
+    "operations": [
+      {
+        "id": "Service_L2_1.Standard.create.311",
+        "name": "create",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "Service_L2_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "Service_L2_1.Standard.configure.312",
+        "name": "configure",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "Service_L2_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "Service_L2_1.Standard.create.311"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "Service_L2_1.Standard.start.313",
+        "name": "start",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "Service_L2_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "Service_L2_1.Standard.configure.312"
+        ],
+        "failure_dependency_operations": []
+      }
+    ]
+  }
+}

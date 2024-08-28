@@ -1,0 +1,61 @@
+{
+	"type": "ctv/virtualnetworkservice",
+	"id": 200,
+	"href": "ctv/virtnetworkserv/200",
+	"dynamicAttributes": [{
+			"attributeKey": 379,
+			"groupName": "SO_RESOURCE",
+			"attributeName": "stringProp1",
+			"stringAttributeValue": "value1",
+			"attributeDefinitionId": 23
+		}, {
+			"attributeKey": 380,
+			"groupName": "SO_RESOURCE",
+			"attributeName": "stringProp2",
+			"stringAttributeValue": "100",
+			"attributeDefinitionId": 24
+		}, {
+			"attributeKey": 381,
+			"groupName": "SO_RESOURCE",
+			"attributeName": "stringProp3",
+			"stringAttributeValue": "true",
+			"attributeDefinitionId": 25
+		}, {
+			"attributeKey": 382,
+			"groupName": "SO_RESOURCE",
+			"attributeName": "listProp1",
+			"listAttributeValue": ["a", "b", "c"],
+			"attributeDefinitionId": 28
+		}, {
+			"attributeKey": 383,
+			"groupName": "SO_RESOURCE",
+			"attributeName": "intProp1",
+			"longAttributeValue": 100,
+			"attributeDefinitionId": 26
+		}, {
+			"attributeKey": 384,
+			"groupName": "SO_RESOURCE",
+			"attributeName": "booleanProp1",
+			"booleanAttributeValue": true,
+			"attributeDefinitionId": 27
+		}
+	],
+	"name": "ns1",
+	"description": "NetworkService for test",
+	"revisionNumber": 1,
+	"scheduledDate": "2021-10-06T17:30:00.000Z",
+	"status": "planning",
+	"lastModifiedOn": "2021-10-06T15:49:24.692Z",
+	"lastModifiedBy": "arabian",
+	"createdOn": "2021-10-06T15:49:24.692Z",
+	"createdBy": "arabian",
+	"versionNumber": 1,
+	"revisionGroupKey": {
+		"type": "revisionGroupKey",
+		"keyValue": 797
+	},
+	"key": {
+		"type": "ctv/virtualnetworkserviceKey",
+		"keyValue": 200
+	}
+}

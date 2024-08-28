@@ -1,0 +1,69 @@
+{
+	"workflow": "undeploy",
+	"serviceExecutionPlan": {
+		"operations": [
+			{
+				"id": "Service_L2_2_1.Standard.stop.9174",
+				"name": "stop",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "Service_L2_2_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [],
+				"failure_dependency_operations": []
+			},
+			{
+				"id": "Service_L2_2_1.Standard.delete.9175",
+				"name": "delete",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "Service_L2_2_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [
+					"Service_L2_2_1.Standard.stop.9174"
+				],
+				"failure_dependency_operations": []
+			},
+			{
+				"id": "Service_L2_1_1.Standard.stop.9178",
+				"name": "stop",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "Service_L2_1_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [
+					"Service_L2_2_1.Standard.delete.9175"
+				],
+				"failure_dependency_operations": []
+			},
+			{
+				"id": "Service_L2_1_1.Standard.delete.9179",
+				"name": "delete",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "Service_L2_1_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [
+					"Service_L2_1_1.Standard.stop.9178"
+				],
+				"failure_dependency_operations": []
+			}
+		]
+	}
+}

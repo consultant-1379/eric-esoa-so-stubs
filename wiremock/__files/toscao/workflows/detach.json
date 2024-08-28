@@ -1,0 +1,36 @@
+{
+  "name": "Detach",
+  "creTime": "2022-09-02 12:48:17.537144",
+  "node": {
+    "interface": [
+      {
+        "name": "Detach",
+        "operations": [
+          {
+            "name": "preDetach",
+            "pre-state": "preReconfiguring",
+            "post-state": "preReconfigured",
+            "filter": {}
+          },
+          {
+            "name": "detach",
+            "pre-state": "reconfiguring",
+            "post-state": "reconfigured",
+            "filter": {}
+          },
+          {
+            "name": "postDetach",
+            "pre-state": "postReconfiguring",
+            "post-state": "postReconfigured",
+            "filter": {}
+          }
+        ]
+      }
+    ]
+  },
+  "relationships": {
+    "interface": null,
+    "operations": []
+  },
+  "dependency_type": "reverse"
+}

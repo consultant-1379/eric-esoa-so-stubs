@@ -1,0 +1,228 @@
+{
+  "workflow": "undeploy",
+  "serviceExecutionPlan": {
+    "operations": [
+      {
+        "id": "vnf_2_1.Standard.stop.811",
+        "name": "stop",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vnf_2_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vnf_2_1.Standard.delete.812",
+        "name": "delete",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vnf_2_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "vnf_2_1.Standard.stop.811"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vnf_1_1.Standard.stop.815",
+        "name": "stop",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vnf_1_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vnf_1_1.Standard.delete.816",
+        "name": "delete",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vnf_1_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "vnf_1_1.Standard.stop.815"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vimZone_1.Standard.stop.819",
+        "name": "stop",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vimZone_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "vnf_2_1.Standard.delete.812",
+          "vnf_1_1.Standard.delete.816"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vimZone_1.Standard.delete.820",
+        "name": "delete",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vimZone_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "vimZone_1.Standard.stop.819"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "networkService_1.Standard.stop.823",
+        "name": "stop",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "networkService_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "vnf_2_1.Standard.delete.812",
+          "vnf_1_1.Standard.delete.816"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "networkService_1.Standard.delete.824",
+        "name": "delete",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "networkService_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "networkService_1.Standard.stop.823"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "nsConnection_1.Standard.stop.827",
+        "name": "stop",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "nsConnection_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "networkService_1.Standard.delete.824"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "nsConnection_1.Standard.delete.828",
+        "name": "delete",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "nsConnection_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "nsConnection_1.Standard.stop.827"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "nsSubsystem_1.Standard.stop.831",
+        "name": "stop",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "nsSubsystem_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "vnf_1_1.Standard.delete.816",
+          "networkService_1.Standard.delete.824"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "nsSubsystem_1.Standard.delete.832",
+        "name": "delete",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "nsSubsystem_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "nsSubsystem_1.Standard.stop.831"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "enmSubsystem_1.Standard.stop.835",
+        "name": "stop",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "enmSubsystem_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "enmSubsystem_1.Standard.delete.836",
+        "name": "delete",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "enmSubsystem_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "enmSubsystem_1.Standard.stop.835"
+        ],
+        "failure_dependency_operations": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+{
+	"workflow": "modify",
+	"serviceExecutionPlan": {
+		"operations": [
+			{
+				"id": "networkService_1.Standard.delete.9480",
+				"name": "delete",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "networkService_1",
+				"implementation": null,
+				"post_state": "delete-completed",
+				"pre_state": "delete-start",
+				"inputs": [],
+				"dependency_operations": [],
+				"failure_dependency_operations": []
+			},
+			{
+				"id": "networkService_1.Standard.stop.9481",
+				"name": "stop",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "networkService_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [
+					"networkService_1.Standard.delete.9480"
+				],
+				"failure_dependency_operations": []
+			},
+			{
+				"id": "networkService_1.Standard.delete.9484",
+				"name": "delete",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "networkService_1",
+				"implementation": null,
+				"post_state": "delete-completed",
+				"pre_state": "delete-start",
+				"inputs": [],
+				"dependency_operations": [
+					"networkService_1.Standard.stop.9481"
+				],
+				"failure_dependency_operations": []
+			},
+			{
+				"id": "networkService_1.Standard.stop.9485",
+				"name": "stop",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "networkService_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [
+					"networkService_1.Standard.delete.9484"
+				],
+				"failure_dependency_operations": []
+			}
+		]
+	}
+}

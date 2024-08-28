@@ -1,0 +1,91 @@
+{
+  "id": "1457",
+  "name": "deploy",
+  "state": "InProgress",
+  "inputs": [
+    {
+      "name": "externalReference",
+      "value": [
+        {
+          "externalReferenceType": "SalesOrderId",
+          "name": "1"
+        }
+      ]
+    },
+    {
+      "name": "serviceCharacteristics",
+      "value": [
+        {
+          "ethernetServiceType": "EVPL",
+          "ceVlanIdPreservation": "enabled",
+          "ethernetBundling": "All-to-One"
+        }
+      ]
+    },
+    {
+      "name": "services",
+      "value": [
+        {
+          "state": "active",
+          "description": "Ethernet Access Service"
+        }
+      ]
+    },
+    {
+      "name": "relatedParty",
+      "value": [
+        {
+          "role": "InstanceConsumerGroup",
+          "id": "B2BSmallandMediumBusiness",
+          "__referredType": "InstanceConsumerGroup"
+        }
+      ]
+    },
+    {
+      "name": "serviceSpecifications",
+      "value": [
+        {
+          "href": "Ethernet Access Service",
+          "name": "Ethernet Access Service",
+          "version": "v1.0"
+        }
+      ]
+    },
+    {
+      "name": "serviceOrderItems",
+      "value": [
+        {
+          "action": "add",
+          "id": "1"
+        }
+      ]
+    },
+    {
+      "name": "requestedCompletionDate",
+      "value": "YYYY-MM-DDTHH:MM:SS"
+    }
+  ],
+  "operations": [
+    {
+      "id": "1485",
+      "name": "create",
+      "actionRef": "deploy",
+      "resourceRef": "886",
+      "implementation": "camunda/CW_SBI_TMF641",
+      "inputs": {},
+      "state": "InProgress",
+      "startDate": "2021-05-31T08:13:52.241Z[UTC]",
+      "modifiedDate": "2021-05-31T08:13:52.253Z[UTC]",
+      "endDate": null,
+      "statusMessage": null,
+      "invokedActionRefIds": []
+    }
+  ],
+  "serviceRef": "725",
+  "startDate": "2021-05-31T08:13:51.910Z[UTC]",
+  "modifiedDate": "2021-05-31T08:13:51.929Z[UTC]",
+  "endDate": null,
+  "executedBy": "eo-user",
+  "executedByTenant": "master",
+  "executedByService": null
+}

@@ -1,0 +1,37 @@
+{
+	"workflow": "modify",
+	"serviceExecutionPlan": {
+		"operations": [
+			{
+				"id": "Service_L3_1_1.Modify.pre_modify.9442",
+				"name": "pre_modify",
+				"interface": "Modify",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "Service_L3_1_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [],
+				"failure_dependency_operations": []
+			},
+			{
+				"id": "Service_L3_1_1.Modify.modify.9443",
+				"name": "modify",
+				"interface": "Modify",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "Service_L3_1_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [
+					"Service_L3_1_1.Modify.pre_modify.9442"
+				],
+				"failure_dependency_operations": []
+			}
+		]
+	}
+}

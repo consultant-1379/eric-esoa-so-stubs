@@ -1,0 +1,1065 @@
+{
+  "id" : "{{request.pathSegments.[3]}}",
+  "creTime": "2022-07-20T13:06:27.131Z",
+{{regexExtract request.path '[-](\d.*)' 'parts'}}
+"name" : "hierarchy_modify_{{parts.0}}",
+  "serviceModelID": "527260d6-a8bb-4f81-a377-e25b4e00851b",
+  "catalogInvariantUUID": "491b8269-01bc-4444-bc99-4567c4dac060",
+  "catalogVersion": "1.0",
+  "catalogId": 301,
+  "metadata": {},
+  "substitutingModelIDs": [],
+  "state": "TO BE DEPLOYED",
+  "workflows": [],
+  "workflow": "undeploy",
+  "topology": {
+    "inputs": [
+      {
+        "name": "L2_1_stringProp1",
+        "value": null,
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "L3_1_stringProp1",
+        "value": null,
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "L2_1_ns_name",
+        "value": null,
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "L3_1_type",
+        "value": null,
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "L3_1_ns_name",
+        "value": null,
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "policies": [],
+    "outputs": [],
+    "relationship_templates": [],
+    "nodes": [
+      {
+        "name": "networkService_1",
+        "state": "Started",
+        "action": "delete",
+        "instanceIDs": [],
+        "directives": [],
+        "occurrences": null,
+        "artifacts": [],
+        "interfaces": [
+          {
+            "name": "Modify",
+            "inputs": [],
+            "operations": [
+              {
+                "name": "Modify",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "pre_modify",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "modify",
+                "inputs": [],
+                "implementation": null
+              }
+            ],
+            "notifications": []
+          },
+          {
+            "name": "Standard",
+            "inputs": [],
+            "operations": [
+              {
+                "name": "start",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "create",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "stop",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "configure",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "delete",
+                "inputs": [],
+                "implementation": null
+              }
+            ],
+            "notifications": []
+          }
+        ],
+        "nodetype": "topology.nodes.ctv.virtNetworkServ",
+        "parent_type": "topology.nodes.ctc.forwardingConstruct",
+        "nodeproperties": [
+          {
+            "name": "lastModifiedOn",
+            "value": 1658322387083,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "SO_NS::connectionName",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "SO_RESOURCE::customTemplates",
+            "value": null,
+            "required": false,
+            "type": "list",
+            "raw_value": null
+          },
+          {
+            "name": "SO_NS::vdcId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "nsdId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "queryDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "SO_RESOURCE::resourceType",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "decommissionDate",
+            "value": "2022-07-20T20:00:00.000Z",
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "SO_NS::vdcName",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "GROUP1::prop1",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "dueDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "revisionNumber",
+            "value": 1,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "SO_NS::nsId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "SO_NS::nsFlavourId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "scheduledDate",
+            "value": "2022-07-20T20:00:00.000Z",
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "NS::nsDescription",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "comments",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "lockedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "lastModifiedBy",
+            "value": "sysadm",
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "SO_NS::nsdId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "NS::connectionName",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "version",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "externalId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "NS::subsystemName",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "modifyDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "archivedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "isArchived",
+            "value": null,
+            "required": false,
+            "type": "boolean",
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::tenancyHref",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "NS::nsName",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::jinjaFile",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "status",
+            "value": "retiring",
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "serviceType",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "vendor",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "description",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "archivedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "SO_NS::subsystemName",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "NS::nsdId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "versionNumber",
+            "value": 3,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "createdBy",
+            "value": "sysadm",
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::deviceHref",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::tenancyId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "orderedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "lockedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "NS::resourceType",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "SO_NS::autoCreatedVdc",
+            "value": null,
+            "required": false,
+            "type": "boolean",
+            "raw_value": null
+          },
+          {
+            "name": "CUSTOM_NS::stringProp1",
+            "value": "value1",
+            "required": false,
+            "type": "string",
+            "raw_value": {
+              "get_input": "L2_1_stringProp1"
+            }
+          },
+          {
+            "name": "name",
+            "value": "ns_L2_1",
+            "required": false,
+            "type": "string",
+            "raw_value": {
+              "get_input": "L2_1_ns_name"
+            }
+          },
+          {
+            "name": "SO_NS::maxNumberofUEs",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "SO_RESOURCE::customOperations",
+            "value": null,
+            "required": false,
+            "type": "list",
+            "raw_value": null
+          },
+          {
+            "name": "resourceType",
+            "value": null,
+            "required": true,
+            "type": "string",
+            "raw_value": "Resource"
+          },
+          {
+            "name": "createdOn",
+            "value": 1658320157384,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "inServiceDate",
+            "value": "2022-07-20T00:00:00.000Z",
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::deviceId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "lockOwner",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "objectInstId",
+            "value": 441,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "installedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          }
+        ],
+        "nodeattributes": [
+          {
+            "name": "state",
+            "value": "Started",
+            "type": "string",
+            "description": "The state of the node instance.",
+            "raw_value": "Started"
+          },
+          {
+            "name": "tosca_name",
+            "value": "networkService",
+            "type": "string",
+            "description": "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+            "raw_value": "networkService"
+          },
+          {
+            "name": "tosca_id",
+            "value": "networkService_1",
+            "type": "string",
+            "description": "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+            "raw_value": "networkService_1"
+          }
+        ],
+        "relationship": []
+      },
+      {
+        "name": "Service_L3_1_1",
+        "state": "Started",
+        "action": "delete",
+        "instanceIDs": [
+          "Service_L3_1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-203"
+        ],
+        "directives": [
+          "substitute"
+        ],
+        "occurrences": null,
+        "artifacts": [],
+        "interfaces": [
+          {
+            "name": "Standard",
+            "inputs": [],
+            "operations": [
+              {
+                "name": "start",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "create",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "stop",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "configure",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "delete",
+                "inputs": [],
+                "implementation": null
+              }
+            ],
+            "notifications": []
+          }
+        ],
+        "nodetype": "topology.nodes.ocrs.serviceCapabilitiesSet",
+        "parent_type": "topology.nodes.sdk.managedObject",
+        "nodeproperties": [
+          {
+            "name": "lastModifiedOn",
+            "value": 1658322387073,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "decommissionDate",
+            "value": "2022-07-20T20:00:00.000Z",
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "ServiceInput::L4_2_1_prop1",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "ServiceInput::L3_2_1_prop1",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "InputData::gnbduName",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "InputData::dLThptPerSliceMaxThpt",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "ServiceInput::L4_2_1_ns_name",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "queryDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "ServiceInput::L2_1_type",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "ServiceInput::L2_2_type",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "ServiceInput::L3_2_2_type",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "ServiceInput::L4_2_2_type",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "dueDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "revisionNumber",
+            "value": 2,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "L2_capability::l2prop1",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "scheduledDate",
+            "value": "2022-07-20T20:00:00.000Z",
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "capability::serviceType",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "ServiceInput::L4_2_1_type",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "InputData::coverageAreaName",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "ServiceInput::L3_2_ns_name",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "comments",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "capability::nssi_ns_name",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "lastModifiedBy",
+            "value": "sysadm",
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "ServiceInput::L3_1_prop1",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": {
+              "get_input": "L3_1_stringProp1"
+            }
+          },
+          {
+            "name": "InputData::cellIdList",
+            "value": null,
+            "required": false,
+            "type": "list",
+            "raw_value": null
+          },
+          {
+            "name": "ServiceInput::L2_2_prop1",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "externalId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "InputData::pLMNInfolist",
+            "value": null,
+            "required": false,
+            "type": "list",
+            "raw_value": null
+          },
+          {
+            "name": "modifyDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "archivedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "isArchived",
+            "value": null,
+            "required": false,
+            "type": "boolean",
+            "raw_value": null
+          },
+          {
+            "name": "ServiceInput::L2_2_ns_name",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "type",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": {
+              "get_input": "L3_1_type"
+            }
+          },
+          {
+            "name": "status",
+            "value": "retiring",
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "archivedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "ServiceInput::L3_2_prop1",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "ServiceInput::L3_2_1_type",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "InputData::coverageAreaTAList",
+            "value": null,
+            "required": false,
+            "type": "list",
+            "raw_value": null
+          },
+          {
+            "name": "ServiceInput::L3_2_2_ns_name",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "versionNumber",
+            "value": 4,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "createdBy",
+            "value": "sysadm",
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "ServiceInput::L3_1_type",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "orderedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "lockedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "lockedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "L2_capability::ns_name",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "ServiceInput::L2_1_ns_name",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "name",
+            "value": "Hierarchy_Modify_3_Service_L2_1_SC_Service_L3_1_SC",
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "ServiceInput::L4_2_2_ns_name",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "resourceType",
+            "value": null,
+            "required": true,
+            "type": "string",
+            "raw_value": "Resource"
+          },
+          {
+            "name": "ServiceInput::L4_2_2_prop1",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "createdOn",
+            "value": 1658321270183,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "ServiceInput::L3_2_1_ns_name",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "inServiceDate",
+            "value": "2022-07-20T00:00:00.000Z",
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "ServiceInput::L3_2_2_prop1",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "ServiceInput::L2_1_prop1",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "InputData::qosProfileName",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "InputData::uLThptPerSlicMaxThpt",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "ServiceInput::L3_2_type",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "ServiceInput::L3_1_ns_name",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": {
+              "get_input": "L3_1_ns_name"
+            }
+          },
+          {
+            "name": "lockOwner",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "objectInstId",
+            "value": 416,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "installedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          }
+        ],
+        "nodeattributes": [
+          {
+            "name": "state",
+            "value": "Started",
+            "type": "string",
+            "description": "The state of the node instance.",
+            "raw_value": "Started"
+          },
+          {
+            "name": "tosca_name",
+            "value": "Service_L3_1",
+            "type": "string",
+            "description": "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+            "raw_value": "Service_L3_1"
+          },
+          {
+            "name": "tosca_id",
+            "value": "Service_L3_1_1",
+            "type": "string",
+            "description": "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+            "raw_value": "Service_L3_1_1"
+          }
+        ],
+        "relationship": []
+      }
+    ]
+  }
+}

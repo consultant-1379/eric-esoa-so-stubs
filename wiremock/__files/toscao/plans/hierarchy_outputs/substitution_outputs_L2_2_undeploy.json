@@ -1,0 +1,69 @@
+{
+  "workflow": "undeploy",
+  "serviceExecutionPlan": {
+    "operations": [
+      {
+        "id": "NETWORK_SERVICE_1.Standard.stop.1963",
+        "name": "stop",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NETWORK_SERVICE_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NETWORK_SERVICE_1.Standard.delete.1964",
+        "name": "delete",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NETWORK_SERVICE_1",
+        "implementation": "camunda/enabler",
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NETWORK_SERVICE_1.Standard.stop.1963"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NFVO_SUBSYSTEM_1.Standard.stop.1967",
+        "name": "stop",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NFVO_SUBSYSTEM_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NETWORK_SERVICE_1.Standard.delete.1964"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NFVO_SUBSYSTEM_1.Standard.delete.1968",
+        "name": "delete",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NFVO_SUBSYSTEM_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NFVO_SUBSYSTEM_1.Standard.stop.1967"
+        ],
+        "failure_dependency_operations": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "mappings": [
+    {
+      "scenarioName": "DEPLOY",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/serviceOrder?fields=id",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalId == '0a073524-6333-424c-93a3-d2f13ff19189')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalVersion == '1.0')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service[?(@.name contains 'service')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0][?(@.action == 'add')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_assigned.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/assigned_event.json",
+          "serviceInstanceId": "NetworkService_000001-Service-ocrs-resourceFacingService-revisionGroupKey-1"
+        }
+      }
+    },
+    {
+      "scenarioName": "DEPLOY",
+      "requiredScenarioState": "ASSIGN_FAILED",
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/serviceOrder?fields=id",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalId == '0a073524-6333-424c-93a3-d2f13ff19189')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalVersion == '1.0')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service[?(@.name contains 'service')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0][?(@.action == 'add')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_assigned.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/assigned_failed_event.json",
+          "serviceInstanceId": ""
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/service-instances\/NetworkService_000001-Service-ocrs-resourceFacingService-revisionGroupKey-.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/network_service_instance.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "DEPLOY",
+      "requiredScenarioState": "FETCH_INSTANCE_ERROR",
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/service-instances/NetworkService_000001-Service-ocrs-resourceFacingService-revisionGroupKey-1"
+      },
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "jsonBody": {
+          "type": "GraniteFaultStack",
+          "messageText": "NdToscaMsg.SCD_NOT_FOUND_BY_NAME",
+          "faults": []
+        }
+      }
+    },
+    {
+      "scenarioName": "DEPLOY",
+      "requiredScenarioState": "NOT_FOUND",
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/ctv/virtnetworkserv/5?fs=dynAttrs"
+      },
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "jsonBody": {
+          "type": "GraniteFaultStack",
+          "messageText": "NdToscaMsg.SCD_NOT_FOUND_BY_NAME",
+          "faults": []
+        }
+      }
+    },
+    {
+      "scenarioName": "DEPLOY",
+      "requiredScenarioState": "TEMPLATE_NOT_ONBOARDED",
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/service-instances/NetworkService_000001-Service-ocrs-resourceFacingService-revisionGroupKey-1"
+      },
+      "response": {        "status": 200,
+        "bodyFileName": "esd/service-instances/network_service_instance.json",
+        "transformerParameters": {
+          "serviceName": "service1",
+          "additionalParamsCatalogRef": "unknown"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts?query=invariantUUID==0a073524-6333-424c-93a3-d2f13ff19189;type==SERVICE_MODEL;version==1.0&listInternalArtifacts=true"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "items": [
+            {
+              "id": "1",
+              "name": "esd_networkservice",
+              "invariantUUID": "0a073524-6333-424c-93a3-d2f13ff19189",
+              "version": "1.0",
+              "type": "SERVICE_MODEL"
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "DEPLOY_CSO",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts/1/download?archive=false"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "catalog/service-models/network_service_model_1.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "DEPLOY_CSO",
+      "requiredScenarioState": "FAILED",
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts/1/download?archive=false"
+      },
+      "response": {
+        "status": 404
+      }
+    },
+    
+    
+    
+    
+    
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts?query=name==unknown;type==CONFIG_TEMPLATE&listInternalArtifacts=false"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "items": []
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    
+    
+    {
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/ocrs\/resourcefacingservice\\?revisionGroupKey=.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs1.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    }
+    
+  ]
+}

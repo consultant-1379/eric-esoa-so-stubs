@@ -1,0 +1,56 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "/toscao/api/v2.7/workflow-definitions"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/workflows/workflow_definitions.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/toscao/api/v2.7/workflow-definitions/Attach"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/workflows/attach.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/toscao/api/v2.7/workflow-definitions/Detach"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/workflows/detach.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/toscao/api/v2.7/workflow-definitions/reconfigure"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/workflows/reconfigure.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    }
+  ]
+}

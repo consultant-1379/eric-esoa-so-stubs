@@ -1,0 +1,49 @@
+{
+  "id": "67",
+  "name": "modify",
+  "state": "InProgress",
+  "inputs": [
+    {
+      "name": "partnerId",
+      "value": "TBS001updated88"
+    },
+    {
+      "name": "sdWanServiceNameList",
+      "value": [
+        "SDWAN_2806_2"
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "id": "83",
+      "name": "modify",
+      "actionRef": "67",
+      "resourceRef": "ctv-virtnetworkserv-24",
+      "ctsResourceRef": {
+        "name": "AN_2806_33_sdWAN_SDWAN_2806_2",
+        "type": "ctv/virtnetworkserv",
+        "href": "ctv/virtnetworkserv/24"
+      },
+      "implementation": "camunda/so-sbi",
+      "inputs": {},
+      "state": "InProgress",
+      "startDate": "2023-08-14 12:56:18.556",
+      "modifiedDate": "2023-08-14 12:56:18.592",
+      "endDate": null,
+      "statusMessage": null,
+      "invokedActionRefIds": []
+    }
+  ],
+  "serviceRef": "fd54300e-a16a-46cb-b8b7-994a40b4d703",
+  "startDate": "2023-08-14 12:56:18.44",
+  "modifiedDate": "2023-08-14 12:56:18.508",
+  "endDate": null,
+  "executedBy": "so-user",
+  "executedByTenant": "master",
+  "executedByService": null,
+  "externalId": "7d0968b0-7540-4886-8fe1-f3b756ec01bb_8",
+  "executionLogHref": null,
+  "recoveryMode": null,
+  "executionId": "f0bb8291-3aa1-11ee-951a-027929bf1c9d"
+}

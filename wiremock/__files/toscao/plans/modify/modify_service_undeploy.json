@@ -1,0 +1,100 @@
+{
+  "workflow": "undeploy",
+  "serviceExecutionPlan": {
+    "operations": [
+      {
+        "id": "vnf_2_1.Standard.stop.80",
+        "name": "stop",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vnf_2_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vnf_2_1.Standard.delete.81",
+        "name": "delete",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vnf_2_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "vnf_2_1.Standard.stop.80"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vnf_1_1.Standard.stop.84",
+        "name": "stop",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vnf_1_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vnf_1_1.Standard.delete.85",
+        "name": "delete",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vnf_1_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "vnf_1_1.Standard.stop.84"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "networkService_1.Standard.stop.88",
+        "name": "stop",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "networkService_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "vnf_2_1.Standard.delete.81",
+          "vnf_1_1.Standard.delete.85"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "networkService_1.Standard.delete.89",
+        "name": "delete",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "networkService_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "networkService_1.Standard.stop.88"
+        ],
+        "failure_dependency_operations": []
+      }
+    ]
+  }
+}

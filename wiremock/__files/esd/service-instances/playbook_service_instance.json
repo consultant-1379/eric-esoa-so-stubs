@@ -1,0 +1,1958 @@
+{
+  "id" : "{{request.pathSegments.[3]}}",
+  "creTime" : "2021-11-01T17:12:43.864Z",
+  "name" : "{{parameters.serviceName}}",
+  "serviceModelID" : "baf109c2-62df-4318-bee3-592607c8d890",
+  "catalogInvariantUUID" : "d291a942-027c-4ec7-8456-c1b562a89f4b",
+  "catalogVersion" : "1.0",
+  "catalogId" : 2,
+  "metadata" : {
+    "template_name" : null,
+    "template_author" : null,
+    "template_version" : null,
+    "category" : "CORE",
+    "serviceType" : "NSSI"
+  },
+  "substitutingModelIDs" : [ ],
+  "state" : "TO BE DEPLOYED",
+  "workflows" : [ ],
+  "topology" : {
+    "inputs" : [ {
+      "name" : "ns_name",
+      "value" : "ns_1",
+      "required" : true,
+      "type" : "string"
+    }, {
+      "name" : "vnf_1_name",
+      "value" : "vnf_1",
+      "required" : true,
+      "type" : "string"
+    }, {
+      "name" : "vnf_2_name",
+      "value" : "vnf_2",
+      "required" : true,
+      "type" : "string"
+    }, {
+      "name" : "nsdId",
+      "value" : "nsdId-1",
+      "required" : true,
+      "type" : "string"
+    }, {
+      "name" : "vimZone",
+      "value" : "vimZone_1",
+      "required" : true,
+      "type" : "string"
+    }, {
+      "name" : "subsystem",
+      "value" : "ecm",
+      "required" : true,
+      "type" : "string"
+    }, {
+      "name" : "enm_subsystem",
+      "value" : "enm",
+      "required" : true,
+      "type" : "string"
+    }, {
+      "name" : "connection",
+      "value" : "connection1",
+      "required" : true,
+      "type" : "string"
+    }, {
+      "name" : "entry_playbook",
+      "value" : "sample_playbook.yml",
+      "required" : true,
+      "type" : "string"
+    } ],
+    "policies" : [ ],
+    "outputs" : [ ],
+    "relationshipTemplates" : [ ],
+    "nodes" : [ {
+      "name" : "vnf_2_1",
+      "state" : "initial",
+      "action" : "add",
+      "instanceIDs" : [ ],
+      "directives" : [ ],
+      "artifacts" : [ ],
+      "interfaces" : [ {
+        "name" : "Standard",
+        "inputs" : [ ],
+        "operations" : [ {
+          "name" : "delete",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "stop",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "start",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "configure",
+          "inputs" : [ {
+            "name" : "customTemplates",
+            "value" : [ {
+              "name" : "vnfTemplate1",
+              "catalogRef" : "day1Template1"
+            } ],
+            "required" : true,
+            "raw_value" : [ {
+              "name" : "vnfTemplate1",
+              "catalogRef" : "day1Template1"
+            } ],
+            "type" : null
+          }, {
+            "name" : "playbook_inputs",
+            "value" : {
+              "extra-vars" : {
+                "input1" : "value1"
+              },
+              "destination_directory" : "/opt/script/config",
+              "key1" : "value1",
+              "become" : "",
+              "become_user" : "admin",
+              "additional_subsystems" : [ "enm" ]
+            },
+            "required" : true,
+            "raw_value" : [ "enm" ],
+            "type" : null
+          } ],
+          "implementation" : {
+            "primary" : {
+              "type" : "com.ericsson.so.artifacts.Implementation.Playbook",
+              "file" : "sample_playbook",
+              "description" : null,
+              "deploy_path" : null,
+              "artifact_version" : "1.0",
+              "checksum" : null,
+              "checksum_algorithm" : null,
+              "properties" : [ {
+                "name" : "entry_playbook",
+                "value" : "sample_playbook.yml",
+                "required" : true,
+                "raw_value" : "sample_playbook.yml",
+                "type" : "string"
+              } ]
+            }
+          }
+        }, {
+          "name" : "create",
+          "inputs" : [ ],
+          "implementation" : null
+        } ],
+        "notifications" : [ ]
+      } ],
+      "nodetype" : "topology.nodes.ctv.vnf",
+      "parent_type" : "topology.nodes.ctc.hostedFunction",
+      "nodeproperties" : [ {
+        "name" : "installedDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "objectInstId",
+        "value" : 136,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "operationalState",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "administrativeState",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "inServiceDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "createdOn",
+        "value" : 1635786764008,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "resourceType",
+        "value" : null,
+        "required" : true,
+        "type" : "string",
+        "raw_value" : "Resource"
+      }, {
+        "name" : "SO_RESOURCE::customOperations",
+        "value" : [ ],
+        "required" : false,
+        "type" : "list",
+        "raw_value" : [ ]
+      }, {
+        "name" : "name",
+        "value" : "vnf_2_501",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : {
+          "get_input" : "vnf_2_name"
+        }
+      }, {
+        "name" : "lockedBy",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "orderedDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "createdBy",
+        "value" : "sysadm",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "versionNumber",
+        "value" : 1,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "archivedBy",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "description",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "vendor",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "status",
+        "value" : "planning",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "type",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "isArchived",
+        "value" : null,
+        "required" : false,
+        "type" : "boolean",
+        "raw_value" : null
+      }, {
+        "name" : "archivedOn",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "modifyDomainGroup",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "externalId",
+        "value" : "MeContext=vnf_2_501",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : {
+          "concat" : [ "MeContext=", {
+            "get_input" : "vnf_2_name"
+          } ]
+        }
+      }, {
+        "name" : "version",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "lastModifiedBy",
+        "value" : "sysadm",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "lockedOn",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "comments",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "scheduledDate",
+        "value" : "2021-01-11T21:00:00.000Z",
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "SO_VNF::vnfmId",
+        "value" : "",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : ""
+      }, {
+        "name" : "revisionNumber",
+        "value" : 1,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "dueDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "flavor",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "decommissionDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "SO_RESOURCE::resourceType",
+        "value" : "NetworkFunction",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : "NetworkFunction"
+      }, {
+        "name" : "queryDomainGroup",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "lockOwner",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "SO_RESOURCE::customTemplates",
+        "value" : [ ],
+        "required" : false,
+        "type" : "list",
+        "raw_value" : [ ]
+      }, {
+        "name" : "lastModifiedOn",
+        "value" : 1635786764008,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      } ],
+      "nodeattributes" : [ {
+        "name" : "tosca_id",
+        "value" : "vnf_2_1",
+        "type" : "string",
+        "description" : "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+        "raw_value" : "vnf_2_1"
+      }, {
+        "name" : "tosca_name",
+        "value" : "vnf_2",
+        "type" : "string",
+        "description" : "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+        "raw_value" : "vnf_2"
+      }, {
+        "name" : "state",
+        "value" : "initial",
+        "type" : "string",
+        "description" : "The state of the node instance.",
+        "raw_value" : "initial"
+      } ],
+      "relationship" : [ {
+        "target" : "vimZone_1",
+        "requirementName" : "vimZone",
+        "relationshipName" : null,
+        "action" : "add"
+      }, {
+        "target" : "networkService_1",
+        "requirementName" : "virtualNetServices",
+        "relationshipName" : null,
+        "action" : "add"
+      } ]
+    }, {
+      "name" : "vnf_1_1",
+      "state" : "initial",
+      "action" : "add",
+      "instanceIDs" : [ ],
+      "directives" : [ ],
+      "artifacts" : [ ],
+      "interfaces" : [ {
+        "name" : "Standard",
+        "inputs" : [ ],
+        "operations" : [ {
+          "name" : "delete",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "stop",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "start",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "configure",
+          "inputs" : [ {
+            "name" : "playbook_inputs",
+            "value" : {
+              "extra-vars" : {
+                "input1" : "value1"
+              },
+              "destination_directory" : "/opt/script/config",
+              "key1" : "value1",
+              "become" : "",
+              "become_user" : "admin",
+              "additional_subsystems" : [ ]
+            },
+            "required" : true,
+            "raw_value" : [ ],
+            "type" : null
+          } ],
+          "implementation" : {
+            "primary" : {
+              "type" : "com.ericsson.so.artifacts.Implementation.Playbook",
+              "file" : "sample_playbook",
+              "description" : null,
+              "deploy_path" : null,
+              "artifact_version" : "1.0",
+              "checksum" : null,
+              "checksum_algorithm" : null,
+              "properties" : [ {
+                "name" : "entry_playbook",
+                "value" : "sample_playbook.yml",
+                "required" : true,
+                "raw_value" : "sample_playbook.yml",
+                "type" : "string"
+              } ]
+            }
+          }
+        }, {
+          "name" : "create",
+          "inputs" : [ ],
+          "implementation" : null
+        } ],
+        "notifications" : [ ]
+      } ],
+      "nodetype" : "topology.nodes.ctv.vnf",
+      "parent_type" : "topology.nodes.ctc.hostedFunction",
+      "nodeproperties" : [ {
+        "name" : "installedDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "objectInstId",
+        "value" : 137,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "operationalState",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "administrativeState",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "inServiceDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "createdOn",
+        "value" : 1635786764043,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "resourceType",
+        "value" : null,
+        "required" : true,
+        "type" : "string",
+        "raw_value" : "Resource"
+      }, {
+        "name" : "SO_RESOURCE::customOperations",
+        "value" : [ ],
+        "required" : false,
+        "type" : "list",
+        "raw_value" : [ ]
+      }, {
+        "name" : "name",
+        "value" : "vnf_1_501",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : {
+          "get_input" : "vnf_1_name"
+        }
+      }, {
+        "name" : "lockedBy",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "orderedDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "createdBy",
+        "value" : "sysadm",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "versionNumber",
+        "value" : 1,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "archivedBy",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "description",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "vendor",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "status",
+        "value" : "planning",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "type",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "isArchived",
+        "value" : null,
+        "required" : false,
+        "type" : "boolean",
+        "raw_value" : null
+      }, {
+        "name" : "archivedOn",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "modifyDomainGroup",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "externalId",
+        "value" : "MeContext=vnf_1_501",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : {
+          "concat" : [ "MeContext=", {
+            "get_input" : "vnf_1_name"
+          } ]
+        }
+      }, {
+        "name" : "version",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "lastModifiedBy",
+        "value" : "sysadm",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "lockedOn",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "comments",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "scheduledDate",
+        "value" : "2021-01-11T21:00:00.000Z",
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "SO_VNF::vnfmId",
+        "value" : "",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : ""
+      }, {
+        "name" : "revisionNumber",
+        "value" : 1,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "dueDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "flavor",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "decommissionDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "SO_RESOURCE::resourceType",
+        "value" : "NetworkFunction",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : "NetworkFunction"
+      }, {
+        "name" : "queryDomainGroup",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "lockOwner",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "SO_RESOURCE::customTemplates",
+        "value" : [ {
+          "name" : "vnfTemplate1",
+          "catalogRef" : "day1Template1"
+        } ],
+        "required" : false,
+        "type" : "list",
+        "raw_value" : [ {
+          "name" : "vnfTemplate1",
+          "catalogRef" : "day1Template1"
+        } ]
+      }, {
+        "name" : "lastModifiedOn",
+        "value" : 1635786764043,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      } ],
+      "nodeattributes" : [ {
+        "name" : "tosca_id",
+        "value" : "vnf_1_1",
+        "type" : "string",
+        "description" : "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+        "raw_value" : "vnf_1_1"
+      }, {
+        "name" : "tosca_name",
+        "value" : "vnf_1",
+        "type" : "string",
+        "description" : "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+        "raw_value" : "vnf_1"
+      }, {
+        "name" : "state",
+        "value" : "initial",
+        "type" : "string",
+        "description" : "The state of the node instance.",
+        "raw_value" : "initial"
+      } ],
+      "relationship" : [ {
+        "target" : "vimZone_1",
+        "requirementName" : "vimZone",
+        "relationshipName" : null,
+        "action" : "add"
+      }, {
+        "target" : "networkService_1",
+        "requirementName" : "virtualNetServices",
+        "relationshipName" : null,
+        "action" : "add"
+      }, {
+        "target" : "nsSubsystem_1",
+        "requirementName" : "subsystemReferences",
+        "relationshipName" : null,
+        "action" : "add"
+      } ]
+    }, {
+      "name" : "networkService_1",
+      "state" : "initial",
+      "action" : "add",
+      "instanceIDs" : [ ],
+      "directives" : [ ],
+      "artifacts" : [ ],
+      "interfaces" : [ {
+        "name" : "Standard",
+        "inputs" : [ ],
+        "operations" : [ {
+          "name" : "delete",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "stop",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "start",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "configure",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "create",
+          "inputs" : [ ],
+          "implementation" : null
+        } ],
+        "notifications" : [ ]
+      } ],
+      "nodetype" : "topology.nodes.ctv.virtNetworkServ",
+      "parent_type" : "topology.nodes.ctc.forwardingConstruct",
+      "nodeproperties" : [ {
+        "name" : "installedDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "objectInstId",
+        "value" : 135,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "lockOwner",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "inServiceDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "createdOn",
+        "value" : 1635786763958,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "resourceType",
+        "value" : null,
+        "required" : true,
+        "type" : "string",
+        "raw_value" : "Resource"
+      }, {
+        "name" : "SO_RESOURCE::customOperations",
+        "value" : [ ],
+        "required" : false,
+        "type" : "list",
+        "raw_value" : [ ]
+      }, {
+        "name" : "name",
+        "value" : "ns501",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : {
+          "get_input" : "ns_name"
+        }
+      }, {
+        "name" : "lockedBy",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "orderedDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "createdBy",
+        "value" : "sysadm",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "versionNumber",
+        "value" : 1,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "SO_NS::nsdId",
+        "value" : "nsdId123",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : {
+          "get_input" : "nsdId"
+        }
+      }, {
+        "name" : "archivedBy",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "description",
+        "value" : "NetworkService",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : "NetworkService"
+      }, {
+        "name" : "vendor",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "serviceType",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "status",
+        "value" : "planning",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "isArchived",
+        "value" : null,
+        "required" : false,
+        "type" : "boolean",
+        "raw_value" : null
+      }, {
+        "name" : "archivedOn",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "modifyDomainGroup",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "externalId",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "version",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "lastModifiedBy",
+        "value" : "sysadm",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "lockedOn",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "comments",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "scheduledDate",
+        "value" : "2021-01-11T21:00:00.000Z",
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "revisionNumber",
+        "value" : 1,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "dueDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "decommissionDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "SO_RESOURCE::resourceType",
+        "value" : "NetworkService",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : "NetworkService"
+      }, {
+        "name" : "queryDomainGroup",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "SO_NS::vdcId",
+        "value" : "",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : ""
+      }, {
+        "name" : "SO_RESOURCE::customTemplates",
+        "value" : [ ],
+        "required" : false,
+        "type" : "list",
+        "raw_value" : [ ]
+      }, {
+        "name" : "lastModifiedOn",
+        "value" : 1635786763958,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      } ],
+      "nodeattributes" : [ {
+        "name" : "tosca_id",
+        "value" : "networkService_1",
+        "type" : "string",
+        "description" : "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+        "raw_value" : "networkService_1"
+      }, {
+        "name" : "tosca_name",
+        "value" : "networkService",
+        "type" : "string",
+        "description" : "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+        "raw_value" : "networkService"
+      }, {
+        "name" : "state",
+        "value" : "initial",
+        "type" : "string",
+        "description" : "The state of the node instance.",
+        "raw_value" : "initial"
+      } ],
+      "relationship" : [ {
+        "target" : "nsSubsystem_1",
+        "requirementName" : "subsystemReferences",
+        "relationshipName" : null,
+        "action" : "add"
+      }, {
+        "target" : "nsConnection_1",
+        "requirementName" : "relatedParty",
+        "relationshipName" : null,
+        "action" : "add"
+      } ]
+    }, {
+      "name" : "nsConnection_1",
+      "state" : "Started",
+      "action" : "noChange",
+      "instanceIDs" : [ ],
+      "directives" : [ "select" ],
+      "artifacts" : [ ],
+      "interfaces" : [ {
+        "name" : "Standard",
+        "inputs" : [ ],
+        "operations" : [ {
+          "name" : "delete",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "stop",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "start",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "configure",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "create",
+          "inputs" : [ ],
+          "implementation" : null
+        } ],
+        "notifications" : [ ]
+      } ],
+      "nodetype" : "topology.nodes.ctg.relatedParty",
+      "parent_type" : "topology.nodes.sdk.managedObject",
+      "nodeproperties" : [ {
+        "name" : "installedDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "objectInstId",
+        "value" : 6,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "lockOwner",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "inServiceDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "createdOn",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "resourceType",
+        "value" : null,
+        "required" : true,
+        "type" : "string",
+        "raw_value" : "Resource"
+      }, {
+        "name" : "name",
+        "value" : "connection2",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "lockedBy",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "orderedDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "createdBy",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "ConnectivityMetrics::meanRTT",
+        "value" : null,
+        "required" : false,
+        "type" : "float",
+        "raw_value" : null
+      }, {
+        "name" : "versionNumber",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "archivedBy",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "status",
+        "value" : "planning",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "externalId",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "isArchived",
+        "value" : null,
+        "required" : false,
+        "type" : "boolean",
+        "raw_value" : null
+      }, {
+        "name" : "archivedOn",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "modifyDomainGroup",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "role",
+        "value" : "Tenant",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "lastModifiedBy",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "lockedOn",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "comments",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "scheduledDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "revisionNumber",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "dueDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "decommissionDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "queryDomainGroup",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "lastModifiedOn",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      } ],
+      "nodeattributes" : [ {
+        "name" : "tosca_id",
+        "value" : "nsConnection_1",
+        "type" : "string",
+        "description" : "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+        "raw_value" : "nsConnection_1"
+      }, {
+        "name" : "tosca_name",
+        "value" : "nsConnection",
+        "type" : "string",
+        "description" : "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+        "raw_value" : "nsConnection"
+      }, {
+        "name" : "state",
+        "value" : "Started",
+        "type" : "string",
+        "description" : "The state of the node instance.",
+        "raw_value" : "Started"
+      } ],
+      "relationship" : [ ]
+    }, {
+      "name" : "enmSubsystem_1",
+      "state" : "Started",
+      "action" : "noChange",
+      "instanceIDs" : [ ],
+      "directives" : [ "select" ],
+      "artifacts" : [ ],
+      "interfaces" : [ {
+        "name" : "Standard",
+        "inputs" : [ ],
+        "operations" : [ {
+          "name" : "delete",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "stop",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "start",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "configure",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "create",
+          "inputs" : [ ],
+          "implementation" : null
+        } ],
+        "notifications" : [ ]
+      } ],
+      "nodetype" : "topology.nodes.ctc.subsystemRef",
+      "parent_type" : "topology.nodes.sdk.managedObject",
+      "nodeproperties" : [ {
+        "name" : "installedDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "objectInstId",
+        "value" : 3,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "lockOwner",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "inServiceDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "createdOn",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "resourceType",
+        "value" : null,
+        "required" : true,
+        "type" : "string",
+        "raw_value" : "Resource"
+      }, {
+        "name" : "name",
+        "value" : "enm",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "lockedBy",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "orderedDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "createdBy",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "versionNumber",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "archivedBy",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "status",
+        "value" : "operating",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "isArchived",
+        "value" : null,
+        "required" : false,
+        "type" : "boolean",
+        "raw_value" : null
+      }, {
+        "name" : "archivedOn",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "modifyDomainGroup",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "externalId",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "lastModifiedBy",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "lockedOn",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "comments",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "scheduledDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "revisionNumber",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "dueDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "decommissionDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "queryDomainGroup",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "lastModifiedOn",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      } ],
+      "nodeattributes" : [ {
+        "name" : "tosca_id",
+        "value" : "enmSubsystem_1",
+        "type" : "string",
+        "description" : "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+        "raw_value" : "enmSubsystem_1"
+      }, {
+        "name" : "tosca_name",
+        "value" : "enmSubsystem",
+        "type" : "string",
+        "description" : "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+        "raw_value" : "enmSubsystem"
+      }, {
+        "name" : "state",
+        "value" : "Started",
+        "type" : "string",
+        "description" : "The state of the node instance.",
+        "raw_value" : "Started"
+      } ],
+      "relationship" : [ ]
+    }, {
+      "name" : "nsSubsystem_1",
+      "state" : "Started",
+      "action" : "noChange",
+      "instanceIDs" : [ ],
+      "directives" : [ "select" ],
+      "artifacts" : [ ],
+      "interfaces" : [ {
+        "name" : "Standard",
+        "inputs" : [ ],
+        "operations" : [ {
+          "name" : "delete",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "stop",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "start",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "configure",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "create",
+          "inputs" : [ ],
+          "implementation" : null
+        } ],
+        "notifications" : [ ]
+      } ],
+      "nodetype" : "topology.nodes.ctc.subsystemRef",
+      "parent_type" : "topology.nodes.sdk.managedObject",
+      "nodeproperties" : [ {
+        "name" : "installedDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "objectInstId",
+        "value" : 1,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "lockOwner",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "inServiceDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "createdOn",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "resourceType",
+        "value" : null,
+        "required" : true,
+        "type" : "string",
+        "raw_value" : "Resource"
+      }, {
+        "name" : "name",
+        "value" : "ecm",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "lockedBy",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "orderedDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "createdBy",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "versionNumber",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "archivedBy",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "status",
+        "value" : "operating",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "isArchived",
+        "value" : null,
+        "required" : false,
+        "type" : "boolean",
+        "raw_value" : null
+      }, {
+        "name" : "archivedOn",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "modifyDomainGroup",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "externalId",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "lastModifiedBy",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "lockedOn",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "comments",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "scheduledDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "revisionNumber",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "dueDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "decommissionDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "queryDomainGroup",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "lastModifiedOn",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      } ],
+      "nodeattributes" : [ {
+        "name" : "tosca_id",
+        "value" : "nsSubsystem_1",
+        "type" : "string",
+        "description" : "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+        "raw_value" : "nsSubsystem_1"
+      }, {
+        "name" : "tosca_name",
+        "value" : "nsSubsystem",
+        "type" : "string",
+        "description" : "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+        "raw_value" : "nsSubsystem"
+      }, {
+        "name" : "state",
+        "value" : "Started",
+        "type" : "string",
+        "description" : "The state of the node instance.",
+        "raw_value" : "Started"
+      } ],
+      "relationship" : [ ]
+    }, {
+      "name" : "vimZone_1",
+      "state" : "Started",
+      "action" : "noChange",
+      "instanceIDs" : [ ],
+      "directives" : [ "select" ],
+      "artifacts" : [ ],
+      "interfaces" : [ {
+        "name" : "Standard",
+        "inputs" : [ ],
+        "operations" : [ {
+          "name" : "delete",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "stop",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "start",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "configure",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "create",
+          "inputs" : [ ],
+          "implementation" : null
+        } ],
+        "notifications" : [ ]
+      } ],
+      "nodetype" : "topology.nodes.ctv.vimZone",
+      "parent_type" : "topology.nodes.ctv.vrm",
+      "nodeproperties" : [ {
+        "name" : "installedDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "objectInstId",
+        "value" : 8,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "lockOwner",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "totalStorage",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "totalvCPUs",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "inServiceDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "numberOfServers",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "createdOn",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "resourceType",
+        "value" : null,
+        "required" : true,
+        "type" : "string",
+        "raw_value" : "Resource"
+      }, {
+        "name" : "name",
+        "value" : "vimZone_1",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "hypervisorType",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "lockedBy",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "orderedDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "createdBy",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "versionNumber",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "extNetworkVimObjectId",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "ctvNetworkType",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "numberOfVMs",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "archivedBy",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "description",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "vendor",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "status",
+        "value" : "operating",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "type",
+        "value" : "Ericsson - Cloud Execution Environment (CEE)",
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "isArchived",
+        "value" : null,
+        "required" : false,
+        "type" : "boolean",
+        "raw_value" : null
+      }, {
+        "name" : "archivedOn",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "modifyDomainGroup",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "externalId",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "version",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "lastModifiedBy",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "lockedOn",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "comments",
+        "value" : null,
+        "required" : false,
+        "type" : "string",
+        "raw_value" : null
+      }, {
+        "name" : "scheduledDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "revisionNumber",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "dueDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "decommissionDate",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      }, {
+        "name" : "queryDomainGroup",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "totalMemory",
+        "value" : null,
+        "required" : false,
+        "type" : "integer",
+        "raw_value" : null
+      }, {
+        "name" : "lastModifiedOn",
+        "value" : null,
+        "required" : false,
+        "type" : "timestamp",
+        "raw_value" : null
+      } ],
+      "nodeattributes" : [ {
+        "name" : "tosca_id",
+        "value" : "vimZone_1",
+        "type" : "string",
+        "description" : "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+        "raw_value" : "vimZone_1"
+      }, {
+        "name" : "tosca_name",
+        "value" : "vimZone",
+        "type" : "string",
+        "description" : "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+        "raw_value" : "vimZone"
+      }, {
+        "name" : "state",
+        "value" : "Started",
+        "type" : "string",
+        "description" : "The state of the node instance.",
+        "raw_value" : "Started"
+      } ],
+      "relationship" : [ ]
+    } ]
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/serviceOrder?fields=id",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalId == '0a073524-6333-424c-93a3-d2f13ff19189')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalVersion == '1.0')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service[?(@.name == 'service_modify_1')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0][?(@.action == 'delete')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_assigned.json",
+        "transformerParameters": {
+          "orderId": "502"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/assigned_event.json",
+          "serviceInstanceId": "Service_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-10"
+        }
+      }
+    },
+    {
+      "scenarioName": "UNDEPLOY",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/service-instances/Service_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-10"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify/modify_instance_delete.json",
+        "transformerParameters": {
+          "serviceName": "service_modify_1"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v2.7/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id == 'Service_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-10')]"},
+          {"matchesJsonPath" : "$[?(@.workflow == 'undeploy')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/modify/modify_service_undeploy.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice/10?fs=dynAttrs"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs.json",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+          "serviceName": "service_modify_1",
+          "id": "10",
+          "status": "retiring"
+        }
+      }
+    },
+    {
+      "scenarioName": "UNDEPLOY_GET_RFS",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice?revisionGroupKey=10"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs.json",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+          "serviceName": "service_modify_1",
+          "revision": 2,
+          "status": "retiring",
+          "id": "10",
+          "invariantId": "a13fc19f-7420-4a7e-bab1-995c62575787"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/completeServiceOrder",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrder[?(@.id == '502')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_completed.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/completed_event.json",
+          "serviceInstanceId": "Service_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-10"
+        }
+      }
+    }
+  ]
+}

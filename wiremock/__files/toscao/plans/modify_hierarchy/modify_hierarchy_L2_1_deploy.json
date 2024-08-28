@@ -1,0 +1,99 @@
+{
+	"workflow": "deploy",
+	"serviceExecutionPlan": {
+		"operations": [
+			{
+				"id": "networkService_1.Standard.create.9184",
+				"name": "create",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "networkService_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [],
+				"failure_dependency_operations": []
+			},
+			{
+				"id": "networkService_1.Standard.configure.9185",
+				"name": "configure",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "networkService_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [
+					"networkService_1.Standard.create.9184"
+				],
+				"failure_dependency_operations": []
+			},
+			{
+				"id": "networkService_1.Standard.start.9186",
+				"name": "start",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "networkService_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [
+					"networkService_1.Standard.configure.9185"
+				],
+				"failure_dependency_operations": []
+			},
+			{
+				"id": "Service_L3_1_1.Standard.create.9189",
+				"name": "create",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "Service_L3_1_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [],
+				"failure_dependency_operations": []
+			},
+			{
+				"id": "Service_L3_1_1.Standard.configure.9190",
+				"name": "configure",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "Service_L3_1_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [
+					"Service_L3_1_1.Standard.create.9189"
+				],
+				"failure_dependency_operations": []
+			},
+			{
+				"id": "Service_L3_1_1.Standard.start.9191",
+				"name": "start",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "Service_L3_1_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [
+					"Service_L3_1_1.Standard.configure.9190"
+				],
+				"failure_dependency_operations": []
+			}
+		]
+	}
+}

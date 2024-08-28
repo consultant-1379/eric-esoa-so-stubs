@@ -1,0 +1,101 @@
+{
+	"workflow": "deploy",
+	"serviceExecutionPlan": {
+		"operations": [
+			{
+				"id": "Service_L2_1_1.Standard.create.9156",
+				"name": "create",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "Service_L2_1_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [],
+				"failure_dependency_operations": []
+			},
+			{
+				"id": "Service_L2_1_1.Standard.configure.9157",
+				"name": "configure",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "Service_L2_1_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [
+					"Service_L2_1_1.Standard.create.9156"
+				],
+				"failure_dependency_operations": []
+			},
+			{
+				"id": "Service_L2_1_1.Standard.start.9158",
+				"name": "start",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "Service_L2_1_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [
+					"Service_L2_1_1.Standard.configure.9157"
+				],
+				"failure_dependency_operations": []
+			},
+			{
+				"id": "Service_L2_2_1.Standard.create.9161",
+				"name": "create",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "Service_L2_2_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [
+					"Service_L2_1_1.Standard.start.9158"
+				],
+				"failure_dependency_operations": []
+			},
+			{
+				"id": "Service_L2_2_1.Standard.configure.9162",
+				"name": "configure",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "Service_L2_2_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [
+					"Service_L2_2_1.Standard.create.9161"
+				],
+				"failure_dependency_operations": []
+			},
+			{
+				"id": "Service_L2_2_1.Standard.start.9163",
+				"name": "start",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "Service_L2_2_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [
+					"Service_L2_2_1.Standard.configure.9162"
+				],
+				"failure_dependency_operations": []
+			}
+		]
+	}
+}

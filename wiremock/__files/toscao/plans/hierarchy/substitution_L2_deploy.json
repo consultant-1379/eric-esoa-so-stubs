@@ -1,0 +1,46 @@
+{
+  "workflow": "deploy",
+  "serviceExecutionPlan": {
+    "operations": [{
+      "id": "NSSI_CORE_1.Standard.create.78",
+      "name": "create",
+      "interface": "Standard",
+      "type": "node",
+      "activity": "call_operation",
+      "node": "NSSI_CORE_1",
+      "implementation": null,
+      "post_state": null,
+      "pre_state": null,
+      "inputs": [],
+      "dependency_operations": [],
+      "failure_dependency_operations": []
+    }, {
+      "id": "NSSI_CORE_1.Standard.configure.79",
+      "name": "configure",
+      "interface": "Standard",
+      "type": "node",
+      "activity": "call_operation",
+      "node": "NSSI_CORE_1",
+      "implementation": null,
+      "post_state": null,
+      "pre_state": null,
+      "inputs": [],
+      "dependency_operations": ["NSSI_CORE_1.Standard.create.78"],
+      "failure_dependency_operations": []
+    }, {
+      "id": "NSSI_CORE_1.Standard.start.80",
+      "name": "start",
+      "interface": "Standard",
+      "type": "node",
+      "activity": "call_operation",
+      "node": "NSSI_CORE_1",
+      "implementation": null,
+      "post_state": null,
+      "pre_state": null,
+      "inputs": [],
+      "dependency_operations": ["NSSI_CORE_1.Standard.configure.79"],
+      "failure_dependency_operations": []
+    }
+    ]
+  }
+}

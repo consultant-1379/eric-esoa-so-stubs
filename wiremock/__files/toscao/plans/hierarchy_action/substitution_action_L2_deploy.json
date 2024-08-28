@@ -1,0 +1,114 @@
+{
+  "workflow": "deploy",
+  "serviceExecutionPlan": {
+    "operations": [
+      {
+        "id": "NSSI_CORE_1.Standard.create.344",
+        "name": "create",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NSSI_CORE_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NSSI_CORE_1.Standard.configure.345",
+        "name": "configure",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NSSI_CORE_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NSSI_CORE_1.Standard.create.344"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NSSI_CORE_1.Standard.start.346",
+        "name": "start",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NSSI_CORE_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NSSI_CORE_1.Standard.configure.345"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NSSI_OTHER_1.Standard.create.349",
+        "name": "create",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NSSI_OTHER_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NSSI_CORE_1.Standard.start.346"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NSSI_OTHER_1.Standard.configure.350",
+        "name": "configure",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NSSI_OTHER_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NSSI_OTHER_1.Standard.create.349"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NSSI_OTHER_1.Standard.start.351",
+        "name": "start",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NSSI_OTHER_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NSSI_OTHER_1.Standard.configure.350"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NSSI_OTHER_1->NSSI_CORE_1.Configure.add_target.74",
+        "name": "add_target",
+        "interface": "Configure",
+        "type": "relationship",
+        "activity": "call_operation",
+        "source_node": "NSSI_OTHER_1",
+        "target_node": "NSSI_CORE_1",
+        "implementation": "action/Attach",
+        "inputs": [],
+        "dependency_operations": ["NSSI_OTHER_1.Standard.start.351"],
+        "failure_dependency_operations": []
+      }
+    ]
+  }
+}

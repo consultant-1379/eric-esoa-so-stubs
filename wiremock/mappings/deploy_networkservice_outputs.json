@@ -1,0 +1,216 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/serviceOrder?fields=id",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalId == '921367aa-a4cc-4405-b671-1e0af0f6a48a')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalVersion == '1.0')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service[?(@.name == 'service_outputs_1')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0][?(@.action == 'add')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_assigned.json",
+        "transformerParameters": {
+          "orderId": "20"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/assigned_event.json",
+          "serviceInstanceId": "ServiceOutputs_000001-Service-ocrs-resourceFacingService-revisionGroupKey-12"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/service-instances/ServiceOutputs_000001-Service-ocrs-resourceFacingService-revisionGroupKey-12"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/network_service_outputs_instance.json",
+        "transformerParameters": {
+          "serviceName": "service_outputs_1"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts?query=invariantUUID==921367aa-a4cc-4405-b671-1e0af0f6a48a;type==SERVICE_MODEL;version==1.0&listInternalArtifacts=true"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "items": [
+            {
+              "id": "4",
+              "name": "ServiceOutputs",
+              "invariantUUID": "921367aa-a4cc-4405-b671-1e0af0f6a48a",
+              "version": "1.0",
+              "type": "SERVICE_MODEL"
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts/4/download?archive=false"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "catalog/service-models/network_service_outputs_model_4.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v2.7/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id == 'ServiceOutputs_000001-Service-ocrs-resourceFacingService-revisionGroupKey-12')]"},
+          {"matchesJsonPath" : "$[?(@.workflow == 'deploy')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/networkservice_outputs/networkservice_outputs_deploy.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice?revisionGroupKey=12"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs.json",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+          "serviceName": "service_outputs_1",
+          "id": "12"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice/12?fs=dynAttrs"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs.json",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+          "serviceName": "service_outputs_1",
+          "id": "12"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ctv/virtnetworkserv/200?fs=dynAttrs"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/virtnetworkserv_200.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/oaf-adv/objectmetadata/objectDescriptor"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/object_descriptors.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/oaf/dynamicattributegroupdefinition/byObjectTypeId?objectTypeId=158"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/virtnetworkserv_dynattr_defs.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "PATCH",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice/12",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.dynamicAttributes[?(@.attributeName == 'stringOutput1')][?(@.stringAttributeValue == 'value1')]"},
+          {"matchesJsonPath" : "$.dynamicAttributes[?(@.attributeName == 'stringOutput2')][?(@.stringAttributeValue == '100')]"},
+          {"matchesJsonPath" : "$.dynamicAttributes[?(@.attributeName == 'stringOutput3')][?(@.stringAttributeValue == 'true')]"},
+          {"matchesJsonPath" : "$.dynamicAttributes[?(@.attributeName == 'stringOutput4')][?(@.stringAttributeValue == 'value1')]"},
+          {"matchesJsonPath" : "$.dynamicAttributes[?(@.attributeName == 'stringOutput5')][?(@.stringAttributeValue == 'value1-100')]"},
+          {"matchesJsonPath" : "$.dynamicAttributes[?(@.attributeName == 'intOutput')][?(@.longAttributeValue == 100)]"},
+          {"matchesJsonPath" : "$.dynamicAttributes[?(@.attributeName == 'booleanOutput')][?(@.booleanAttributeValue == true)]"},
+          {"matchesJsonPath" : "$.dynamicAttributes[?(@.attributeName == 'listOutput')][?(@.listAttributeValue == ['a', 'b', 'c'])]"}
+        ]
+      },
+      "response": {
+        "status": 200
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/completeServiceOrder",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrder[?(@.id == '20')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_completed.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/completed_event.json",
+          "serviceInstanceId": "ServiceOutputs_000001-Service-ocrs-resourceFacingService-revisionGroupKey-12"
+        }
+      }
+    }
+  ]
+}

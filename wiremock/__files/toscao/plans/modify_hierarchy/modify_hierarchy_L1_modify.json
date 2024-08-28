@@ -1,0 +1,69 @@
+{
+	"workflow": "modify",
+	"serviceExecutionPlan": {
+		"operations": [
+			{
+				"id": "Service_L2_1_1.Modify.pre_modify.9432",
+				"name": "pre_modify",
+				"interface": "Modify",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "Service_L2_1_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [],
+				"failure_dependency_operations": []
+			},
+			{
+				"id": "Service_L2_1_1.Modify.modify.9433",
+				"name": "modify",
+				"interface": "Modify",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "Service_L2_1_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [
+					"Service_L2_1_1.Modify.pre_modify.9432"
+				],
+				"failure_dependency_operations": []
+			},
+			{
+				"id": "Service_L2_2_1.Modify.pre_modify.9436",
+				"name": "pre_modify",
+				"interface": "Modify",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "Service_L2_2_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [
+					"Service_L2_1_1.Modify.modify.9433"
+				],
+				"failure_dependency_operations": []
+			},
+			{
+				"id": "Service_L2_2_1.Modify.modify.9437",
+				"name": "modify",
+				"interface": "Modify",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "Service_L2_2_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [
+					"Service_L2_2_1.Modify.pre_modify.9436"
+				],
+				"failure_dependency_operations": []
+			}
+		]
+	}
+}

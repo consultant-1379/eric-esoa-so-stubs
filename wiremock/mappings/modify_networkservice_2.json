@@ -1,0 +1,207 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/serviceOrder?fields=id",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalId == '0a073524-6333-424c-93a3-d2f13ff19189')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalVersion == '1.0')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service[?(@.name =~ /^(modify.*)$/)]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0][?(@.action =~ /^(modify|add|delete)$/)]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_assigned.json",
+        "transformerParameters": {
+          "orderId": "401"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/assigned_event.json",
+          "serviceInstanceId": "Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-200"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/ocrs\/resourcefacingservice\\?invariantId=.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs2.json",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+          "serviceName": "service_modify_1",
+          "status": "active",
+          "invariantId": "a13fc19f-7420-4a7e-bab1-995c62575787",
+          "id": 10
+        }
+      }
+    },
+
+
+    {
+      "scenarioName": "MODIFY",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/service-instances\/Service_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify/modify_instance_add.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "MODIFY",
+      "requiredScenarioState": "modify",
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/service-instances\/Service_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify/modify_instance_modify.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "MODIFY",
+      "requiredScenarioState": "undeploy",
+      "request": {
+        "method": "GET",
+        "urlPattern": "^\/oss-core-ws\/rest\/service-instances\/Service_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-.*"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify/modify_instance_delete.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "MODIFY",
+      "requiredScenarioState": "FETCH_INSTANCE_ERROR",
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/service-instances/Service_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-10"
+      },
+      "response": {
+        "status": 500,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "jsonBody": {
+          "type": "GraniteFaultStack",
+          "messageText": "NdToscaMsg.SCD_NOT_FOUND_BY_NAME",
+          "faults": []
+        }
+      }
+    },
+    {
+      "scenarioName": "MODIFY_GET_RFS",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice?revisionGroupKey=10"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs.json",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+          "serviceName": "service_modify_1",
+          "revision": 2,
+          "id": 10,
+          "invariantId": "a13fc19f-7420-4a7e-bab1-995c62575787"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/completeServiceOrder",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrder[?(@.id == '501')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_completed.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions": {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/completed_event.json",
+          "serviceInstanceId": "Service_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-10"
+        }
+      }
+    },
+    {
+      "scenarioName": "MODIFY",
+      "requiredScenarioState": "COMPLETE_ORDER_ERROR",
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/completeServiceOrder",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrder[?(@.id == '501')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_completed.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions": {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/completed_failed_event.json",
+          "serviceInstanceId": "Service_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-10"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/cancelServiceOrder",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrder[?(@.id == '501')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_cancelled.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions": {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/cancelled_event.json",
+          "serviceInstanceId": "Service_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-10"
+        }
+      }
+    }
+  ]
+}

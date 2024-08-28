@@ -1,0 +1,272 @@
+{
+  "id" : "{{request.pathSegments.[3]}}",
+  "workflow": "modify",
+  "creTime": "2022-12-12T15:27:14.431Z",
+  "name" : "{{parameters.serviceName}}",
+  "serviceModelID": "83852209-2ae3-4b6b-865f-3e5a4261f007",
+  "catalogInvariantUUID": "45387729-dd42-4313-8c33-3aa8860ba13b",
+  "catalogVersion": "1.0",
+  "catalogId": 99,
+  "metadata": {},
+  "substitutingModelIDs": [],
+  "state": "TO BE DEPLOYED",
+  "workflows": [],
+  "topology": {
+    "inputs": [
+      {
+        "name": "node_name",
+        "value": "node_1",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "capacity",
+        "value": 1,
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "name": "vimZoneName",
+        "value": "vimZone_1",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "policies": [],
+    "outputs": [],
+    "relationship_templates": [],
+    "nodes": [
+      {
+        "name": "Node_1_1",
+        "state": "initial",
+        "action": "add",
+        "instanceIDs": [],
+        "directives": [],
+        "occurrences": null,
+        "artifacts": [],
+        "interfaces": [
+          {
+            "name": "Standard",
+            "inputs": [],
+            "operations": [
+              {
+                "name": "create",
+                "inputs": [],
+                "implementation": "workflow/enabler"
+              },
+              {
+                "name": "configure",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "start",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "stop",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "delete",
+                "inputs": [],
+                "implementation": null
+              }
+            ],
+            "notifications": []
+          },
+          {
+            "name": "Modify",
+            "inputs": [],
+            "operations": [
+              {
+                "name": "Modify",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "pre_modify",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "modify",
+                "inputs": [],
+                "implementation": "workflow/enabler"
+              }
+            ]
+          }
+        ],
+        "nodetype": "naas.AtomicService1",
+        "parent_type": "naas.AtomicServiceBase",
+        "nodeproperties": [
+          {
+            "name": "name",
+            "value": "node_1_v2",
+            "required": false,
+            "type": "string",
+            "raw_value": {
+              "get_input": "node_name"
+            }
+          },
+          {
+            "name": "capacity",
+            "value": 1,
+            "required": false,
+            "type": "integer",
+            "raw_value": {
+              "get_input": "capacity"
+            }
+          },
+          {
+            "name": "objectInstId",
+            "value": 95,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "vimZoneName",
+            "value": "vimZone_1",
+            "required": false,
+            "type": "string",
+            "raw_value": {
+              "get_input": "vimZoneName"
+            }
+          }
+        ],
+        "nodeattributes": [
+          {
+            "name": "tosca_id",
+            "value": "Node_1_1",
+            "type": "string",
+            "description": "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+            "raw_value": "Node_1_1"
+          },
+          {
+            "name": "tosca_name",
+            "value": "Node_1",
+            "type": "string",
+            "description": "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+            "raw_value": "Node_1"
+          },
+          {
+            "name": "state",
+            "value": "initial",
+            "type": "string",
+            "description": "The state of the node instance.",
+            "raw_value": "initial"
+          }
+        ],
+        "relationship": []
+      },
+      {
+        "name": "Node_1_1_prev",
+        "state": "Started",
+        "action": "delete",
+        "instanceIDs": [],
+        "directives": [],
+        "occurrences": null,
+        "artifacts": [],
+        "interfaces": [
+          {
+            "name": "Standard",
+            "inputs": [],
+            "operations": [
+              {
+                "name": "create",
+                "inputs": [],
+                "implementation": "workflow/log_operation_vars"
+              },
+              {
+                "name": "configure",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "start",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "stop",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "delete",
+                "inputs": [],
+                "implementation": null
+              }
+            ],
+            "notifications": []
+          }
+        ],
+        "nodetype": "naas.AtomicService1",
+        "parent_type": "naas.AtomicServiceBase",
+        "nodeproperties": [
+          {
+            "name": "name",
+            "value": "node_1",
+            "required": false,
+            "type": "string",
+            "raw_value": {
+              "get_input": "node_name"
+            }
+          },
+          {
+            "name": "objectInstId",
+            "value": 94,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "capacity",
+            "value": 1,
+            "required": false,
+            "type": "integer",
+            "raw_value": {
+              "get_input": "capacity"
+            }
+          },
+          {
+            "name": "vimZoneName",
+            "value": "vimZone_1",
+            "required": false,
+            "type": "string",
+            "raw_value": {
+              "get_input": "vimZoneName"
+            }
+          }
+        ],
+        "nodeattributes": [
+          {
+            "name": "tosca_id",
+            "value": "Node_1_1_prev",
+            "type": "string",
+            "description": "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+            "raw_value": "Node_1_1_prev"
+          },
+          {
+            "name": "tosca_name",
+            "value": "Node_1",
+            "type": "string",
+            "description": "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+            "raw_value": "Node_1"
+          },
+          {
+            "name": "state",
+            "value": "Started",
+            "type": "string",
+            "description": "The state of the node instance.",
+            "raw_value": "Started"
+          }
+        ],
+        "relationship": []
+      }
+    ]
+  }
+}

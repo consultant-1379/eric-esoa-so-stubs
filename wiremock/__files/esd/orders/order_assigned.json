@@ -1,0 +1,5 @@
+
+{
+  "id": "{{jsonPath request.body '$.serviceOrderItem[0].service.name'}}",
+  "href": "oss-core-ws/rest/serviceOrdering/v4/serviceOrder/{{jsonPath request.body '$.serviceOrderItem[0].service.name'}}"
+}

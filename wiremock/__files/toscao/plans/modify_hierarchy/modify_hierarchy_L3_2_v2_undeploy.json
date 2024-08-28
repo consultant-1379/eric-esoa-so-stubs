@@ -1,0 +1,37 @@
+{
+	"workflow": "undeploy",
+	"serviceExecutionPlan": {
+		"operations": [
+			{
+				"id": "networkService_1.Standard.stop.9279",
+				"name": "stop",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "networkService_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [],
+				"failure_dependency_operations": []
+			},
+			{
+				"id": "networkService_1.Standard.delete.9280",
+				"name": "delete",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "networkService_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [
+					"networkService_1.Standard.stop.9279"
+				],
+				"failure_dependency_operations": []
+			}
+		]
+	}
+}

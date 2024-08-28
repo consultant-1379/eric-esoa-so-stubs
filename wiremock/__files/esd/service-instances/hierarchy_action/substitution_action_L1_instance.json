@@ -1,0 +1,174 @@
+{
+  "id" : "{{request.pathSegments.[3]}}",
+  "creTime" : "2021-09-27T18:29:59.158Z",
+  "name" : "{{parameters.serviceName}}",
+  "serviceModelID" : "dc52ca1c-da08-4ca4-b76a-c69b5bc02b85",
+  "catalogInvariantUUID" : "1cf052a2-66dc-4c09-98fe-cb951c74e1f7",
+  "catalogVersion" : "1.0",
+  "catalogId" : 200,
+  "metadata" : {
+    "template_name" : null,
+    "template_author" : null,
+    "template_version" : null,
+    "category" : "CORE",
+    "serviceType" : "NSI",
+    "resourceSharingLevel" : "Shared"
+  },
+  "substitutingModelIDs" : [ ],
+  "state" : "TO BE DEPLOYED",
+  "workflows" : [ ],
+  "topology" : {
+    "inputs" : [ {
+      "name" : "service_type",
+      "value" : "CORE_2",
+      "required" : true,
+      "type" : "string"
+    }, {
+      "name" : "ns_name_1",
+      "value" : "ns1",
+      "required" : true,
+      "type" : "string"
+    }, {
+      "name" : "ns_vnf_name_1",
+      "value" : "vnf1",
+      "required" : true,
+      "type" : "string"
+    }, {
+      "name" : "ns_name_2",
+      "value" : "ns2",
+      "required" : true,
+      "type" : "string"
+    }, {
+      "name" : "ns_vnf_name_2",
+      "value" : "vnf2",
+      "required" : true,
+      "type" : "string"
+    }, {
+      "name" : "vimZone",
+      "value" : "vimZone1",
+      "required" : true,
+      "type" : "string"
+    }, {
+      "name" : "tenant",
+      "value" : "ecm",
+      "required" : true,
+      "type" : "string"
+    } ],
+    "policies" : [ ],
+    "outputs" : [ ],
+    "relationshipTemplates" : [ ],
+    "nodes" : [ {
+      "name" : "Service_L2_1",
+      "state" : "initial",
+      "action" : "add",
+      "instanceIDs" : [ "Service_L2_2_000001-Service-ocrs-resourceFacingService-revisionGroupKey-3" ],
+      "directives" : [ "substitute" ],
+      "artifacts" : [ ],
+      "interfaces" : [ {
+        "name" : "Standard",
+        "inputs" : [ ],
+        "operations" : [ {
+          "name" : "delete",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "stop",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "start",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "configure",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "create",
+          "inputs" : [ ],
+          "implementation" : null
+        } ],
+        "notifications" : [ ]
+      } ],
+      "nodetype" : "com.ericsson.so.nodes.CoreService",
+      "parent_type" : "tosca.nodes.Root",
+      "nodeproperties" : [ {
+        "name" : "ns1_vnf_name",
+        "value" : null,
+        "required" : true,
+        "type" : "string",
+        "raw_value" : {
+          "get_input" : "ns_vnf_name_1"
+        }
+      }, {
+        "name" : "type",
+        "value" : null,
+        "required" : true,
+        "type" : "string",
+        "raw_value" : {
+          "get_input" : "service_type"
+        }
+      }, {
+        "name" : "ns2_name",
+        "value" : null,
+        "required" : true,
+        "type" : "string",
+        "raw_value" : {
+          "get_input" : "ns_name_2"
+        }
+      }, {
+        "name" : "ns2_vnf_name",
+        "value" : null,
+        "required" : true,
+        "type" : "string",
+        "raw_value" : {
+          "get_input" : "ns_vnf_name_2"
+        }
+      }, {
+        "name" : "ns_tenant",
+        "value" : null,
+        "required" : true,
+        "type" : "string",
+        "raw_value" : {
+          "get_input" : "tenant"
+        }
+      }, {
+        "name" : "ns_vimZone",
+        "value" : null,
+        "required" : true,
+        "type" : "string",
+        "raw_value" : {
+          "get_input" : "vimZone"
+        }
+      }, {
+        "name" : "ns1_name",
+        "value" : null,
+        "required" : true,
+        "type" : "string",
+        "raw_value" : {
+          "get_input" : "ns_name_1"
+        }
+      } ],
+      "nodeattributes" : [ {
+        "name" : "tosca_id",
+        "value" : "Service_L2_1",
+        "type" : "string",
+        "description" : "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+        "raw_value" : "Service_L2_1"
+      }, {
+        "name" : "tosca_name",
+        "value" : "Service_L2",
+        "type" : "string",
+        "description" : "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+        "raw_value" : "Service_L2"
+      }, {
+        "name" : "state",
+        "value" : "initial",
+        "type" : "string",
+        "description" : "The state of the node instance.",
+        "raw_value" : "initial"
+      } ],
+      "relationship" : [ ]
+    } ]
+  }
+}

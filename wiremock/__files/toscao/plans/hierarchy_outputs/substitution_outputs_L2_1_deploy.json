@@ -1,0 +1,101 @@
+{
+  "workflow": "deploy",
+  "serviceExecutionPlan": {
+    "operations": [
+      {
+        "id": "NFVO_SUBSYSTEM_1.Standard.create.1941",
+        "name": "create",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NFVO_SUBSYSTEM_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NFVO_SUBSYSTEM_1.Standard.configure.1942",
+        "name": "configure",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NFVO_SUBSYSTEM_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NFVO_SUBSYSTEM_1.Standard.create.1941"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NFVO_SUBSYSTEM_1.Standard.start.1943",
+        "name": "start",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NFVO_SUBSYSTEM_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NFVO_SUBSYSTEM_1.Standard.configure.1942"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NETWORK_SERVICE_1.Standard.create.1946",
+        "name": "create",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NETWORK_SERVICE_1",
+        "implementation": "camunda/enabler",
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NFVO_SUBSYSTEM_1.Standard.start.1943"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NETWORK_SERVICE_1.Standard.configure.1947",
+        "name": "configure",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NETWORK_SERVICE_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NETWORK_SERVICE_1.Standard.create.1946"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NETWORK_SERVICE_1.Standard.start.1948",
+        "name": "start",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NETWORK_SERVICE_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NETWORK_SERVICE_1.Standard.configure.1947"
+        ],
+        "failure_dependency_operations": []
+      }
+    ]
+  }
+}

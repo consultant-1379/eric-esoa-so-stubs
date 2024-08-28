@@ -1,0 +1,74 @@
+{
+  "type": "ctv/virtualnetworkservice",
+  "id": 369,
+  "href": "ctv/virtnetworkserv/369",
+  "dynamicAttributes": [
+    {
+      "attributeKey": 493,
+      "groupName": "SO_NS",
+      "attributeName": "nsdId",
+      "stringAttributeValue": "nsdId123",
+      "attributeDefinitionId": 5
+    },
+    {
+      "attributeKey": 494,
+      "groupName": "SO_NS",
+      "attributeName": "vdcName",
+      "stringAttributeValue": "vdc111",
+      "attributeDefinitionId": 14
+    },
+    {
+      "attributeKey": 495,
+      "groupName": "SO_NS",
+      "attributeName": "nsStringAttr1",
+      "stringAttributeValue": "stringValue1",
+      "attributeDefinitionId": 15
+    },
+    {
+      "attributeKey": 496,
+      "groupName": "SO_NS",
+      "attributeName": "nsBooleanAttr1",
+      "booleanAttributeValue": true,
+      "attributeDefinitionId": 16
+    },
+    {
+      "attributeKey": 497,
+      "groupName": "SO_NS",
+      "attributeName": "nsListAttr1",
+      "listAttributeValue":  ["value1", "value2"],
+      "attributeDefinitionId": 17
+    },
+    {
+      "attributeKey": 498,
+      "groupName": "SO_NS",
+      "attributeName": "nsMapAttr1",
+      "mapAttributeValue": {"key1": "value1", "key2": "value2"},
+      "attributeDefinitionId": 18
+    },
+    {
+      "attributeKey": 499,
+      "groupName": "SO_NS",
+      "attributeName": "nsIntAttr1",
+      "booleanAttributeValue": 1000,
+      "attributeDefinitionId": 19
+    }
+  ],
+  "name": "ns_111",
+  "description": "NetworkService for test",
+  "revisionNumber": 1,
+  "scheduledDate": "2021-12-09T17:00:00.000Z",
+  "status": "planning",
+  "lastModifiedOn": "2021-12-09T14:17:57.026Z",
+  "lastModifiedBy": "sysadm",
+  "createdOn": "2021-12-09T14:17:57.026Z",
+  "createdBy": "sysadm",
+  "versionNumber": 1,
+  "revisionGroupKey": {
+    "type": "revisionGroupKey",
+    "keyValue": 1540
+  },
+  "key": {
+    "type": "ctv/virtualnetworkserviceKey",
+    "keyValue": 369
+  }
+}

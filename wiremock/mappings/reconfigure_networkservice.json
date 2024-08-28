@@ -1,0 +1,146 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/serviceOrder?fields=id",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalId == '0a073524-6333-424c-93a3-d2f13ff19189')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalVersion == '1.0')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service[?(@.name == 'service1')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0][?(@.action == 'modify')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_assigned.json",
+        "transformerParameters": {
+          "orderId": "3"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/assigned_event.json",
+          "serviceInstanceId": "NetworkService_000001-Service-ocrs-resourceFacingService-revisionGroupKey-1"
+        }
+      }
+    },
+    {
+      "scenarioName": "RECONFIGURE",
+      "requiredScenarioState": "ASSIGN_FAILED",
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/serviceOrder?fields=id",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalId == '0a073524-6333-424c-93a3-d2f13ff19189')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalVersion == '1.0')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service[?(@.name == 'service1')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0][?(@.action == 'modify')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_assigned.json",
+        "transformerParameters": {
+          "orderId": "3"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/assigned_failed_event.json",
+          "serviceInstanceId": ""
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v2.7/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id == 'NetworkService_000001-Service-ocrs-resourceFacingService-revisionGroupKey-1')]"},
+          {"matchesJsonPath" : "$[?(@.workflow == 'reconfigure')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/networkservice/network_service_reconfigure.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "RECONFIGURE",
+      "requiredScenarioState": "OPERATION_ERROR",
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v2.7/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id == 'NetworkService_000001-Service-ocrs-resourceFacingService-revisionGroupKey-1')]"},
+          {"matchesJsonPath" : "$[?(@.workflow == 'reconfigure')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/networkservice/network_service_reconfigure_error.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/cancelServiceOrder",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrder[?(@.id == '3')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_cancelled.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/cancelled_event.json",
+          "serviceInstanceId": "NetworkService_000001-Service-ocrs-resourceFacingService-revisionGroupKey-1"
+        }
+      }
+    },
+    {
+      "scenarioName": "RECONFIGURE",
+      "requiredScenarioState": "CANCEL_ORDER_ERROR",
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/cancelServiceOrder",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrder[?(@.id == '3')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_completed.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/cancelled_failed_event.json",
+          "serviceInstanceId": "NetworkService_000001-Service-ocrs-resourceFacingService-revisionGroupKey-1"
+        }
+      }
+    }
+  ]
+}

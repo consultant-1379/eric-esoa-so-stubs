@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/catalog-manager/v1/artifacts?query=name==additionalParams;type==CONFIG_TEMPLATE&listInternalArtifacts=false"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "items": [
+        {
+          "id": "9f7fc452-4895-40e1-aeaa-6bbfddf1f9ea",
+          "name": "additionalParams",
+          "type": "CONFIG_TEMPLATE"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

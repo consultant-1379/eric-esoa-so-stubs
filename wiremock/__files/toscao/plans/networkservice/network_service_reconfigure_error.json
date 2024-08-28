@@ -1,0 +1,46 @@
+{
+	"workflow": "reconfigure",
+	"serviceExecutionPlan": {
+		"operations": [{
+				"id": "VNF_1.Reconfigure.preReconfigure.51",
+				"name": "preReconfigure",
+				"interface": "Reconfigure",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "VNF_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [],
+				"failure_dependency_operations": []
+			}, {
+				"id": "VNF_1.Reconfigure.reconfigure.52",
+				"name": "reconfigure",
+				"interface": "Reconfigure",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "VNF_1",
+				"implementation": "camunda/failed",
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": ["VNF_1.Reconfigure.preReconfigure.51"],
+				"failure_dependency_operations": []
+			}, {
+				"id": "VNF_1.Reconfigure.postReconfigure.53",
+				"name": "postReconfigure",
+				"interface": "Reconfigure",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "VNF_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": ["VNF_1.Reconfigure.reconfigure.52"],
+				"failure_dependency_operations": []
+			}
+		]
+	}
+}

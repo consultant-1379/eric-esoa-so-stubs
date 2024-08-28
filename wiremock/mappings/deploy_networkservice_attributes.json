@@ -1,0 +1,264 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/serviceOrder?fields=id",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalId == '1ab4bcbc-9c75-4622-94e7-d069b7485824')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalVersion == '1.0')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service[?(@.name == 'get_attributes_1')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0][?(@.action == 'add')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_assigned.json",
+        "transformerParameters": {
+          "orderId": "10"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/assigned_event.json",
+          "serviceInstanceId": "GetAttributes_000001-Service-ocrs-resourceFacingService-revisionGroupKey-11"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/service-instances/GetAttributes_000001-Service-ocrs-resourceFacingService-revisionGroupKey-11"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/network_service_attributes_instance.json",
+        "transformerParameters": {
+          "serviceName": "get_attributes_1"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts?query=invariantUUID==1ab4bcbc-9c75-4622-94e7-d069b7485824;type==SERVICE_MODEL;version==1.0&listInternalArtifacts=true"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "items": [
+            {
+              "id": "5",
+              "name": "GetAttributes",
+              "invariantUUID": "1ab4bcbc-9c75-4622-94e7-d069b7485824",
+              "version": "1.0",
+              "type": "SERVICE_MODEL"
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts/5/download?archive=false"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "catalog/service-models/network_service_attributes_model_5.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v2.7/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id == 'GetAttributes_000001-Service-ocrs-resourceFacingService-revisionGroupKey-11')]"},
+          {"matchesJsonPath" : "$[?(@.workflow == 'deploy')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/networkservice_attributes/networkservice_attributes_deploy.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice?revisionGroupKey=11"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs.json",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+          "serviceName": "get_attributes_1",
+          "id": "11"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ctv/vimzone/16?fs=dynAttrs"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/vimzone_16.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ctv/vnf/370?fs=dynAttrs"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/vnf_370.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "PATCH",
+        "url": "/oss-core-ws/rest/ctv/vnf/370",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.dynamicAttributes[0][?(@.attributeName == 'vimZoneName')]"},
+          {"matchesJsonPath" : "$.dynamicAttributes[0][?(@.stringAttributeValue == 'vimZone_1')]"}
+        ]
+      },
+      "response": {
+        "status": 200
+      }
+    },
+    {
+      "request": {
+        "method": "PATCH",
+        "url": "/oss-core-ws/rest/ctv/vnf/370",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.dynamicAttributes[?(@.attributeName == 'vnfStringProp1')][?(@.stringAttributeValue == 'stringValue1')]"},
+          {"matchesJsonPath" : "$.dynamicAttributes[?(@.attributeName == 'vnfStringProp2')][?(@.stringAttributeValue == 'vnf1ns_111stringValue1')]"},
+          {"matchesJsonPath" : "$.dynamicAttributes[?(@.attributeName == 'vnfIntProp1')][?(@.integerAttributeValue == 1000)]"},
+          {"matchesJsonPath" : "$.dynamicAttributes[?(@.attributeName == 'vnfBooleanProp1')][?(@.booleanAttributeValue == true)]"},
+          {"matchesJsonPath" : "$.dynamicAttributes[?(@.attributeName == 'vnfListProp1')][?(@.listAttributeValue == ['value1', 'value2'])]"},
+          {"matchesJsonPath" : "$.dynamicAttributes[?(@.attributeName == 'vnfMapProp1')][?(@.mapAttributeValue['key1'] == 'value1')]"},
+          {"matchesJsonPath" : "$.dynamicAttributes[?(@.attributeName == 'vnfMapProp1')][?(@.mapAttributeValue['key2'] == 'value2')]"}
+
+        ]
+      },
+      "response": {
+        "status": 200
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ctv/virtnetworkserv/369?fs=dynAttrs"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/virtnetworkserv_369.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/oaf-adv/objectmetadata/objectDescriptor"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/object_descriptors.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/oaf/dynamicattributegroupdefinition/byObjectTypeId?objectTypeId=159"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/vnf_370_dynattr_defs.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/oaf/dynamicattributegroupdefinition/byObjectTypeId?objectTypeId=158"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/virtnetworkserv_dynattr_defs.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/oaf/dynamicattributegroupdefinition/byObjectTypeId?objectTypeId=160"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": [],
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/completeServiceOrder",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrder[?(@.id == '10')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_completed.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/completed_event.json",
+          "serviceInstanceId": "GetAttributes_000001-Service-ocrs-resourceFacingService-revisionGroupKey-11"
+        }
+      }
+    }
+  ]
+}

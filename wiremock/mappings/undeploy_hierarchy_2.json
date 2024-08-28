@@ -1,0 +1,411 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/serviceOrder?fields=id",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalId == '0a073524-6333-424c-93a3-d2f13ff19189')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service.serviceSpecification[?(@.externalVersion == '1.0')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0].service[?(@.name == 'hierarchy_modify_1')]"},
+          {"matchesJsonPath" : "$.serviceOrderItem[0][?(@.action == 'delete')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_assigned.json",
+        "transformerParameters": {
+          "orderId": "402"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/assigned_event.json",
+          "serviceInstanceId": "Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-200"
+        }
+      }
+    },
+    {
+      "scenarioName": "UNDEPLOY",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/service-instances/Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-200"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify_hierarchy/hierarchy_modify_L1_instance_delete.json",
+        "transformerParameters": {
+          "serviceName": "hierarchy_modify_1"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "UNDEPLOY",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/service-instances/Service_L2_1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-201?topLevelServiceId=Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-200"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify_hierarchy/hierarchy_modify_L2_1_instance_delete.json",
+        "transformerParameters": {
+          "serviceName": "Service_L2_1"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "UNDEPLOY",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/service-instances/Service_L2_2_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-202?topLevelServiceId=Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-200"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify_hierarchy/hierarchy_modify_L2_2_instance_delete.json",
+        "transformerParameters": {
+          "serviceName": "Service_L2_2"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+        "scenarioName": "UNDEPLOY",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/service-instances/Service_L3_2_v2_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-205?topLevelServiceId=Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-200"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify_hierarchy/hierarchy_modify_L3_2_v2_instance_delete.json",
+        "transformerParameters": {
+          "serviceName": "Service_L3_2_v2"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "UNDEPLOY",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/service-instances/Service_L3_1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-203?topLevelServiceId=Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-200"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/modify_hierarchy/hierarchy_modify_L3_1_instance_delete.json",
+        "transformerParameters": {
+          "serviceName": "Service_L3_1"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v2.7/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id == 'Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-200')]"},
+          {"matchesJsonPath" : "$[?(@.workflow == 'undeploy')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/modify_hierarchy/hierarchy_modify_L1_undeploy.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v2.7/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id == 'Service_L2_1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-201')]"},
+          {"matchesJsonPath" : "$[?(@.workflow == 'undeploy')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/modify_hierarchy/hierarchy_modify_L2_1_undeploy.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v2.7/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id == 'Service_L2_2_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-202')]"},
+          {"matchesJsonPath" : "$[?(@.workflow == 'undeploy')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/modify_hierarchy/hierarchy_modify_L2_2_undeploy.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v2.7/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id == 'Service_L3_1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-203')]"},
+          {"matchesJsonPath" : "$[?(@.workflow == 'undeploy')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/modify_hierarchy/hierarchy_modify_L3_1_undeploy.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v2.7/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id == 'Service_L3_2_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-204')]"},
+          {"matchesJsonPath" : "$[?(@.workflow == 'undeploy')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/modify_hierarchy/hierarchy_modify_L3_2_undeploy.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/toscao/api/v2.7/service-execution-plan",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$[?(@.id == 'Service_L3_2_v2_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-205')]"},
+          {"matchesJsonPath" : "$[?(@.workflow == 'undeploy')]"}]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "toscao/plans/modify_hierarchy/hierarchy_modify_L3_2_v2_undeploy.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "UNDEPLOY_GET_RFS",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice/200?fs=dynAttrs"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs.json",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+          "serviceName": "hierarchy_modify_1",
+          "id": "200",
+          "revision": 2,
+          "status": "retiring"
+        }
+      }
+    },
+    {
+      "scenarioName": "UNDEPLOY_GET_RFS",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice=201?fs=dynAttrs"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs.json",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+          "serviceName": "Service_L2_1",
+          "id": "201",
+          "revision": 2,
+          "status": "retiring"
+        }
+      }
+    },
+    {
+      "scenarioName": "UNDEPLOY_GET_RFS",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice=202?fs=dynAttrs"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs.json",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+          "serviceName": "Service_L2_2",
+          "id": "202",
+          "revision": 2,
+          "status": "retiring"
+        }
+      }
+    },
+    {
+      "scenarioName": "UNDEPLOY_GET_RFS",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice=203?fs=dynAttrs"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs.json",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+          "serviceName": "Service_L3_1",
+          "id": "203",
+          "revision": 2,
+          "status": "retiring"
+        }
+      }
+    },
+    {
+      "scenarioName": "UNDEPLOY_GET_RFS",
+      "requiredScenarioState": "Started",
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ocrs/resourcefacingservice=205?fs=dynAttrs"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/rfs.json",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "transformerParameters": {
+          "serviceName": "Service_L3_2_v2",
+          "id": "205",
+          "revision": 1,
+          "status": "retiring"
+        }
+      }
+    },
+      {
+          "request": {
+              "method": "GET",
+              "url": "/oss-core-ws/rest/ocrs/resourcefacingservice/201?fs=dynAttrs"
+          },
+          "response": {
+              "status": 200,
+              "bodyFileName": "cts/rfs.json",
+              "headers": {
+                  "Content-Type": "application/json"
+              },
+              "transformerParameters": {
+                  "id": "201"
+              }
+          }
+      },
+      {
+          "request": {
+              "method": "GET",
+              "url": "/oss-core-ws/rest/ocrs/resourcefacingservice/202?fs=dynAttrs"
+          },
+          "response": {
+              "status": 200,
+              "bodyFileName": "cts/rfs.json",
+              "headers": {
+                  "Content-Type": "application/json"
+              },
+              "transformerParameters": {
+                  "id": "202"
+              }
+          }
+      },
+      {
+          "request": {
+              "method": "GET",
+              "url": "/oss-core-ws/rest/ocrs/resourcefacingservice/203?fs=dynAttrs"
+          },
+          "response": {
+              "status": 200,
+              "bodyFileName": "cts/rfs.json",
+              "headers": {
+                  "Content-Type": "application/json"
+              },
+              "transformerParameters": {
+                  "id": "203"
+              }
+          }
+      },
+      {
+          "request": {
+              "method": "GET",
+              "url": "/oss-core-ws/rest/ocrs/resourcefacingservice/205?fs=dynAttrs"
+          },
+          "response": {
+              "status": 200,
+              "bodyFileName": "cts/rfs.json",
+              "headers": {
+                  "Content-Type": "application/json"
+              },
+              "transformerParameters": {
+                  "id": "205"
+              }
+          }
+      },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/oss-core-ws/rest/serviceOrdering/v4/completeServiceOrder",
+        "bodyPatterns" : [
+          {"matchesJsonPath" : "$.serviceOrder[?(@.id == '402')]"}
+        ]
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/orders/order_completed.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "postServeActions":
+      {
+        "esdOrderNotification": {
+          "eventFileName": "esd/orders/completed_event.json",
+          "serviceInstanceId": "Service_L1_modify_000001-Service-ocrs-resourceFacingService-revisionGroupKey-200"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+[{
+  "id": "1",
+  "name": "NFVO_Subsystem",
+  "subsystemType": {
+    "type": "NFVO"
+  },
+  "adapterLink": "eric-eo-ecm-adapter",
+  "vendor": "Ericsson",
+  "url": "http://eric-eo-ecm-stub",
+  "connectionProperties": [{
+    "name": "Connection1",
+    "tenant": "nfvo_tenant",
+    "username": "ecmadmin",
+    "password": "CloudAdmin123",
+    "encryptedKeys": ["password"]
+  }
+  ]
+},
+  {
+    "id": "2",
+    "name": "ecm",
+    "subsystemType": {
+      "type": "NFVO"
+    },
+    "adapterLink": "eric-eo-ecm-adapter",
+    "vendor": "Ericsson",
+    "url": "http://eric-eo-ecm-stub",
+    "connectionProperties": [{
+      "id": 1,
+      "name": "connection1",
+      "tenant": "ecm",
+      "username": "ecmadmin",
+      "password": "CloudAdmin123",
+      "encryptedKeys": ["password"]
+    }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "enm",
+    "subsystemType": {
+      "type": "DomainManager"
+    },
+    "adapterLink": null,
+    "vendor": "Ericsson",
+    "url": "http://eric-eo-enm-stub",
+    "connectionProperties": [{
+      "username": "administrator",
+      "password": "TestPassw0rd",
+      "encryptedKeys": ["password"]
+    }
+    ]
+  }
+]

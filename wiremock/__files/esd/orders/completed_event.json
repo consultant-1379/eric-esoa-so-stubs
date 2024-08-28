@@ -1,0 +1,19 @@
+{
+  "eventId": "%EVENT_ID%",
+  "eventTime": "%EVENT_TIME%",
+  "eventType": "ServiceOrderStateChangeEvent",
+  "event": {
+    "serviceOrder": {
+      "id": "%ORDER_ID%",
+      "externalId": "%EXTERNAL_ID%",
+      "state": "completed",
+      "subState": "COMPLETED",
+      "orderItem": [
+        {
+          "service": {
+            "id": "%SERVICE_ID%"
+          }
+        }]
+    }
+  }
+}

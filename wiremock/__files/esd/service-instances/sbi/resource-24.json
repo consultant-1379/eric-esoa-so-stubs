@@ -1,0 +1,23 @@
+{
+  "type": "ctv/virtualnetworkservice",
+  "id": 16,
+  "href": "ctv/virtnetworkserv/16",
+  "name": "ns_ecmsol005_1652712453021",
+  "description": "NetworkService",
+  "revisionNumber": 1,
+  "scheduledDate": "2022-05-16T14:47:39.540Z",
+  "status": "planning",
+  "lastModifiedOn": "2022-05-19T10:28:54.684Z",
+  "lastModifiedBy": "sysadm",
+  "createdOn": "2022-05-16T14:47:44.537Z",
+  "createdBy": "sysadm",
+  "versionNumber": 4,
+  "revisionGroupKey": {
+    "type": "revisionGroupKey",
+    "keyValue": 56
+  },
+  "key": {
+    "type": "ctv/virtualnetworkserviceKey",
+    "keyValue": 16
+  }
+}

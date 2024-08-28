@@ -1,0 +1,149 @@
+{
+  "workflow": "deploy",
+  "serviceExecutionPlan": {
+    "operations": [
+      {
+        "id": "networkService_1.Standard.create.94",
+        "name": "create",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "networkService_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "networkService_1.Standard.configure.95",
+        "name": "configure",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "networkService_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "networkService_1.Standard.create.94"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "networkService_1.Standard.start.96",
+        "name": "start",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "networkService_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "networkService_1.Standard.configure.95"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vnf_1_1.Standard.create.99",
+        "name": "create",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vnf_1_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "networkService_1.Standard.start.96"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vnf_1_1.Standard.configure.100",
+        "name": "configure",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vnf_1_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "vnf_1_1.Standard.create.99"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vnf_1_1.Standard.start.101",
+        "name": "start",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vnf_1_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "vnf_1_1.Standard.configure.100"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vnf_2_1.Standard.create.104",
+        "name": "create",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vnf_2_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "networkService_1.Standard.start.96"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vnf_2_1.Standard.configure.105",
+        "name": "configure",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vnf_2_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "vnf_2_1.Standard.create.104"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "vnf_2_1.Standard.start.106",
+        "name": "start",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "vnf_2_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "vnf_2_1.Standard.configure.105"
+        ],
+        "failure_dependency_operations": []
+      }
+    ]
+  }
+}

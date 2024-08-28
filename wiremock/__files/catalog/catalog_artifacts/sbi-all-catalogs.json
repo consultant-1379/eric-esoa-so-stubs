@@ -1,0 +1,91 @@
+{
+  "items": [
+    {
+      "id": 654,
+      "name": "Jinja_TMF641_v4_telstra",
+      "type": "CONFIG_TEMPLATE",
+      "owner": "eo-user",
+      "originalFileName": "Jinja_TMF641_v4_telstra.j2",
+      "description": "null",
+      "referenceId": "Jinja_TMF641_v4_telstra",
+      "createdAt": "2021-05-31T12:50:20.270+0000",
+      "viewable": true
+    },
+    {
+      "id": 655,
+      "name": "referred_config_template_1",
+      "type": "CONFIG_TEMPLATE",
+      "owner": "eo-user",
+      "originalFileName": "referred_config_template_1.j2",
+      "description": "null",
+      "referenceId": "referred_config_template_2",
+      "createdAt": "2021-05-31T12:50:20.270+0000",
+      "viewable": true
+    },
+    {
+      "id": 656,
+      "name": "referred_config_template_2",
+      "type": "CONFIG_TEMPLATE",
+      "owner": "eo-user",
+      "originalFileName": "referred_config_template_2.j2",
+      "description": "null",
+      "referenceId": "referred_config_template_2",
+      "createdAt": "2021-05-31T12:50:20.270+0000",
+      "viewable": true
+    },
+    {
+      "id": 657,
+      "name": "JT_TMF645",
+      "type": "CONFIG_TEMPLATE",
+      "owner": "eo-user",
+      "originalFileName": "JT_TMF645.j2",
+      "description": "null",
+      "referenceId": "JT_TMF645",
+      "createdAt": "2023-01-31T12:50:20.270+0000",
+      "viewable": true
+    },
+    {
+      "id": 658,
+      "name": "ANParentHierarchicalForDefect2",
+      "type": "SERVICE_TEMPLATE",
+      "owner": "so-user",
+      "originalFileName": "ANParentHierarchicalForDefect2.csar",
+      "description": "null",
+      "referenceId": "85335519-fb5b-4b68-a532-03e571af4b80",
+      "invariantUUID": "d9329103-833a-4a24-8047-c69ea2fb9b63",
+      "createdAt": "2023-08-11T11:29:21.341+00:00",
+      "version": "1.0",
+      "uuid": "47a35243-5359-4876-ae77-7d1818dda442",
+      "status": "ACTIVE"
+    },
+    {
+      "id": 659,
+      "name": "SdWanChildHierarchicalForDefect2",
+      "type": "SERVICE_TEMPLATE",
+      "owner": "so-user",
+      "originalFileName": "SdWanChildHierarchicalForDefect2.csar",
+      "description": "null",
+      "referenceId": "e2e47201-6fed-4830-b6b7-5af4c9206373",
+      "invariantUUID": "42b2359a-b7a5-4cea-a8e6-d19a7a375432",
+      "createdAt": "2023-08-11T11:30:28.278+00:00",
+      "version": "1.0",
+      "uuid": "b0442450-437d-4a27-84a8-3a628b265540",
+      "status": "ACTIVE"
+    },
+    {
+      "id": 660,
+      "name": "JT_sdWAN",
+      "type": "CONFIG_TEMPLATE",
+      "owner": "so-user",
+      "originalFileName": "JT_sdWAN.j2",
+      "description": "null",
+      "referenceId": "JT_sdWAN",
+      "createdAt": "2023-08-11T14:39:40.396+00:00",
+      "status": "ACTIVE"
+    }
+  ],
+  "links": null,
+  "query": {
+    "query-params": ""
+  }
+}

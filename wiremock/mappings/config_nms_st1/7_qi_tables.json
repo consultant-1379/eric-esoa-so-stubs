@@ -1,0 +1,135 @@
+{
+  "mappings": [
+    {
+      "request" : {
+        "urlPath" : "/oss-core-ws/rest/service-instances/manage.5qidata_01.002_000769-Service-ocrs-resourceFacingService-revisionGroupKey-26407",
+        "method" : "GET",
+        "headers" : {
+          "Accept" : {
+            "matches" : "application/json.*"
+          },
+          "GS-Database-Name" : {
+            "matches" : "^\\s*\\S[\\S\\s]*"
+          },
+          "GS-Database-Host-Name" : {
+            "matches" : "^\\s*\\S[\\S\\s]*"
+          }
+        },
+        "queryParameters" : {
+          "topLevelServiceId" : {
+            "matches" : "^.*Service-ocrs-resourceFacingService-revisionGroupKey-[0-9]*$"
+          }
+        }
+      },
+      "response" : {
+        "status" : 200,
+        "bodyFileName": "esd/config_nms_st1/temporal-1751-manage.5qidata_01.002_000769-Service-ocrs-resourceFacingService-revisionGroupKey-26407.json",
+        "headers" : {
+          "Content-Type" : "application/json"
+        }
+      }
+    },
+    {
+      "request" : {
+        "urlPath" : "/oss-core-ws/rest/service-instances/process.5qidata.model_01.002_000759-Service-ocrs-resourceFacingService-revisionGroupKey-26425",
+        "method" : "GET",
+        "headers" : {
+          "Accept" : {
+            "matches" : "application/json.*"
+          },
+          "GS-Database-Name" : {
+            "matches" : "^\\s*\\S[\\S\\s]*"
+          },
+          "GS-Database-Host-Name" : {
+            "matches" : "^\\s*\\S[\\S\\s]*"
+          }
+        },
+        "queryParameters" : {
+          "topLevelServiceId" : {
+            "matches" : "^.*Service-ocrs-resourceFacingService-revisionGroupKey-[0-9]*$"
+          }
+        }
+      },
+      "response" : {
+        "status" : 200,
+        "bodyFileName": "esd/config_nms_st1/temporal-1751-process.5qidata.model_01.002_000759-Service-ocrs-resourceFacingService-revisionGroupKey-26425.json",
+        "headers" : {
+          "Content-Type" : "application/json"
+        }
+      }
+    },
+    {
+      "request" : {
+        "urlPath" : "/oss-core-ws/rest/service-instances/process.5qidata.gnbdu_01.002_000777-Service-ocrs-resourceFacingService-revisionGroupKey-26414",
+        "method" : "GET",
+        "headers" : {
+          "Accept" : {
+            "matches" : "application/json.*"
+          },
+          "GS-Database-Name" : {
+            "matches" : "^\\s*\\S[\\S\\s]*"
+          },
+          "GS-Database-Host-Name" : {
+            "matches" : "^\\s*\\S[\\S\\s]*"
+          }
+        },
+        "queryParameters" : {
+          "topLevelServiceId" : {
+            "matches" : "^.*Service-ocrs-resourceFacingService-revisionGroupKey-[0-9]*$"
+          }
+        }
+      },
+      "response" : {
+        "status" : 200,
+        "bodyFileName": "esd/config_nms_st1/temporal-1751-process.5qidata.gnbdu_01.002_000777-Service-ocrs-resourceFacingService-revisionGroupKey-26414.json",
+        "headers" : {
+          "Content-Type" : "application/json"
+        }
+      }
+    },
+    {
+      "request" : {
+        "urlPath" : "/oss-core-ws/rest/ctw/gnbdu",
+        "method" : "GET",
+        "headers" : {
+          "Accept" : {
+            "matches" : "application/json.*"
+          },
+          "GS-Database-Name" : {
+            "matches" : "^\\s*\\S[\\S\\s]*"
+          },
+          "GS-Database-Host-Name" : {
+            "matches" : "^\\s*\\S[\\S\\s]*"
+          }
+        },
+        "queryParameters" : {
+          "fs.nrCells" : {
+            "equalTo" : "attrs"
+          },
+          "fs.nrCells.plmnInfoList" : {
+            "equalTo" : "attrs"
+          },
+          "fs.nrCells.plmnInfoList.resourcePartitionMembers" : {
+            "equalTo" : "dynAttrs"
+          },
+          "fs.nrCells.plmnInfoList.resourcePartitionMembers.resourcePartition" : {
+            "equalTo" : ""
+          },
+          "fs.nrCells.plmnInfoList.resourcePartitionMembers.resourcePartition.fiveQISet" : {
+            "equalTo" : "dynAttrs"
+          },
+          "name" : {
+            "matches" : "manage"
+          }
+        }
+      },
+      "response" : {
+        "status" : 200,
+        "bodyFileName": "cts/config_nms_st1/manage_qi_table_enrichment.json",
+        "headers" : {
+          "Content-Type" : "application/json"
+        }
+      }
+    }
+  ]
+}

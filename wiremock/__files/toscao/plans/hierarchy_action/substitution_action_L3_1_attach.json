@@ -1,0 +1,61 @@
+{
+    "serviceExecutionPlan": {
+        "operations": [
+            {
+                "activity": "call_operation",
+                "dependency_operations": [],
+                "failure_dependency_operations": [],
+                "id": "NETWORK_SERVICE_1.Attach.attach.435",
+                "implementation": "camunda/enabler",
+                "inputs": [
+                    {
+                        "name": "input4",
+                        "raw_value": {
+                            "get_property": [
+                                "VNF",
+                                "name"
+                            ]
+                        },
+                        "required": true,
+                        "type": null,
+                        "value": "vnf1"
+                    },
+                    {
+                        "name": "input3",
+                        "raw_value": {
+                            "get_input": "attach_input3"
+                        },
+                        "required": true,
+                        "type": null,
+                        "value": false
+                    },
+                    {
+                        "name": "input2",
+                        "raw_value": {
+                            "get_input": "attach_input2"
+                        },
+                        "required": true,
+                        "type": null,
+                        "value": 0
+                    },
+                    {
+                        "name": "input1",
+                        "raw_value": {
+                            "get_input": "attach_input1"
+                        },
+                        "required": true,
+                        "type": null,
+                        "value": ""
+                    }
+                ],
+                "interface": "Attach",
+                "name": "attach",
+                "node": "NETWORK_SERVICE_1",
+                "post_state": "reconfigured",
+                "pre_state": "reconfiguring",
+                "type": "node"
+            }
+        ]
+    },
+    "workflow": "Attach"
+}

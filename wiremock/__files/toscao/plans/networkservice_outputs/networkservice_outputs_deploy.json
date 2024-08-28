@@ -1,0 +1,6 @@
+{
+	"workflow": "deploy",
+	"serviceExecutionPlan": {
+		"operations": []
+	}
+}

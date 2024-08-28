@@ -1,0 +1,196 @@
+{
+  "serviceExecutionPlan": {
+    "operations": [
+      {
+        "activity": "call_operation",
+        "dependency_operations": [],
+        "failure_dependency_operations": [],
+        "id": "NFVO_SUBSYSTEM_1.Standard.create.378",
+        "implementation": null,
+        "inputs": [],
+        "interface": "Standard",
+        "name": "create",
+        "node": "NFVO_SUBSYSTEM_1",
+        "post_state": null,
+        "pre_state": null,
+        "type": "node"
+      },
+      {
+        "activity": "call_operation",
+        "dependency_operations": [
+          "NFVO_SUBSYSTEM_1.Standard.create.378"
+        ],
+        "failure_dependency_operations": [],
+        "id": "NFVO_SUBSYSTEM_1.Standard.configure.379",
+        "implementation": null,
+        "inputs": [],
+        "interface": "Standard",
+        "name": "configure",
+        "node": "NFVO_SUBSYSTEM_1",
+        "post_state": null,
+        "pre_state": null,
+        "type": "node"
+      },
+      {
+        "activity": "call_operation",
+        "dependency_operations": [
+          "NFVO_SUBSYSTEM_1.Standard.configure.379"
+        ],
+        "failure_dependency_operations": [],
+        "id": "NFVO_SUBSYSTEM_1.Standard.start.380",
+        "implementation": null,
+        "inputs": [],
+        "interface": "Standard",
+        "name": "start",
+        "node": "NFVO_SUBSYSTEM_1",
+        "post_state": null,
+        "pre_state": null,
+        "type": "node"
+      },
+      {
+        "activity": "call_operation",
+        "dependency_operations": [
+          "NFVO_SUBSYSTEM_1.Standard.start.380"
+        ],
+        "failure_dependency_operations": [],
+        "id": "NETWORK_SERVICE_1.Standard.create.383",
+        "implementation": "camunda/enabler",
+        "inputs": [],
+        "interface": "Standard",
+        "name": "create",
+        "node": "NETWORK_SERVICE_1",
+        "post_state": null,
+        "pre_state": null,
+        "type": "node"
+      },
+      {
+        "activity": "call_operation",
+        "dependency_operations": [
+          "NETWORK_SERVICE_1.Standard.create.383"
+        ],
+        "failure_dependency_operations": [],
+        "id": "NETWORK_SERVICE_1.Standard.configure.384",
+        "implementation": null,
+        "inputs": [],
+        "interface": "Standard",
+        "name": "configure",
+        "node": "NETWORK_SERVICE_1",
+        "post_state": null,
+        "pre_state": null,
+        "type": "node"
+      },
+      {
+        "activity": "call_operation",
+        "dependency_operations": [
+          "NETWORK_SERVICE_1.Standard.configure.384"
+        ],
+        "failure_dependency_operations": [],
+        "id": "NETWORK_SERVICE_1.Standard.start.385",
+        "implementation": null,
+        "inputs": [],
+        "interface": "Standard",
+        "name": "start",
+        "node": "NETWORK_SERVICE_1",
+        "post_state": null,
+        "pre_state": null,
+        "type": "node"
+      },
+      {
+        "activity": "call_operation",
+        "dependency_operations": [],
+        "failure_dependency_operations": [],
+        "id": "VIM_ZONE_1.Standard.create.388",
+        "implementation": null,
+        "inputs": [],
+        "interface": "Standard",
+        "name": "create",
+        "node": "VIM_ZONE_1",
+        "post_state": null,
+        "pre_state": null,
+        "type": "node"
+      },
+      {
+        "activity": "call_operation",
+        "dependency_operations": [
+          "VIM_ZONE_1.Standard.create.388"
+        ],
+        "failure_dependency_operations": [],
+        "id": "VIM_ZONE_1.Standard.configure.389",
+        "implementation": null,
+        "inputs": [],
+        "interface": "Standard",
+        "name": "configure",
+        "node": "VIM_ZONE_1",
+        "post_state": null,
+        "pre_state": null,
+        "type": "node"
+      },
+      {
+        "activity": "call_operation",
+        "dependency_operations": [
+          "VIM_ZONE_1.Standard.configure.389"
+        ],
+        "failure_dependency_operations": [],
+        "id": "VIM_ZONE_1.Standard.start.390",
+        "implementation": null,
+        "inputs": [],
+        "interface": "Standard",
+        "name": "start",
+        "node": "VIM_ZONE_1",
+        "post_state": null,
+        "pre_state": null,
+        "type": "node"
+      },
+      {
+        "activity": "call_operation",
+        "dependency_operations": [
+          "VIM_ZONE_1.Standard.start.390",
+          "NETWORK_SERVICE_1.Standard.start.385"
+        ],
+        "failure_dependency_operations": [],
+        "id": "VNF_1.Standard.create.393",
+        "implementation": null,
+        "inputs": [],
+        "interface": "Standard",
+        "name": "create",
+        "node": "VNF_1",
+        "post_state": null,
+        "pre_state": null,
+        "type": "node"
+      },
+      {
+        "activity": "call_operation",
+        "dependency_operations": [
+          "VNF_1.Standard.create.393"
+        ],
+        "failure_dependency_operations": [],
+        "id": "VNF_1.Standard.configure.394",
+        "implementation": "camunda/enabler",
+        "inputs": [],
+        "interface": "Standard",
+        "name": "configure",
+        "node": "VNF_1",
+        "post_state": null,
+        "pre_state": null,
+        "type": "node"
+      },
+      {
+        "activity": "call_operation",
+        "dependency_operations": [
+          "VNF_1.Standard.configure.394"
+        ],
+        "failure_dependency_operations": [],
+        "id": "VNF_1.Standard.start.395",
+        "implementation": null,
+        "inputs": [],
+        "interface": "Standard",
+        "name": "start",
+        "node": "VNF_1",
+        "post_state": null,
+        "pre_state": null,
+        "type": "node"
+      }
+    ]
+  },
+  "workflow": "deploy"
+}

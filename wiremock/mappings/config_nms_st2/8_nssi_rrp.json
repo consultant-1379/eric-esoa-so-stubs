@@ -1,0 +1,164 @@
+{
+  "mappings": [
+    {
+      "request" : {
+        "urlPath" : "/oss-core-ws/rest/service-instances/allocate.ran.dedicated.nssi_01.002_000773-Service-ocrs-resourceFacingService-revisionGroupKey-26815",
+        "method" : "GET",
+        "headers" : {
+          "Accept" : {
+            "matches" : "application/json.*"
+          },
+          "GS-Database-Name" : {
+            "matches" : "^\\s*\\S[\\S\\s]*"
+          },
+          "GS-Database-Host-Name" : {
+            "matches" : "^\\s*\\S[\\S\\s]*"
+          }
+        },
+        "queryParameters" : {
+          "topLevelServiceId" : {
+            "matches" : "^.*Service-ocrs-resourceFacingService-revisionGroupKey-[0-9]*$"
+          }
+        }
+      },
+      "response" : {
+        "status" : 200,
+        "bodyFileName": "esd/config_nms_st2/temporal-1506-allocate.ran.dedicated.nssi_01.002_000773-Service-ocrs-resourceFacingService-revisionGroupKey-26815.json",
+        "headers" : {
+          "Content-Type" : "application/json"
+        }
+      }
+    },
+    {
+      "request" : {
+        "urlPath" : "/oss-core-ws/rest/service-instances/ran.select.plmninfo_01.002_000753-Service-ocrs-resourceFacingService-revisionGroupKey-26859",
+        "method" : "GET",
+        "headers" : {
+          "Accept" : {
+            "matches" : "application/json.*"
+          },
+          "GS-Database-Name" : {
+            "matches" : "^\\s*\\S[\\S\\s]*"
+          },
+          "GS-Database-Host-Name" : {
+            "matches" : "^\\s*\\S[\\S\\s]*"
+          }
+        },
+        "queryParameters" : {
+          "topLevelServiceId" : {
+            "matches" : "^.*Service-ocrs-resourceFacingService-revisionGroupKey-[0-9]*$"
+          }
+        }
+      },
+      "response" : {
+        "status" : 200,
+        "bodyFileName": "esd/config_nms_st2/temporal-1506-allocate.ran.dedicated.nssi_ran.select.plmninfo_01.002_000753-Service-ocrs-resourceFacingService-revisionGroupKey-26859.json",
+        "headers" : {
+          "Content-Type" : "application/json"
+        }
+      }
+    },
+    {
+      "request" : {
+        "urlPath" : "/oss-core-ws/rest/service-instances/ran.sliceprofiles_01.002_000751-Service-ocrs-resourceFacingService-revisionGroupKey-26826",
+        "method" : "GET",
+        "headers" : {
+          "Accept" : {
+            "matches" : "application/json.*"
+          },
+          "GS-Database-Name" : {
+            "matches" : "^\\s*\\S[\\S\\s]*"
+          },
+          "GS-Database-Host-Name" : {
+            "matches" : "^\\s*\\S[\\S\\s]*"
+          }
+        },
+        "queryParameters" : {
+          "topLevelServiceId" : {
+            "matches" : "^.*Service-ocrs-resourceFacingService-revisionGroupKey-[0-9]*$"
+          }
+        }
+      },
+      "response" : {
+        "status" : 200,
+        "bodyFileName": "esd/config_nms_st2/temporal-1506-allocate.ran.dedicated.nssi_ran.sliceprofiles_01.002_000751-Service-ocrs-resourceFacingService-revisionGroupKey-26826.json",
+        "headers" : {
+          "Content-Type" : "application/json"
+        }
+      }
+    },
+    {
+      "request" : {
+        "urlPath" : "/oss-core-ws/rest/service-instances/ran.gnbdu.base_01.002_000757-Service-ocrs-resourceFacingService-revisionGroupKey-26838",
+        "method" : "GET",
+        "headers" : {
+          "Accept" : {
+            "matches" : "application/json.*"
+          },
+          "GS-Database-Name" : {
+            "matches" : "^\\s*\\S[\\S\\s]*"
+          },
+          "GS-Database-Host-Name" : {
+            "matches" : "^\\s*\\S[\\S\\s]*"
+          }
+        },
+        "queryParameters" : {
+          "topLevelServiceId" : {
+            "matches" : "^.*Service-ocrs-resourceFacingService-revisionGroupKey-[0-9]*$"
+          }
+        }
+      },
+      "response" : {
+        "status" : 200,
+        "bodyFileName": "esd/config_nms_st2/temporal-1506-allocate.ran.dedicated.nssi_ran.gnbdu.base_01.002_000757-Service-ocrs-resourceFacingService-revisionGroupKey-26838.json",
+        "headers" : {
+          "Content-Type" : "application/json"
+        }
+      }
+    },
+    {
+      "request" : {
+        "urlPath" : "/oss-core-ws/rest/ctw/gnbdu",
+        "method" : "GET",
+        "headers" : {
+          "Accept" : {
+            "matches" : "application/json.*"
+          },
+          "GS-Database-Name" : {
+            "matches" : "^\\s*\\S[\\S\\s]*"
+          },
+          "GS-Database-Host-Name" : {
+            "matches" : "^\\s*\\S[\\S\\s]*"
+          }
+        },
+        "queryParameters" : {
+          "fs.nrCells" : {
+            "equalTo" : "attrs"
+          },
+          "fs.nrCells.plmnInfoList" : {
+            "equalTo" : "attrs"
+          },
+          "fs.nrCells.plmnInfoList.resourcePartitionMembers" : {
+            "equalTo" : "dynAttrs"
+          },
+          "fs.nrCells.plmnInfoList.resourcePartitionMembers.resourcePartition" : {
+            "equalTo" : ""
+          },
+          "fs.nrCells.plmnInfoList.resourcePartitionMembers.resourcePartition.fiveQISet" : {
+            "equalTo" : "dynAttrs"
+          },
+          "name" : {
+            "matches" : "dedicated"
+          }
+        }
+      },
+      "response" : {
+        "status" : 200,
+        "bodyFileName": "cts/config_nms_st2/dedicated-gnbdu.json",
+        "headers" : {
+          "Content-Type" : "application/json"
+        }
+      }
+    }
+  ]
+}

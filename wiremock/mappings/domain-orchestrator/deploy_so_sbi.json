@@ -1,0 +1,82 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "catalog/catalog_artifacts/sbi-all-catalogs.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts/660?b64Encoded=false"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "catalog/catalog_artifacts/jinja-file-catalog-1.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/orchestration/v1/actions/67"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "orchestration/actions/action-67.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/service-instances/SdWanChildHierarchicalForDefect2_000004-Service-ocrs-resourceFacingService-revisionGroupKey-71?topLevelServiceId=ANParentHierarchicalForDefect2_000002-Service-ocrs-resourceFacingService-revisionGroupKey-69"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/sbi/service_instance_hierarchical.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ctv/virtnetworkserv/24"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/sbi/resource-24.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "PATCH",
+        "url": "/oss-core-ws/rest/ctv/virtnetworkserv/24"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "esd/service-instances/sbi/resource-24.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    }
+  ]
+}

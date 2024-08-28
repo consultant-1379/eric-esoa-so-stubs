@@ -1,0 +1,1589 @@
+{
+  "id": "{{request.path.[3]}}",
+  "creTime": "2023-08-14T12:56:11.056Z",
+  "name": "AN_2806_33_sdWAN_SDWAN_2806_2",
+  "serviceModelID": "e2e47201-6fed-4830-b6b7-5af4c9206373",
+  "catalogInvariantUUID": "42b2359a-b7a5-4cea-a8e6-d19a7a375432",
+  "catalogVersion": "1.0",
+  "catalogId": 4,
+  "metadata": {
+    "template_name": null,
+    "template_author": null,
+    "template_version": null,
+    "category": "E2E Service",
+    "serviceType": "NSI",
+    "orderable": "true",
+    "reloadNodesOnGetServiceInstance": "false"
+  },
+  "substitutingModelIDs": [],
+  "state": "TO BE DEPLOYED",
+  "workflows": [],
+  "topology": {
+    "inputs": [
+      {
+        "name": "customerName",
+        "value": "CO_3WayService_6",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "cidn",
+        "value": "8612271788",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "adBorId",
+        "value": "160455421",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "sdwanServer",
+        "value": null,
+        "required": true,
+        "type": "sdwanServer"
+      },
+      {
+        "name": "sdWanId",
+        "value": null,
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "partnerId",
+        "value": "TBS001",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "sdWanServiceName",
+        "value": "SDWANService_1",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "policies": [],
+    "outputs": [],
+    "relationship_templates": [],
+    "nodes": [
+      {
+        "name": "sdWAN_1",
+        "state": "started",
+        "action": "modify",
+        "instanceIDs": [],
+        "directives": [
+          "instantiate"
+        ],
+        "occurrences": [
+          0,
+          1
+        ],
+        "artifacts": [],
+        "interfaces": [
+          {
+            "name": "Standard",
+            "inputs": [],
+            "operations": [
+              {
+                "name": "create",
+                "inputs": [],
+                "implementation": "camunda/so-sbi-workflow"
+              },
+              {
+                "name": "configure",
+                "inputs": [],
+                "implementation": "camunda/so-sbi-workflow"
+              },
+              {
+                "name": "start",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "stop",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "delete",
+                "inputs": [],
+                "implementation": "camunda/so-sbi-workflow"
+              }
+            ],
+            "notifications": []
+          },
+          {
+            "name": "Attach",
+            "inputs": [],
+            "operations": [
+              {
+                "name": "attach",
+                "inputs": [],
+                "implementation": null
+              }
+            ],
+            "notifications": []
+          },
+          {
+            "name": "Detach",
+            "inputs": [],
+            "operations": [
+              {
+                "name": "detach",
+                "inputs": [],
+                "implementation": null
+              }
+            ],
+            "notifications": []
+          },
+          {
+            "name": "Reconfigure",
+            "inputs": [],
+            "operations": [
+              {
+                "name": "Reconfigure",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "preReconfigure",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "reconfigure",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "postReconfigure",
+                "inputs": [],
+                "implementation": null
+              }
+            ],
+            "notifications": []
+          },
+          {
+            "name": "Modify",
+            "inputs": [],
+            "operations": [
+              {
+                "name": "Modify",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "pre_modify",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "modify",
+                "inputs": [],
+                "implementation": "camunda/so-sbi"
+              }
+            ],
+            "notifications": []
+          }
+        ],
+        "nodetype": "topology.nodes.ctv.virtNetworkServ",
+        "parent_type": "topology.nodes.ctc.forwardingConstruct",
+        "nodeproperties": [
+          {
+            "name": "name",
+            "value": "AN_2806_33_sdWAN_SDWAN_2806_2",
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": {
+              "function": {
+                "name": "juel",
+                "args": [
+                  "${serviceComponent.name}"
+                ]
+              }
+            },
+            "previous_value": "AN_2806_33_sdWAN_SDWAN_2806_2"
+          },
+          {
+            "name": "serviceType",
+            "value": "sdWAN",
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": "sdWAN",
+            "previous_value": "sdWAN"
+          },
+          {
+            "name": "sdWAN::jinjaFile",
+            "value": "JT_sdWAN",
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": "JT_sdWAN",
+            "previous_value": "JT_sdWAN"
+          },
+          {
+            "name": "sdWAN::customerName",
+            "value": "SDWAN_2806_2",
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": {
+              "get_input": "customerName"
+            },
+            "previous_value": "SDWAN_2806_2"
+          },
+          {
+            "name": "sdWAN::sdWanIdExisting",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": {
+              "get_input": "sdWanId"
+            }
+          },
+          {
+            "name": "sdWAN::sdWanId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": {
+              "get_input": "sdWanId"
+            }
+          },
+          {
+            "name": "sdWAN::sdWanServiceName",
+            "value": "SDWAN_2806_2",
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": {
+              "get_input": "sdWanServiceName"
+            },
+            "previous_value": "SDWAN_2806_2"
+          },
+          {
+            "name": "sdWAN::adBorId",
+            "value": "160455444",
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": {
+              "get_input": "adBorId"
+            },
+            "previous_value": "160455444"
+          },
+          {
+            "name": "sdWAN::cidn",
+            "value": "3815762982",
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": {
+              "get_input": "cidn"
+            },
+            "previous_value": "3815762982"
+          },
+          {
+            "name": "sdWAN::partnerId",
+            "value": "TBS001updated88",
+            "required": false,
+            "type": "string",
+            "modified": true,
+            "value_expression": null,
+            "raw_value": {
+              "get_input": "partnerId"
+            },
+            "previous_value": "TBS001updated66"
+          },
+          {
+            "name": "sdWAN::skuPart",
+            "value": "VC-VirtualEdge",
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": {
+              "function": {
+                "name": "get_input_ext",
+                "args": [
+                  "sdwanServer",
+                  "skus",
+                  0,
+                  "sku"
+                ]
+              }
+            },
+            "previous_value": "VC-VirtualEdge"
+          },
+          {
+            "name": "sdWAN::skuLicense",
+            "value": "VC100M-ENT-HO-SG-L34S1-12P",
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": {
+              "function": {
+                "name": "get_input_ext",
+                "args": [
+                  "sdwanServer",
+                  "skus",
+                  1,
+                  "sku"
+                ]
+              }
+            },
+            "previous_value": "VC100M-ENT-HO-SG-L34S1-12P"
+          },
+          {
+            "name": "sdWAN::skuMaintenance",
+            "value": "VC-VirtualEdge-3W",
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": {
+              "function": {
+                "name": "get_input_ext",
+                "args": [
+                  "sdwanServer",
+                  "skus",
+                  2,
+                  "sku"
+                ]
+              }
+            },
+            "previous_value": "VC-VirtualEdge-3W"
+          },
+          {
+            "name": "resourceType",
+            "value": null,
+            "required": true,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": "NetworkService"
+          },
+          {
+            "name": "SO_RESOURCE::resourceType",
+            "value": "NetworkService",
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": "NetworkService",
+            "previous_value": "NetworkService"
+          },
+          {
+            "name": "SO_RESOURCE::customOperations",
+            "value": null,
+            "required": false,
+            "type": "list",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "SO_RESOURCE::customTemplates",
+            "value": null,
+            "required": false,
+            "type": "list",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "GROUP1::prop1",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "externalId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "comments",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "objectInstId",
+            "value": 24,
+            "required": false,
+            "type": "integer",
+            "modified": true,
+            "value_expression": null,
+            "raw_value": null,
+            "previous_value": 22
+          },
+          {
+            "name": "description",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "vendor",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "version",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "revisionNumber",
+            "value": 6,
+            "required": false,
+            "type": "integer",
+            "modified": true,
+            "value_expression": null,
+            "raw_value": null,
+            "previous_value": 5
+          },
+          {
+            "name": "decommissionDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "modified": true,
+            "value_expression": null,
+            "raw_value": null,
+            "previous_value": "2023-08-14T12:56:10.587Z"
+          },
+          {
+            "name": "dueDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "inServiceDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "modified": true,
+            "value_expression": null,
+            "raw_value": null,
+            "previous_value": "2023-08-14T00:00:00.000Z"
+          },
+          {
+            "name": "installedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "orderedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "scheduledDate",
+            "value": "2023-08-14T12:56:10.587Z",
+            "required": false,
+            "type": "timestamp",
+            "modified": true,
+            "value_expression": null,
+            "raw_value": null,
+            "previous_value": "2023-08-14T11:17:17.090Z"
+          },
+          {
+            "name": "status",
+            "value": "planning",
+            "required": false,
+            "type": "string",
+            "modified": true,
+            "value_expression": null,
+            "raw_value": null,
+            "previous_value": "retiring"
+          },
+          {
+            "name": "lastModifiedOn",
+            "value": 1692017770949,
+            "required": false,
+            "type": "timestamp",
+            "modified": true,
+            "value_expression": null,
+            "raw_value": null,
+            "previous_value": 1692017770929
+          },
+          {
+            "name": "lastModifiedBy",
+            "value": "sysadm",
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null,
+            "previous_value": "sysadm"
+          },
+          {
+            "name": "queryDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "modifyDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "createdOn",
+            "value": 1692017770949,
+            "required": false,
+            "type": "timestamp",
+            "modified": true,
+            "value_expression": null,
+            "raw_value": null,
+            "previous_value": 1692011837452
+          },
+          {
+            "name": "createdBy",
+            "value": "sysadm",
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null,
+            "previous_value": "sysadm"
+          },
+          {
+            "name": "isArchived",
+            "value": null,
+            "required": false,
+            "type": "boolean",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "archivedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "archivedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lockedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lockedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lockOwner",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "versionNumber",
+            "value": 1,
+            "required": false,
+            "type": "integer",
+            "modified": true,
+            "value_expression": null,
+            "raw_value": null,
+            "previous_value": 5
+          },
+          {
+            "name": "SO_NS::nsdId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "SO_NS::vdcId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "SO_NS::vdcName",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "SO_NS::autoCreatedVdc",
+            "value": null,
+            "required": false,
+            "type": "boolean",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "SO_NS::subsystemName",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "SO_NS::connectionName",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "CUSTOM_NS::intProp1",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "CUSTOM_NS::booleanProp1",
+            "value": null,
+            "required": false,
+            "type": "boolean",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "CUSTOM_NS::listProp1",
+            "value": null,
+            "required": false,
+            "type": "list",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "CUSTOM_NS::mapProp1",
+            "value": null,
+            "required": false,
+            "type": "map",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "Domain_Orch_Adapter::jinjaFile",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "Domain_Orch_Adapter::timeoutDuration",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::relatedParty",
+            "value": null,
+            "required": false,
+            "type": "list",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::serviceSpecification_href",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::serviceSpecification_id",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::serviceCharacteristic_businessName",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::serviceCharacteristicTenancyProfile_template",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::serviceCharacteristicTenancyProfile_type",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::tenancyId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::tenancyIdExisting",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::stubRouting",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::serviceRelationship_id",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::serviceRelationship_href",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::serviceRelationship_relationshipType",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::serviceOrderId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::serviceOrderAction",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::serviceDescription",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::serviceName",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::serviceState",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::servicePlace_id",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::servicePlace_name",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::servicePlace_role",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::servicePlace___type",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::servicePlace___referredType",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::serviceSpecification_id",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::serviceSpecification_href",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::serviceRelatedParty",
+            "value": null,
+            "required": false,
+            "type": "list",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::serviceCharacteristic_coreFunction",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::serviceCharacteristic_deviceType",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::serviceCharacteristic_serviceTier",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::serviceCharacteristic_sku_Part",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::serviceCharacteristic_sku_License",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::serviceCharacteristic_sku_Maintenance",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::serviceOrderIdDevice",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::deviceId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::deviceHref",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::sdWanOrchestrator",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::orderId",
+            "value": "95f8ab1f-b479-43b9-a492-6aacf341edfe",
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null,
+            "previous_value": "95f8ab1f-b479-43b9-a492-6aacf341edfe"
+          },
+          {
+            "name": "NSTMF640::state",
+            "value": "completed",
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null,
+            "previous_value": "completed"
+          },
+          {
+            "name": "NSTMF640::errorCode",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::errorMessage",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::errorReason",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TMF640serviceSpecification_id",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TMF640serviceSpecification_href",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TcVNFserviceRelationshipCharacteristicDevice_activationKey",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TcVNFserviceRelationshipCharacteristicDevice_edgeName",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TcVNFserviceRelationshipCharacteristicTenancy_sdWanOrchestrator",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TcVNFServiceRelationshipManagedDevice_id",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TcVNFServiceRelationshipManagedDevice_href",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TcVNFServiceRelationshipManagedTenancy_id",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TcVNFServiceRelationshipManagedTenancy_href",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TMF640tcServiceCharacteristic_type",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TMF640tcServiceCharacteristic_wanInterfaceGE1_type",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TMF640tcServiceCharacteristic_wanInterfaceGE1_ipv4Address",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TMF640tcServiceCharacteristic_wanInterfaceGE1_subnetMask",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TMF640tcServiceCharacteristic_wanInterfaceGE1_defaultGateway",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TMF640tcServiceCharacteristic_wanInterfaceGE2_type",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TMF640tcServiceCharacteristic_wanInterfaceGE2_ipv4Address",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TMF640tcServiceCharacteristic_wanInterfaceGE2_subnetMask",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TMF640tcServiceCharacteristic_wanInterfaceGE2_defaultGateway",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TMF640tcServiceCharacteristic_lanInterfaceGE3_type",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TMF640tcServiceCharacteristic_lanInterfaceGE3_ipv4Address",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TMF640tcServiceCharacteristic_lanInterfaceGE3_subnetMask",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TMF640tcServiceCharacteristic_lanInterfaceGE3_defaultGateway",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TMF640tcServiceCharacteristic_tenancy_subscriptionName",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TMF640tcServiceCharacteristic_tenancy_subscriptionId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TMF640tcServiceCharacteristic_tenancy_resourceGroupName",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TMF640tcServiceCharacteristic_tenancy_cspTenantId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TMF640tcServiceCharacteristic_edgeDevice_edgeDeviceName",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TMF640tcServiceCharacteristic_edgeDevice_networkFunctionManagerName",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::TMF640tcServiceCharacteristic_edgeDevice_edgeDeviceActivationDate",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::activationKey",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF641::edgeName",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::tcVNFId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "NSTMF640::tcVNFHref",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "sdWAN::timeoutDuration",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "sdWAN::sdWanOrderId",
+            "value": "95f8ab1f-b479-43b9-a492-6aacf341edfe",
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null,
+            "previous_value": "95f8ab1f-b479-43b9-a492-6aacf341edfe"
+          },
+          {
+            "name": "sdWAN::sdWanOrderHref",
+            "value": "/serviceOrdering/v4/serviceOrder/managedDevice/95f8ab1f-b479-43b9-a492-6aacf341edfe",
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null,
+            "previous_value": "/serviceOrdering/v4/serviceOrder/managedDevice/95f8ab1f-b479-43b9-a492-6aacf341edfe"
+          },
+          {
+            "name": "sdWAN::randomId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "sdWAN::testJuel",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "type",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "SDWANInputData::customerNameInput",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "SDWANInputData::cidnInput",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "SDWANInputData::adBorIdInput",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "SDWANInputData::sdWanIdInput",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "SDWANInputData::partnerIdInput",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "SDWANInputData::sdWanServiceNameInput",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "SDWANInputData::sdwanServerInput",
+            "value": null,
+            "required": false,
+            "type": "sdwanServer",
+            "modified": false,
+            "value_expression": null,
+            "raw_value": null
+          }
+        ],
+        "nodeattributes": [
+          {
+            "name": "tosca_id",
+            "value": "sdWAN_1",
+            "type": "string",
+            "description": "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+            "value_expression": null,
+            "raw_value": "sdWAN_1"
+          },
+          {
+            "name": "tosca_name",
+            "value": "sdWAN",
+            "type": "string",
+            "description": "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+            "value_expression": null,
+            "raw_value": "sdWAN"
+          },
+          {
+            "name": "state",
+            "value": "started",
+            "type": "string",
+            "description": "The state of the node instance.",
+            "value_expression": null,
+            "raw_value": "started"
+          }
+        ],
+        "relationship": []
+      }
+    ]
+  }
+}

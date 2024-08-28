@@ -1,0 +1,244 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "GET",
+        "urlPattern": "/oss-core-ws/rest/serviceInventory/v4/service/.*?fields="
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/ns/service.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "nsDelete",
+      "requiredScenarioState": "Skip",
+      "request": {
+        "method": "GET",
+        "urlPattern": "/oss-core-ws/rest/serviceInventory/v4/service/.*?fields="
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/ns/serviceNoVdc.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ctv/virtnetworkserv/169?fs.vnfs=key&fs.subsystemReferences=key&fs.relatedParty=key"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/ns/virtnetworkservice.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ctv/virtnetworkserv/169?fs.vimZone=key"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/ns/virtnetworkservicevimzone.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/orchestration/v1/variables/resources/169?name=autoCreatedVdc"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/ns/autovdc.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ctv/vnf/170?fs.vimZone=key"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/ns/vnf_170.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/oss-core-ws/rest/ctv/vnf/171?fs.vimZone=key"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/ns/vnf_171.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts?query=name==additionalParamsForVnfOneTemplate;type==CONFIG_TEMPLATE"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "items": [
+            {
+              "id": "1002",
+              "name": "additionalParamsForVnfOneTemplate",
+              "invariantUUID": "3cef9148-e889-42f7-bd71-11b20fa2c8d9",
+              "type": "CONFIG_TEMPLATE",
+              "originalFileName": "additionalParamsForVnfOneTemplate.txt"
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts/1002/download?archive=false"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "catalog/catalog_artifacts/ns_create/additionalparams.txt",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts?query=name==day0VnfOneConfig;type==CONFIG_TEMPLATE"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "items": [
+            {
+              "id": "1001",
+              "name": "day0VnfOneConfig",
+              "invariantUUID": "3cef9148-e889-42f7-bd71-11b20fa2c8d8",
+              "type": "CONFIG_TEMPLATE",
+              "originalFileName": "template1.txt"
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts/1001/download?archive=false"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "catalog/catalog_artifacts/ns_create/day0.txt",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts?query=name==additionalParamsForNsConfig;type==CONFIG_TEMPLATE"
+      },
+      "response": {
+        "status": 200,
+        "jsonBody": {
+          "items": [
+            {
+              "id": "1003",
+              "name": "additionalParamsForNsConfig",
+              "invariantUUID": "3cef9148-e889-42f7-bd71-11b20fa2c8d9",
+              "type": "CONFIG_TEMPLATE",
+              "originalFileName": "additionalParamsForNsConfig.txt"
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/catalog-manager/v1/artifacts/1003/download?archive=false"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "catalog/catalog_artifacts/ns_create/ns.txt",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/orchestration/v1/variables/resources/ctv-virtnetworkserv-169"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/ns/variableDto.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/orchestration/v1/variables/resources/ctv-vnf-170"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/ns/variableDto.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/orchestration/v1/variables/resources/ctv-vnf-171"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "cts/ns/variableDto.json",
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "type": "ctv/virtualnetworkservice",
+  "id": 5,
+  "href": "ctv/virtnetworkserv/5",
+  "dynamicAttributes": [
+    {
+      "attributeKey": 13,
+      "groupName": "SO_NS",
+      "attributeName": "nsdId",
+      "stringAttributeValue": "nsdId123",
+      "attributeDefinitionId": 7
+    },
+    {
+      "attributeKey": 14,
+      "groupName": "SO_NS",
+      "attributeName": "vdcName",
+      "stringAttributeValue": "vdc123",
+      "attributeDefinitionId": 11
+    }
+  ],
+  "name": "ns_2_2",
+  "description": "NetworkService for test",
+  "revisionNumber": 1,
+  "scheduledDate": "2021-10-10T21:00:00.000Z",
+  "status": "planning",
+  "lastModifiedOn": "2021-10-11T10:31:41.823Z",
+  "lastModifiedBy": "Arabian",
+  "createdOn": "2021-10-11T10:31:41.823Z",
+  "createdBy": "Arabian",
+  "versionNumber": 1,
+  "revisionGroupKey": {
+    "type": "revisionGroupKey",
+    "keyValue": 25
+  },
+  "key": {
+    "type": "ctv/virtualnetworkserviceKey",
+    "keyValue": 5
+  }
+}

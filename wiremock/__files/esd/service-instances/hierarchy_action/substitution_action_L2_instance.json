@@ -1,0 +1,301 @@
+{
+  "id" : "{{request.pathSegments.[3]}}",
+  "creTime" : "2021-09-27T19:47:40.569Z",
+  "name" : "{{parameters.serviceName}}",
+  "serviceModelID" : "56225731-5e92-46fc-b0d6-4b60dfb88c99",
+  "catalogInvariantUUID" : "47ebc2b0-8396-4d1a-8f71-3c8cf908726f",
+  "catalogVersion" : "1.0",
+  "catalogId" : 201,
+  "metadata" : {
+    "template_name" : null,
+    "template_author" : null,
+    "template_version" : null,
+    "category" : "CORE",
+    "serviceType" : "NSSI",
+    "resourceSharingLevel" : "Shared"
+  },
+  "substitutingModelIDs" : [ ],
+  "state" : "TO BE DEPLOYED",
+  "workflows" : [ ],
+  "topology" : {
+    "inputs" : [ {
+      "name" : "type",
+      "value" : "CORE_2",
+      "required" : true,
+      "type" : "string"
+    }, {
+      "name" : "ns1_name",
+      "value" : "ns1",
+      "required" : true,
+      "type" : "string"
+    }, {
+      "name" : "ns1_vnf_name",
+      "value" : "vnf1",
+      "required" : true,
+      "type" : "string"
+    }, {
+      "name" : "ns2_name",
+      "value" : "ns2",
+      "required" : true,
+      "type" : "string"
+    }, {
+      "name" : "ns2_vnf_name",
+      "value" : "vnf2",
+      "required" : true,
+      "type" : "string"
+    }, {
+      "name" : "ns_vimZone",
+      "value" : "vimZone1",
+      "required" : true,
+      "type" : "string"
+    }, {
+      "name" : "ns_tenant",
+      "value" : "ecm",
+      "required" : true,
+      "type" : "string"
+    } ],
+    "policies" : [ ],
+    "outputs" : [ ],
+    "relationshipTemplates" : [ {
+      "name" : "core_connection",
+      "description" : null,
+      "properties" : [ {
+        "name" : "credential",
+        "value" : null,
+        "required" : false,
+        "raw_value" : null,
+        "type" : "tosca.datatypes.Credential"
+      } ],
+      "interfaces" : [ {
+        "name" : "Configure",
+        "inputs" : [ ],
+        "operations" : [ {
+          "name" : "remove_target",
+          "inputs" : [ ],
+          "implementation" : "action/Detach"
+        }, {
+          "name" : "target_changed",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "add_source",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "add_target",
+          "inputs" : [ {
+            "name" : "input3",
+            "value" : true,
+            "required" : true,
+            "raw_value" : true,
+            "type" : null
+          }, {
+            "name" : "input2",
+            "value" : 2,
+            "required" : true,
+            "raw_value" : 2,
+            "type" : null
+          }, {
+            "name" : "input1",
+            "value" : "value1",
+            "required" : true,
+            "raw_value" : "value1",
+            "type" : null
+          } ],
+          "implementation" : "action/Attach"
+        }, {
+          "name" : "post_configure_target",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "post_configure_source",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "pre_configure_target",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "pre_configure_source",
+          "inputs" : [ ],
+          "implementation" : null
+        } ],
+        "notifications" : [ ]
+      } ]
+    } ],
+    "nodes" : [ {
+      "name" : "NSSI_OTHER_1",
+      "state" : "initial",
+      "action" : "add",
+      "instanceIDs" : [ "Service_L3_2_000001-Service-ocrs-resourceFacingService-revisionGroupKey-5" ],
+      "directives" : [ "substitute" ],
+      "artifacts" : [ ],
+      "interfaces" : [ {
+        "name" : "Standard",
+        "inputs" : [ ],
+        "operations" : [ {
+          "name" : "delete",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "stop",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "start",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "configure",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "create",
+          "inputs" : [ ],
+          "implementation" : null
+        } ],
+        "notifications" : [ ]
+      } ],
+      "nodetype" : "com.ericsson.so.nodes.NSSI_OTHER",
+      "parent_type" : "tosca.nodes.Root",
+      "nodeproperties" : [ {
+        "name" : "type",
+        "value" : null,
+        "required" : true,
+        "type" : "string",
+        "raw_value" : {
+          "get_input" : "type"
+        }
+      }, {
+        "name" : "nssi_vnf_name",
+        "value" : null,
+        "required" : true,
+        "type" : "string",
+        "raw_value" : {
+          "get_input" : "ns2_vnf_name"
+        }
+      } ],
+      "nodeattributes" : [ {
+        "name" : "tosca_id",
+        "value" : "NSSI_OTHER_1",
+        "type" : "string",
+        "description" : "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+        "raw_value" : "NSSI_OTHER_1"
+      }, {
+        "name" : "tosca_name",
+        "value" : "NSSI_OTHER",
+        "type" : "string",
+        "description" : "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+        "raw_value" : "NSSI_OTHER"
+      }, {
+        "name" : "state",
+        "value" : "initial",
+        "type" : "string",
+        "description" : "The state of the node instance.",
+        "raw_value" : "initial"
+      } ],
+      "relationship" : [ {
+        "target" : "NSSI_CORE_1",
+        "requirementName" : "core_connection",
+        "relationshipName" : null,
+        "action" : "delete"
+      } ]
+    }, {
+      "name" : "NSSI_CORE_1",
+      "state" : "initial",
+      "action" : "add",
+      "instanceIDs" : [ "Service_L3_1_000001-Service-ocrs-resourceFacingService-revisionGroupKey-4" ],
+      "directives" : [ "substitute" ],
+      "artifacts" : [ ],
+      "interfaces" : [ {
+        "name" : "Standard",
+        "inputs" : [ ],
+        "operations" : [ {
+          "name" : "delete",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "stop",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "start",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "configure",
+          "inputs" : [ ],
+          "implementation" : null
+        }, {
+          "name" : "create",
+          "inputs" : [ ],
+          "implementation" : null
+        } ],
+        "notifications" : [ ]
+      } ],
+      "nodetype" : "com.ericsson.so.nodes.NSSI_CORE",
+      "parent_type" : "tosca.nodes.Root",
+      "nodeproperties" : [ {
+        "name" : "nssi_tenant",
+        "value" : null,
+        "required" : true,
+        "type" : "string",
+        "raw_value" : {
+          "get_input" : "ns_tenant"
+        }
+      }, {
+        "name" : "nssi_vimZone",
+        "value" : null,
+        "required" : true,
+        "type" : "string",
+        "raw_value" : {
+          "get_input" : "ns_vimZone"
+        }
+      }, {
+        "name" : "nssi_ns_name",
+        "value" : null,
+        "required" : true,
+        "type" : "string",
+        "raw_value" : {
+          "get_input" : "ns1_name"
+        }
+      }, {
+        "name" : "type",
+        "value" : null,
+        "required" : true,
+        "type" : "string",
+        "raw_value" : {
+          "get_input" : "type"
+        }
+      }, {
+        "name" : "nssi_vnf_name",
+        "value" : null,
+        "required" : true,
+        "type" : "string",
+        "raw_value" : {
+          "get_input" : "ns1_vnf_name"
+        }
+      } ],
+      "nodeattributes" : [ {
+        "name" : "tosca_id",
+        "value" : "NSSI_CORE_1",
+        "type" : "string",
+        "description" : "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+        "raw_value" : "NSSI_CORE_1"
+      }, {
+        "name" : "tosca_name",
+        "value" : "NSSI_CORE",
+        "type" : "string",
+        "description" : "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+        "raw_value" : "NSSI_CORE"
+      }, {
+        "name" : "state",
+        "value" : "initial",
+        "type" : "string",
+        "description" : "The state of the node instance.",
+        "raw_value" : "initial"
+      } ],
+      "relationship" : [ ]
+    } ]
+  }
+}

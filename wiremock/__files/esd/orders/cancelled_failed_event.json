@@ -1,0 +1,22 @@
+{
+  "eventId": "%EVENT_ID%",
+  "eventTime": "%EVENT_TIME%",
+  "eventType": "ServiceOrderStateChangeEvent",
+  "event": {
+    "serviceOrder": {
+      "id": "%ORDER_ID%",
+      "externalId": "%EXTERNAL_ID%",
+      "state": "failed",
+      "subState": "CANCEL_FAILED",
+      "orderItem": [{
+        "service": {
+          "id": "%SERVICE_ID%"
+        }
+      }
+      ],
+      "errorDetails": {
+        "messageText": "CANCEL ERROR"
+      }
+    }
+  }
+}

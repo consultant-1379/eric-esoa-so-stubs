@@ -1,0 +1,22 @@
+{
+  "type" : "ctv/vimzone",
+  "id" : 16,
+  "href" : "ctv/vimzone/16",
+  "name" : "vimZone_1",
+  "revisionNumber" : 1,
+  "scheduledDate" : "2021-11-18T13:26:17.346Z",
+  "status" : "planning",
+  "lastModifiedOn" : "2021-11-18T13:26:18.416Z",
+  "lastModifiedBy" : "sysadm",
+  "createdOn" : "2021-11-18T13:26:18.416Z",
+  "createdBy" : "sysadm",
+  "revisionGroupKey" : {
+    "type" : "revisionGroupKey",
+    "keyValue" : 113
+  },
+  "_type" : "Ericsson - Cloud Execution Environment (CEE)",
+  "key" : {
+    "type" : "ctv/vimzoneKey",
+    "keyValue" : 16
+  }
+}

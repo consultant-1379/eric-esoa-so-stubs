@@ -1,0 +1,22 @@
+{
+  "type" : "ctv/virtualnetworkfunction",
+  "id" : 370,
+  "href" : "ctv/vnf/370",
+  "name" : "vnf_111",
+  "revisionNumber" : 1,
+  "scheduledDate" : "2021-12-09T17:00:00.000Z",
+  "status" : "planning",
+  "lastModifiedOn" : "2021-12-09T14:17:57.103Z",
+  "lastModifiedBy" : "sysadm",
+  "createdOn" : "2021-12-09T14:17:57.103Z",
+  "createdBy" : "sysadm",
+  "versionNumber" : 1,
+  "revisionGroupKey" : {
+    "type" : "revisionGroupKey",
+    "keyValue" : 1542
+  },
+  "key" : {
+    "type" : "ctv/virtualnetworkfunctionKey",
+    "keyValue" : 370
+  }
+}

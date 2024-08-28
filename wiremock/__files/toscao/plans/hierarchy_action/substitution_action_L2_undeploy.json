@@ -1,0 +1,82 @@
+{
+  "workflow": "undeploy",
+  "serviceExecutionPlan": {
+    "operations": [
+      {
+        "id": "NSSI_OTHER_1.Standard.stop.334",
+        "name": "stop",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NSSI_OTHER_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NSSI_OTHER_1->NSSI_CORE_1_1.Configure.remove_target.80",
+        "name": "remove_target",
+        "interface": "Configure",
+        "type": "relationship",
+        "activity": "call_operation",
+        "source_node": "NSSI_OTHER_1",
+        "target_node": "NSSI_CORE_1",
+        "implementation": "action/Detach",
+        "inputs": [],
+        "dependency_operations": ["NSSI_OTHER_1.Standard.stop.334"],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NSSI_OTHER_1.Standard.delete.335",
+        "name": "delete",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NSSI_OTHER_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NSSI_OTHER_1->NSSI_CORE_1_1.Configure.remove_target.80"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NSSI_CORE_1.Standard.stop.338",
+        "name": "stop",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NSSI_CORE_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NSSI_OTHER_1.Standard.delete.335"
+        ],
+        "failure_dependency_operations": []
+      },
+      {
+        "id": "NSSI_CORE_1.Standard.delete.339",
+        "name": "delete",
+        "interface": "Standard",
+        "type": "node",
+        "activity": "call_operation",
+        "node": "NSSI_CORE_1",
+        "implementation": null,
+        "post_state": null,
+        "pre_state": null,
+        "inputs": [],
+        "dependency_operations": [
+          "NSSI_CORE_1.Standard.stop.338"
+        ],
+        "failure_dependency_operations": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "workflow": "undeploy",
+  "serviceExecutionPlan": {
+    "operations": [{
+      "id": "NSSI_CORE_1.Standard.stop.85",
+      "name": "stop",
+      "interface": "Standard",
+      "type": "node",
+      "activity": "call_operation",
+      "node": "NSSI_CORE_1",
+      "implementation": null,
+      "post_state": null,
+      "pre_state": null,
+      "inputs": [],
+      "dependency_operations": [],
+      "failure_dependency_operations": []
+    }, {
+      "id": "NSSI_CORE_1.Standard.delete.86",
+      "name": "delete",
+      "interface": "Standard",
+      "type": "node",
+      "activity": "call_operation",
+      "node": "NSSI_CORE_1",
+      "implementation": null,
+      "post_state": null,
+      "pre_state": null,
+      "inputs": [],
+      "dependency_operations": ["NSSI_CORE_1.Standard.stop.85"],
+      "failure_dependency_operations": []
+    }
+    ]
+  }
+}

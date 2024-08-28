@@ -1,0 +1,21 @@
+{
+    "serviceExecutionPlan": {
+        "operations": [
+            {
+                "activity": "call_operation",
+                "dependency_operations": [],
+                "failure_dependency_operations": [],
+                "id": "NETWORK_SERVICE_1.Detach.detach.444",
+                "implementation": "camunda/enabler",
+                "inputs": [],
+                "interface": "Detach",
+                "name": "detach",
+                "node": "NETWORK_SERVICE_1",
+                "post_state": "reconfigured",
+                "pre_state": "reconfiguring",
+                "type": "node"
+            }
+        ]
+    },
+    "workflow": "Detach"
+}

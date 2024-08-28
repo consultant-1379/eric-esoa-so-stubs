@@ -1,0 +1,2160 @@
+{
+  "id": "{{request.pathSegments.[3]}}",
+  "creTime": "2021-12-09T14:17:56.897Z",
+  "workflow": "undeploy",
+  "name": "{{parameters.serviceName}}",
+  "serviceModelID": "07e44939-599c-47fb-b54b-e3963c0bee65",
+  "catalogInvariantUUID": "1ab4bcbc-9c75-4622-94e7-d069b7485824",
+  "catalogVersion": "1.0",
+  "catalogId": 5,
+  "metadata": {
+    "template_name": null,
+    "template_author": null,
+    "template_version": null,
+    "category": "CORE",
+    "serviceType": "NSSI",
+    "resourceSharingLevel": "Shared"
+  },
+  "substitutingModelIDs": [],
+  "state": "TO BE DEPLOYED",
+  "workflows": [],
+  "topology": {
+    "inputs": [
+      {
+        "name": "ns_name",
+        "value": "ns1",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "vnf_name",
+        "value": "vnf1",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "vimZone",
+        "value": "vimZone1",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "tenant",
+        "value": "ecm",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "vdc_name",
+        "value": "vdc1",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "nsStringAttr1",
+        "value": "value1",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "nsStringAttr2",
+        "value": "100",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "nsStringAttr3",
+        "value": "true",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "ctsHost",
+        "value": "eai:8080",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "nsIntAttr1",
+        "value": 100,
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "name": "nsBooleanAttr1",
+        "value": true,
+        "required": true,
+        "type": "boolean"
+      },
+      {
+        "name": "nsListAttr1",
+        "value": [
+          "value1",
+          "value2",
+          "value3"
+        ],
+        "required": true,
+        "type": "list"
+      },
+      {
+        "name": "nsMapAttr1",
+        "value": {
+          "key1": "value1"
+        },
+        "required": true,
+        "type": "map"
+      }
+    ],
+    "policies": [],
+    "outputs": [],
+    "relationshipTemplates": [],
+    "nodes": [
+      {
+        "name": "NETWORK_FUNCTION_1",
+        "state": "initial",
+        "action": "add",
+        "instanceIDs": [],
+        "directives": [],
+        "artifacts": [],
+        "interfaces": [
+          {
+            "name": "Scale",
+            "inputs": [],
+            "operations": [
+              {
+                "name": "postScale",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "scale",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "preScale",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "Scale",
+                "inputs": [],
+                "implementation": null
+              }
+            ],
+            "notifications": []
+          },
+          {
+            "name": "Standard",
+            "inputs": [],
+            "operations": [
+              {
+                "name": "delete",
+                "inputs": [
+                  {
+                    "name": "mapOpInput2",
+                    "value": {
+                      "key1": "vnf1",
+                      "key2": "ns1",
+                      "key3": null
+                    },
+                    "required": true,
+                    "raw_value": {
+                      "key1": {
+                        "get_input": "vnf_name"
+                      },
+                      "key2": {
+                        "get_property": [
+                          "NETWORK_SERVICE",
+                          "name"
+                        ]
+                      },
+                      "key3": {
+                        "get_attribute": [
+                          "NETWORK_SERVICE",
+                          "SO_NS::nsStringAttr1"
+                        ]
+                      }
+                    },
+                    "type": null
+                  },
+                  {
+                    "name": "mapOpInput1",
+                    "value": {
+                      "key1": "value",
+                      "key2": {
+                        "key3": null
+                      }
+                    },
+                    "required": true,
+                    "raw_value": {
+                      "key1": "value",
+                      "key2": {
+                        "key3": {
+                          "get_attribute": [
+                            "NETWORK_SERVICE",
+                            "SO_NS::nsMapAttr1"
+                          ]
+                        }
+                      }
+                    },
+                    "type": null
+                  },
+                  {
+                    "name": "listOpInput2",
+                    "value": [
+                      "vnf1",
+                      "ns1",
+                      null
+                    ],
+                    "required": true,
+                    "raw_value": [
+                      {
+                        "get_input": "vnf_name"
+                      },
+                      {
+                        "get_property": [
+                          "NETWORK_SERVICE",
+                          "name"
+                        ]
+                      },
+                      {
+                        "get_attribute": [
+                          "NETWORK_SERVICE",
+                          "SO_NS::nsStringAttr1"
+                        ]
+                      }
+                    ],
+                    "type": null
+                  },
+                  {
+                    "name": "listOpInput3",
+                    "value": [
+                      {
+                        "get_attribute": [
+                          "SELF",
+                          "name"
+                        ]
+                      },
+                      {
+                        "get_property": [
+                          "SELF",
+                          "name"
+                        ]
+                      }
+                    ],
+                    "required": true,
+                    "raw_value": [
+                      {
+                        "get_attribute": [
+                          "SELF",
+                          "name"
+                        ]
+                      },
+                      {
+                        "get_property": [
+                          "SELF",
+                          "name"
+                        ]
+                      }
+                    ],
+                    "type": null
+                  },
+                  {
+                    "name": "listOpInput1",
+                    "value": null,
+                    "required": true,
+                    "raw_value": {
+                      "get_attribute": [
+                        "NETWORK_SERVICE",
+                        "SO_NS::nsListAttr1"
+                      ]
+                    },
+                    "type": null
+                  },
+                  {
+                    "name": "booleanOpInput1",
+                    "value": null,
+                    "required": true,
+                    "raw_value": {
+                      "get_attribute": [
+                        "NETWORK_SERVICE",
+                        "SO_NS::nsBooleanAttr1"
+                      ]
+                    },
+                    "type": null
+                  },
+                  {
+                    "name": "intOpInput1",
+                    "value": null,
+                    "required": true,
+                    "raw_value": {
+                      "get_attribute": [
+                        "NETWORK_SERVICE",
+                        "SO_NS::nsIntAttr1"
+                      ]
+                    },
+                    "type": null
+                  },
+                  {
+                    "name": "stringOpInput2",
+                    "value": "vnf1ns1",
+                    "required": true,
+                    "raw_value": {
+                      "concat": [
+                        {
+                          "get_input": "vnf_name"
+                        },
+                        {
+                          "get_property": [
+                            "NETWORK_SERVICE",
+                            "name"
+                          ]
+                        },
+                        {
+                          "get_attribute": [
+                            "NETWORK_SERVICE",
+                            "SO_NS::nsStringAttr1"
+                          ]
+                        }
+                      ]
+                    },
+                    "type": null
+                  },
+                  {
+                    "name": "stringOpInput1",
+                    "value": null,
+                    "required": true,
+                    "raw_value": {
+                      "get_attribute": [
+                        "NETWORK_SERVICE",
+                        "SO_NS::nsStringAttr1"
+                      ]
+                    },
+                    "type": null
+                  }
+                ],
+                "implementation": "workflow/enabler"
+              },
+              {
+                "name": "stop",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "start",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "configure",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "create",
+                "inputs": [
+                  {
+                    "name": "mapOpInput2",
+                    "value": {
+                      "key1": "vnf1",
+                      "key2": "ns1",
+                      "key3": null
+                    },
+                    "required": true,
+                    "raw_value": {
+                      "key1": {
+                        "get_input": "vnf_name"
+                      },
+                      "key2": {
+                        "get_property": [
+                          "NETWORK_SERVICE",
+                          "name"
+                        ]
+                      },
+                      "key3": {
+                        "get_attribute": [
+                          "NETWORK_SERVICE",
+                          "SO_NS::nsStringAttr1"
+                        ]
+                      }
+                    },
+                    "type": null
+                  },
+                  {
+                    "name": "mapOpInput1",
+                    "value": {
+                      "key1": "value",
+                      "key2": {
+                        "key3": null
+                      }
+                    },
+                    "required": true,
+                    "raw_value": {
+                      "key1": "value",
+                      "key2": {
+                        "key3": {
+                          "get_attribute": [
+                            "NETWORK_SERVICE",
+                            "SO_NS::nsMapAttr1"
+                          ]
+                        }
+                      }
+                    },
+                    "type": null
+                  },
+                  {
+                    "name": "listOpInput2",
+                    "value": [
+                      "vnf1",
+                      "ns1",
+                      null
+                    ],
+                    "required": true,
+                    "raw_value": [
+                      {
+                        "get_input": "vnf_name"
+                      },
+                      {
+                        "get_property": [
+                          "NETWORK_SERVICE",
+                          "name"
+                        ]
+                      },
+                      {
+                        "get_attribute": [
+                          "NETWORK_SERVICE",
+                          "SO_NS::nsStringAttr1"
+                        ]
+                      }
+                    ],
+                    "type": null
+                  },
+                  {
+                    "name": "listOpInput1",
+                    "value": null,
+                    "required": true,
+                    "raw_value": {
+                      "get_attribute": [
+                        "NETWORK_SERVICE",
+                        "SO_NS::nsListAttr1"
+                      ]
+                    },
+                    "type": null
+                  },
+                  {
+                    "name": "booleanOpInput1",
+                    "value": null,
+                    "required": true,
+                    "raw_value": {
+                      "get_attribute": [
+                        "NETWORK_SERVICE",
+                        "SO_NS::nsBooleanAttr1"
+                      ]
+                    },
+                    "type": null
+                  },
+                  {
+                    "name": "intOpInput1",
+                    "value": null,
+                    "required": true,
+                    "raw_value": {
+                      "get_attribute": [
+                        "NETWORK_SERVICE",
+                        "SO_NS::nsIntAttr1"
+                      ]
+                    },
+                    "type": null
+                  },
+                  {
+                    "name": "stringOpInput2",
+                    "value": "vnf1ns1",
+                    "required": true,
+                    "raw_value": {
+                      "concat": [
+                        {
+                          "get_input": "vnf_name"
+                        },
+                        {
+                          "get_property": [
+                            "NETWORK_SERVICE",
+                            "name"
+                          ]
+                        },
+                        {
+                          "get_attribute": [
+                            "NETWORK_SERVICE",
+                            "SO_NS::nsStringAttr1"
+                          ]
+                        }
+                      ]
+                    },
+                    "type": null
+                  },
+                  {
+                    "name": "listOpInput3",
+                    "value": [
+                      {
+                        "get_attribute": [
+                          "SELF",
+                          "name"
+                        ]
+                      },
+                      {
+                        "get_property": [
+                          "SELF",
+                          "name"
+                        ]
+                      }
+                    ],
+                    "required": true,
+                    "raw_value": [
+                      {
+                        "get_attribute": [
+                          "SELF",
+                          "name"
+                        ]
+                      },
+                      {
+                        "get_property": [
+                          "SELF",
+                          "name"
+                        ]
+                      }
+                    ],
+                    "type": null
+                  },
+                  {
+                    "name": "stringOpInput1",
+                    "value": null,
+                    "required": true,
+                    "raw_value": {
+                      "get_attribute": [
+                        "NETWORK_SERVICE",
+                        "SO_NS::nsStringAttr1"
+                      ]
+                    },
+                    "type": null
+                  }
+                ],
+                "implementation": "workflow/enabler"
+              }
+            ],
+            "notifications": []
+          }
+        ],
+        "nodetype": "topology.nodes.ctv.vnf",
+        "parent_type": "topology.nodes.ctc.hostedFunction",
+        "nodeproperties": [
+          {
+            "name": "installedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "objectInstId",
+            "value": 370,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "operationalState",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "administrativeState",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "SO_VNF::vimZoneName",
+            "value": {
+              "get_attribute": [
+                "VIM_ZONE_1",
+                "name"
+              ]
+            },
+            "required": false,
+            "type": "string",
+            "raw_value": {
+              "get_attribute": [
+                "VIM_ZONE",
+                "name"
+              ]
+            },
+            "value_expression": {
+              "get_attribute": [
+                "VIM_ZONE_1",
+                "name"
+              ]
+            }
+          },
+          {
+            "name": "inServiceDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "createdOn",
+            "value": 1639059477103,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "resourceType",
+            "value": null,
+            "required": true,
+            "type": "string",
+            "raw_value": "Resource"
+          },
+          {
+            "name": "SO_RESOURCE::customOperations",
+            "value": [],
+            "required": false,
+            "type": "list",
+            "raw_value": []
+          },
+          {
+            "name": "name",
+            "value": "vnf_111",
+            "required": false,
+            "type": "string",
+            "raw_value": {
+              "get_input": "vnf_name"
+            }
+          },
+          {
+            "name": "lockedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "orderedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "SO_VNF::vnfStringProp2",
+            "value": {
+              "concat": [
+                {
+                  "get_input": "vnf_name"
+                },
+                {
+                  "get_property": [
+                    "NETWORK_SERVICE",
+                    "name"
+                  ]
+                },
+                {
+                  "get_attribute": [
+                    "NETWORK_SERVICE_1",
+                    "SO_NS::nsStringAttr1"
+                  ]
+                }
+              ]
+            },
+            "required": false,
+            "type": "string",
+            "raw_value": {
+              "concat": [
+                {
+                  "get_input": "vnf_name"
+                },
+                {
+                  "get_property": [
+                    "NETWORK_SERVICE",
+                    "name"
+                  ]
+                },
+                {
+                  "get_attribute": [
+                    "NETWORK_SERVICE",
+                    "SO_NS::nsStringAttr1"
+                  ]
+                }
+              ]
+            },
+            "value_expression": {
+              "concat": [
+                {
+                  "get_input": "vnf_name"
+                },
+                {
+                  "get_property": [
+                    "NETWORK_SERVICE",
+                    "name"
+                  ]
+                },
+                {
+                  "get_attribute": [
+                    "NETWORK_SERVICE_1",
+                    "SO_NS::nsStringAttr1"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "name": "SO_VNF::vnfStringProp3",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "SO_VNF::vnfStringProp1",
+            "value": {
+              "get_attribute": [
+                "NETWORK_SERVICE_1",
+                "SO_NS::nsStringAttr1"
+              ]
+            },
+            "required": false,
+            "type": "string",
+            "raw_value": {
+              "get_attribute": [
+                "NETWORK_SERVICE",
+                "SO_NS::nsStringAttr1"
+              ]
+            },
+            "value_expression": {
+              "get_attribute": [
+                "NETWORK_SERVICE_1",
+                "SO_NS::nsStringAttr1"
+              ]
+            }
+          },
+          {
+            "name": "versionNumber",
+            "value": 1,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "SO_VNF::vnfListProp1",
+            "value": {
+              "get_attribute": [
+                "NETWORK_SERVICE_1",
+                "SO_NS::nsListAttr1"
+              ]
+            },
+            "required": false,
+            "type": "list",
+            "raw_value": {
+              "get_attribute": [
+                "NETWORK_SERVICE",
+                "SO_NS::nsListAttr1"
+              ]
+            },
+            "value_expression": {
+              "get_attribute": [
+                "NETWORK_SERVICE_1",
+                "SO_NS::nsListAttr1"
+              ]
+            }
+          },
+          {
+            "name": "SO_VNF::vnfListProp2",
+            "value": [
+              {
+                "get_input": "vnf_name"
+              },
+              {
+                "get_property": [
+                  "NETWORK_SERVICE",
+                  "name"
+                ]
+              },
+              {
+                "get_attribute": [
+                  "NETWORK_SERVICE_1",
+                  "SO_NS::nsStringAttr1"
+                ]
+              },
+              {
+                "get_attribute": [
+                  "VIM_ZONE_1",
+                  "name"
+                ]
+              }
+            ],
+            "required": false,
+            "type": "list",
+            "raw_value": [
+              {
+                "get_input": "vnf_name"
+              },
+              {
+                "get_property": [
+                  "NETWORK_SERVICE",
+                  "name"
+                ]
+              },
+              {
+                "get_attribute": [
+                  "NETWORK_SERVICE",
+                  "SO_NS::nsStringAttr1"
+                ]
+              }
+            ],
+            "value_expression": [
+              {
+                "get_input": "vnf_name"
+              },
+              {
+                "get_property": [
+                  "NETWORK_SERVICE",
+                  "name"
+                ]
+              },
+              {
+                "get_attribute": [
+                  "NETWORK_SERVICE_1",
+                  "SO_NS::nsStringAttr1"
+                ]
+              },
+              {
+                "get_attribute": [
+                  "VIM_ZONE_1",
+                  "name"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "archivedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "SO_VNF::vnfBooleanProp1",
+            "value": {
+              "get_attribute": [
+                "NETWORK_SERVICE_1",
+                "SO_NS::nsBooleanAttr1"
+              ]
+            },
+            "required": false,
+            "type": "boolean",
+            "raw_value": {
+              "get_attribute": [
+                "NETWORK_SERVICE",
+                "SO_NS::nsBooleanAttr1"
+              ]
+            },
+            "value_expression": {
+              "get_attribute": [
+                "NETWORK_SERVICE_1",
+                "SO_NS::nsBooleanAttr1"
+              ]
+            }
+          },
+          {
+            "name": "description",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "vendor",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "SO_VNF::vnfIntProp1",
+            "value": {
+              "get_attribute": [
+                "NETWORK_SERVICE_1",
+                "SO_NS::nsIntAttr1"
+              ]
+            },
+            "required": false,
+            "type": "integer",
+            "raw_value": {
+              "get_attribute": [
+                "NETWORK_SERVICE",
+                "SO_NS::nsIntAttr1"
+              ]
+            },
+            "value_expression": {
+              "get_attribute": [
+                "NETWORK_SERVICE_1",
+                "SO_NS::nsIntAttr1"
+              ]
+            }
+          },
+          {
+            "name": "status",
+            "value": "planning",
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "type",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "isArchived",
+            "value": null,
+            "required": false,
+            "type": "boolean",
+            "raw_value": null
+          },
+          {
+            "name": "archivedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "modifyDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "externalId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "version",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "lastModifiedBy",
+            "value": "sysadm",
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "lockedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "comments",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "scheduledDate",
+            "value": "2021-12-09T17:00:00.000Z",
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "SO_VNF::vnfMapProp2",
+            "value": {
+              "key1": {
+                "get_input": "vnf_name"
+              },
+              "key2": {
+                "get_property": [
+                  "NETWORK_SERVICE",
+                  "name"
+                ]
+              },
+              "key3": {
+                "get_attribute": [
+                  "NETWORK_SERVICE_1",
+                  "SO_NS::nsStringAttr1"
+                ]
+              }
+            },
+            "required": false,
+            "type": "map",
+            "raw_value": {
+              "key1": {
+                "get_input": "vnf_name"
+              },
+              "key2": {
+                "get_property": [
+                  "NETWORK_SERVICE",
+                  "name"
+                ]
+              },
+              "key3": {
+                "get_attribute": [
+                  "NETWORK_SERVICE",
+                  "SO_NS::nsStringAttr1"
+                ]
+              }
+            },
+            "value_expression": {
+              "key1": {
+                "get_input": "vnf_name"
+              },
+              "key2": {
+                "get_property": [
+                  "NETWORK_SERVICE",
+                  "name"
+                ]
+              },
+              "key3": {
+                "get_attribute": [
+                  "NETWORK_SERVICE_1",
+                  "SO_NS::nsStringAttr1"
+                ]
+              }
+            }
+          },
+          {
+            "name": "SO_VNF::vnfMapProp1",
+            "value": {
+              "get_attribute": [
+                "NETWORK_SERVICE_1",
+                "SO_NS::nsMapAttr1"
+              ]
+            },
+            "required": false,
+            "type": "map",
+            "raw_value": {
+              "get_attribute": [
+                "NETWORK_SERVICE",
+                "SO_NS::nsMapAttr1"
+              ]
+            },
+            "value_expression": {
+              "get_attribute": [
+                "NETWORK_SERVICE_1",
+                "SO_NS::nsMapAttr1"
+              ]
+            }
+          },
+          {
+            "name": "revisionNumber",
+            "value": 1,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "dueDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "flavor",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "decommissionDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "createdBy",
+            "value": "sysadm",
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "queryDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "lockOwner",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "SO_RESOURCE::customTemplates",
+            "value": [],
+            "required": false,
+            "type": "list",
+            "raw_value": []
+          },
+          {
+            "name": "lastModifiedOn",
+            "value": 1639059477103,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          }
+        ],
+        "nodeattributes": [
+          {
+            "name": "tosca_id",
+            "value": "NETWORK_FUNCTION_1",
+            "type": "string",
+            "description": "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+            "raw_value": "NETWORK_FUNCTION_1"
+          },
+          {
+            "name": "tosca_name",
+            "value": "NETWORK_FUNCTION",
+            "type": "string",
+            "description": "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+            "raw_value": "NETWORK_FUNCTION"
+          },
+          {
+            "name": "state",
+            "value": "initial",
+            "type": "string",
+            "description": "The state of the node instance.",
+            "raw_value": "initial"
+          }
+        ],
+        "relationship": [
+          {
+            "target": "VIM_ZONE_1",
+            "requirementName": "vimZone",
+            "relationshipName": null,
+            "action": "add"
+          },
+          {
+            "target": "NETWORK_SERVICE_1",
+            "requirementName": "dependency",
+            "relationshipName": "tosca.relationships.DependsOn",
+            "action": "delete"
+          }
+        ]
+      },
+      {
+        "name": "NETWORK_SERVICE_1",
+        "state": "initial",
+        "action": "add",
+        "instanceIDs": [],
+        "directives": [],
+        "artifacts": [],
+        "interfaces": [
+          {
+            "name": "Scale",
+            "inputs": [],
+            "operations": [
+              {
+                "name": "postScale",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "scale",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "preScale",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "Scale",
+                "inputs": [],
+                "implementation": null
+              }
+            ],
+            "notifications": []
+          },
+          {
+            "name": "Standard",
+            "inputs": [],
+            "operations": [
+              {
+                "name": "delete",
+                "inputs": [],
+                "implementation": "workflow/enabler"
+              },
+              {
+                "name": "stop",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "start",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "configure",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "create",
+                "inputs": [],
+                "implementation": "workflow/enabler"
+              }
+            ],
+            "notifications": []
+          }
+        ],
+        "nodetype": "topology.nodes.ctv.virtNetworkServ",
+        "parent_type": "topology.nodes.ctc.forwardingConstruct",
+        "nodeproperties": [
+          {
+            "name": "installedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "objectInstId",
+            "value": 369,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "lockOwner",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "inServiceDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "createdOn",
+            "value": 1639059477026,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "resourceType",
+            "value": null,
+            "required": true,
+            "type": "string",
+            "raw_value": "Resource"
+          },
+          {
+            "name": "SO_RESOURCE::customOperations",
+            "value": [],
+            "required": false,
+            "type": "list",
+            "raw_value": []
+          },
+          {
+            "name": "name",
+            "value": "ns_111",
+            "required": false,
+            "type": "string",
+            "raw_value": {
+              "get_input": "ns_name"
+            }
+          },
+          {
+            "name": "lockedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "orderedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "createdBy",
+            "value": "sysadm",
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "versionNumber",
+            "value": 1,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "SO_NS::nsdId",
+            "value": "nsdId123",
+            "required": false,
+            "type": "string",
+            "raw_value": "nsdId123"
+          },
+          {
+            "name": "archivedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "description",
+            "value": "NetworkService for test",
+            "required": false,
+            "type": "string",
+            "raw_value": "NetworkService for test"
+          },
+          {
+            "name": "vendor",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "serviceType",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "status",
+            "value": "planning",
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "isArchived",
+            "value": null,
+            "required": false,
+            "type": "boolean",
+            "raw_value": null
+          },
+          {
+            "name": "archivedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "modifyDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "externalId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "version",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "SO_NS::subsystemName",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "lastModifiedBy",
+            "value": "sysadm",
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "lockedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "comments",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "scheduledDate",
+            "value": "2021-12-09T17:00:00.000Z",
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "revisionNumber",
+            "value": 1,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "dueDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "SO_NS::vdcName",
+            "value": "vdc111",
+            "required": false,
+            "type": "string",
+            "raw_value": {
+              "get_input": "vdc_name"
+            }
+          },
+          {
+            "name": "decommissionDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "queryDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "SO_RESOURCE::customTemplates",
+            "value": [],
+            "required": false,
+            "type": "list",
+            "raw_value": []
+          },
+          {
+            "name": "lastModifiedOn",
+            "value": 1639059477026,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          }
+        ],
+        "nodeattributes": [
+          {
+            "name": "SO_NS::nsListAttr1",
+            "value": [
+              "value1",
+              "value2"
+            ],
+            "type": "list",
+            "raw_value": [
+              "value1",
+              "value2"
+            ]
+          },
+          {
+            "name": "tosca_id",
+            "value": "NETWORK_SERVICE_1",
+            "type": "string",
+            "description": "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+            "raw_value": "NETWORK_SERVICE_1"
+          },
+          {
+            "name": "state",
+            "value": "initial",
+            "type": "string",
+            "description": "The state of the node instance.",
+            "raw_value": "initial"
+          },
+          {
+            "name": "SO_NS::nsIntAttr1",
+            "value": 1000,
+            "type": "integer",
+            "raw_value": 1000
+          },
+          {
+            "name": "tosca_name",
+            "value": "NETWORK_SERVICE",
+            "type": "string",
+            "description": "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+            "raw_value": "NETWORK_SERVICE"
+          },
+          {
+            "name": "SO_NS::nsStringAttr2",
+            "value": null,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "SO_NS::nsStringAttr3",
+            "value": null,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "SO_NS::nsBooleanAttr1",
+            "value": true,
+            "type": "boolean",
+            "raw_value": true
+          },
+          {
+            "name": "SO_NS::nsStringAttr1",
+            "value": "stringValue1",
+            "type": "string",
+            "raw_value": "stringValue1"
+          },
+          {
+            "name": "SO_NS::nsMapAttr1",
+            "value": {
+              "key1": "value1",
+              "key2": "value2"
+            },
+            "type": "map",
+            "raw_value": {
+              "key1": "value1",
+              "key2": "value2"
+            }
+          }
+        ],
+        "relationship": [
+          {
+            "target": "NFVO_SUBSYSTEM_1",
+            "requirementName": "subsystemReferences",
+            "relationshipName": null,
+            "action": "add"
+          }
+        ]
+      },
+      {
+        "name": "NFVO_SUBSYSTEM_1",
+        "state": "Started",
+        "action": "noChange",
+        "instanceIDs": [],
+        "directives": [
+          "select"
+        ],
+        "artifacts": [],
+        "interfaces": [
+          {
+            "name": "Standard",
+            "inputs": [],
+            "operations": [
+              {
+                "name": "delete",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "stop",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "start",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "configure",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "create",
+                "inputs": [],
+                "implementation": null
+              }
+            ],
+            "notifications": []
+          }
+        ],
+        "nodetype": "topology.nodes.ctc.subsystemRef",
+        "parent_type": "topology.nodes.sdk.managedObject",
+        "nodeproperties": [
+          {
+            "name": "installedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "objectInstId",
+            "value": 4,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "lockOwner",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "inServiceDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "createdOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "resourceType",
+            "value": null,
+            "required": true,
+            "type": "string",
+            "raw_value": "Resource"
+          },
+          {
+            "name": "name",
+            "value": "sol005",
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "lockedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "orderedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "createdBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "versionNumber",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "archivedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "status",
+            "value": "planning",
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "isArchived",
+            "value": null,
+            "required": false,
+            "type": "boolean",
+            "raw_value": null
+          },
+          {
+            "name": "archivedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "modifyDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "lastModifiedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "dueDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "comments",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "scheduledDate",
+            "value": "2021-11-18T13:26:17.346Z",
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "revisionNumber",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "lockedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "decommissionDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "queryDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "lastModifiedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          }
+        ],
+        "nodeattributes": [
+          {
+            "name": "tosca_id",
+            "value": "NFVO_SUBSYSTEM_1",
+            "type": "string",
+            "description": "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+            "raw_value": "NFVO_SUBSYSTEM_1"
+          },
+          {
+            "name": "tosca_name",
+            "value": "NFVO_SUBSYSTEM",
+            "type": "string",
+            "description": "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+            "raw_value": "NFVO_SUBSYSTEM"
+          },
+          {
+            "name": "state",
+            "value": "Started",
+            "type": "string",
+            "description": "The state of the node instance.",
+            "raw_value": "Started"
+          }
+        ],
+        "relationship": []
+      },
+      {
+        "name": "VIM_ZONE_1",
+        "state": "Started",
+        "action": "noChange",
+        "instanceIDs": [],
+        "directives": [
+          "select"
+        ],
+        "artifacts": [],
+        "interfaces": [
+          {
+            "name": "Standard",
+            "inputs": [],
+            "operations": [
+              {
+                "name": "delete",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "stop",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "start",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "configure",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "create",
+                "inputs": [],
+                "implementation": null
+              }
+            ],
+            "notifications": []
+          }
+        ],
+        "nodetype": "topology.nodes.ctv.vimZone",
+        "parent_type": "topology.nodes.ctv.vrm",
+        "nodeproperties": [
+          {
+            "name": "installedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "objectInstId",
+            "value": 16,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "lockOwner",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "totalStorage",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "totalvCPUs",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "inServiceDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "numberOfServers",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "createdOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "resourceType",
+            "value": null,
+            "required": true,
+            "type": "string",
+            "raw_value": "Resource"
+          },
+          {
+            "name": "name",
+            "value": "vimZone_1",
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "hypervisorType",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "lockedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "orderedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "createdBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "versionNumber",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "extNetworkVimObjectId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "ctvNetworkType",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "numberOfVMs",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "archivedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "description",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "vendor",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "status",
+            "value": "planning",
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "type",
+            "value": "Ericsson - Cloud Execution Environment (CEE)",
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "isArchived",
+            "value": null,
+            "required": false,
+            "type": "boolean",
+            "raw_value": null
+          },
+          {
+            "name": "archivedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "modifyDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "externalId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "version",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "lastModifiedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "lockedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "comments",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "raw_value": null
+          },
+          {
+            "name": "scheduledDate",
+            "value": "2021-11-18T13:26:17.346Z",
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "revisionNumber",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "dueDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "decommissionDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          },
+          {
+            "name": "queryDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "totalMemory",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "raw_value": null
+          },
+          {
+            "name": "lastModifiedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "raw_value": null
+          }
+        ],
+        "nodeattributes": [
+          {
+            "name": "tosca_id",
+            "value": "VIM_ZONE_1",
+            "type": "string",
+            "description": "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+            "raw_value": "VIM_ZONE_1"
+          },
+          {
+            "name": "tosca_name",
+            "value": "VIM_ZONE",
+            "type": "string",
+            "description": "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+            "raw_value": "VIM_ZONE"
+          },
+          {
+            "name": "state",
+            "value": "Started",
+            "type": "string",
+            "description": "The state of the node instance.",
+            "raw_value": "Started"
+          }
+        ],
+        "relationship": []
+      }
+    ]
+  }
+}

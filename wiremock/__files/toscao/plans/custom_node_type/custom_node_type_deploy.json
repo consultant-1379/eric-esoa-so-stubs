@@ -1,0 +1,53 @@
+{
+	"workflow": "deploy",
+	"serviceExecutionPlan": {
+		"operations": [
+			{
+				"id": "Node_1_1.Standard.create.6979",
+				"name": "create",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "Node_1_1",
+				"implementation": "workflow/enabler",
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [],
+				"failure_dependency_operations": []
+			},
+			{
+				"id": "Node_1_1.Standard.configure.6980",
+				"name": "configure",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "Node_1_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [
+					"Node_1_1.Standard.create.6979"
+				],
+				"failure_dependency_operations": []
+			},
+			{
+				"id": "Node_1_1.Standard.start.6981",
+				"name": "start",
+				"interface": "Standard",
+				"type": "node",
+				"activity": "call_operation",
+				"node": "Node_1_1",
+				"implementation": null,
+				"post_state": null,
+				"pre_state": null,
+				"inputs": [],
+				"dependency_operations": [
+					"Node_1_1.Standard.configure.6980"
+				],
+				"failure_dependency_operations": []
+			}
+		]
+	}
+}

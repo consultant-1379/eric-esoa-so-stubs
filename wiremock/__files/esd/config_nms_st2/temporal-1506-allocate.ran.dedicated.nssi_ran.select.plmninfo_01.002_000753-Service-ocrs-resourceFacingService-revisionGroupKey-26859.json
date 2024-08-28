@@ -1,0 +1,3565 @@
+{
+  "id": "ran.select.plmninfo_01.002_000753-Service-ocrs-resourceFacingService-revisionGroupKey-26859",
+  "creTime": "2023-04-24T10:46:07.724Z",
+  "name": "dedicated_ranSelectPlmnInfoService_SC",
+  "serviceModelID": "7c3414c9-ca21-4404-96ea-058b30722449",
+  "catalogInvariantUUID": "85e684e6-7f2f-496e-859e-630bba42fa95",
+  "catalogVersion": "1.0",
+  "catalogId": 753,
+  "metadata": {
+    "template_name": null,
+    "template_author": null,
+    "template_version": null,
+    "serviceFunction": "RAN",
+    "serviceRole": "NSSI",
+    "includeFindsSEconnRules": "true"
+  },
+  "substitutingModelIDs": [],
+  "state": "TO BE DEPLOYED",
+  "workflows": [],
+  "topology": {
+    "inputs": [
+      {
+        "name": "qosProfileName",
+        "value": null,
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "mcc",
+        "value": null,
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "mnc",
+        "value": null,
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "sliceServiceType",
+        "value": null,
+        "required": true,
+        "type": "integer"
+      },
+      {
+        "name": "coverageAreaTAList",
+        "value": null,
+        "required": true,
+        "type": "list"
+      }
+    ],
+    "policies": [],
+    "outputs": [],
+    "relationship_templates": [],
+    "nodes": [
+      {
+        "name": "qosProfile_1",
+        "state": "started",
+        "action": "noChange",
+        "instanceIDs": [],
+        "directives": [
+          "select"
+        ],
+        "occurrences": [
+          1,
+          1
+        ],
+        "artifacts": [],
+        "interfaces": [
+          {
+            "name": "Standard",
+            "inputs": [],
+            "operations": [
+              {
+                "name": "create",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "configure",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "start",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "stop",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "delete",
+                "inputs": [],
+                "implementation": null
+              }
+            ],
+            "notifications": []
+          }
+        ],
+        "nodetype": "topology.nodes.ctw.qosProfile",
+        "parent_type": "topology.nodes.sdk.managedObject",
+        "nodeproperties": [
+          {
+            "name": "resourceType",
+            "value": null,
+            "required": true,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": "Resource"
+          },
+          {
+            "name": "externalId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "revisionNumber",
+            "value": 1,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "decommissionDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "dueDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "inServiceDate",
+            "value": "2023-04-24T00:00:00.000Z",
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "installedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "orderedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "scheduledDate",
+            "value": "2024-05-18T00:01:29.863Z",
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "status",
+            "value": "operating",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "name",
+            "value": "dedicatedQoS",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "comments",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "objectInstId",
+            "value": 63,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "createdOn",
+            "value": 1682061049772,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "createdBy",
+            "value": "sysadm",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lastModifiedOn",
+            "value": 1682332364248,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lastModifiedBy",
+            "value": "sysadm",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "queryDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "modifyDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "isArchived",
+            "value": null,
+            "required": false,
+            "type": "boolean",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "archivedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "archivedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lockedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lockedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lockOwner",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "versionNumber",
+            "value": 2,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "project.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "attachment.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "fiveQISets.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "esdData.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "networkSliceSubnets.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "serviceMemberships.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "RadioResourcePartition::SpectrumShareDL",
+            "value": 0,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "RadioResourcePartition::SpectrumShareUL",
+            "value": 0,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          }
+        ],
+        "nodeattributes": [
+          {
+            "name": "tosca_id",
+            "value": "qosProfile_1",
+            "type": "string",
+            "description": "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+            "value_expression": null,
+            "raw_value": "qosProfile_1"
+          },
+          {
+            "name": "tosca_name",
+            "value": "qosProfile",
+            "type": "string",
+            "description": "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+            "value_expression": null,
+            "raw_value": "qosProfile"
+          },
+          {
+            "name": "state",
+            "value": "started",
+            "type": "string",
+            "description": "The state of the node instance.",
+            "value_expression": null,
+            "raw_value": "started"
+          }
+        ],
+        "relationship": []
+      },
+      {
+        "name": "wirelessNetwork_1",
+        "state": "started",
+        "action": "noChange",
+        "instanceIDs": [],
+        "directives": [
+          "select"
+        ],
+        "occurrences": [
+          1,
+          1
+        ],
+        "artifacts": [],
+        "interfaces": [
+          {
+            "name": "Standard",
+            "inputs": [],
+            "operations": [
+              {
+                "name": "configure",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "create",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "start",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "stop",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "delete",
+                "inputs": [],
+                "implementation": null
+              }
+            ],
+            "notifications": []
+          }
+        ],
+        "nodetype": "topology.nodes.ctw.wirelessNetwork",
+        "parent_type": "topology.nodes.ctc.topologyDomain",
+        "nodeproperties": [
+          {
+            "name": "resourceType",
+            "value": null,
+            "required": true,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": "Resource"
+          },
+          {
+            "name": "externalId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "name",
+            "value": "dedicatedWN",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "comments",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "objectInstId",
+            "value": 1526,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "aggregateEntities.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "adjacentEntities.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "places.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "mcc",
+            "value": 280,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "mnc",
+            "value": "42",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "country",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "operatorName",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "revisionNumber",
+            "value": 1,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "createdOn",
+            "value": 1681810458259,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "createdBy",
+            "value": "sysadm",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "queryDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "modifyDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "decommissionDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "dueDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "inServiceDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "installedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "orderedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "scheduledDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "status",
+            "value": "operating",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lastModifiedOn",
+            "value": 1681810458259,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lastModifiedBy",
+            "value": "sysadm",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "isArchived",
+            "value": null,
+            "required": false,
+            "type": "boolean",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "archivedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "archivedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lockedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lockedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lockOwner",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "versionNumber",
+            "value": 1,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "wirelessNetFunctions.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "plmnId.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "project.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "assignedNumbers.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "managedObjectIpRanges.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "numberRanges.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "subsystemReferences.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "supportedGnbcucps.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "esdData.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "assignedIPAddress.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "nrCells.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lteCells.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "attachment.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "netwkSlices.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "serviceMemberships.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          }
+        ],
+        "nodeattributes": [
+          {
+            "name": "tosca_id",
+            "value": "wirelessNetwork_1",
+            "type": "string",
+            "description": "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+            "value_expression": null,
+            "raw_value": "wirelessNetwork_1"
+          },
+          {
+            "name": "tosca_name",
+            "value": "wirelessNetwork",
+            "type": "string",
+            "description": "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+            "value_expression": null,
+            "raw_value": "wirelessNetwork"
+          },
+          {
+            "name": "state",
+            "value": "started",
+            "type": "string",
+            "description": "The state of the node instance.",
+            "value_expression": null,
+            "raw_value": "started"
+          }
+        ],
+        "relationship": []
+      },
+      {
+        "name": "nrCells_1",
+        "state": "started",
+        "action": "noChange",
+        "instanceIDs": [],
+        "directives": [
+          "select"
+        ],
+        "occurrences": [
+          1,
+          "UNBOUNDED"
+        ],
+        "artifacts": [],
+        "interfaces": [
+          {
+            "name": "Standard",
+            "inputs": [],
+            "operations": [
+              {
+                "name": "create",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "configure",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "start",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "stop",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "delete",
+                "inputs": [],
+                "implementation": null
+              }
+            ],
+            "notifications": []
+          }
+        ],
+        "nodetype": "topology.nodes.ctw.nrCell",
+        "parent_type": "topology.nodes.ctw.rfCell",
+        "nodeproperties": [
+          {
+            "name": "resourceType",
+            "value": null,
+            "required": true,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": "Resource"
+          },
+          {
+            "name": "externalId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "name",
+            "value": "dedicated_1",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "comments",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "objectInstId",
+            "value": 1529,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "aggregateEntities.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "createdOn",
+            "value": 1681811092830,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "createdBy",
+            "value": "sysadm",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "queryDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "modifyDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "decommissionDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "dueDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "inServiceDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "installedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "orderedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "scheduledDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "status",
+            "value": "operating",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lastModifiedOn",
+            "value": 1681811209515,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lastModifiedBy",
+            "value": "sysadm",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "isArchived",
+            "value": null,
+            "required": false,
+            "type": "boolean",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "archivedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "archivedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lockedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lockedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lockOwner",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "versionNumber",
+            "value": 3,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "cellType",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "motherCell",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "originalOnAirDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "sectorNumber",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "maximumOutputPower",
+            "value": null,
+            "required": false,
+            "type": "float",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "cabinetNumber",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "subrackNumber",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "slotNumber",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "revisionNumber",
+            "value": 1,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "administrativeState",
+            "value": "UNLOCKED",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "operationalState",
+            "value": "ENABLED",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "geographicSite.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "nrCellCuExternalId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "nrCellCuName",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "localCellIdNci",
+            "value": 280421,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "physicalCellIdentity",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "trackingAreaCode",
+            "value": 28042,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "downlinkEARFCN",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "uplinkEARFCN",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "supplementaryUplinkEARFCN",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "bsChannelBandwidthDownlink",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "ssbFrequency",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "ssbPeriodicity",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "ssbSubcarrierSpacing",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "ssbOffset",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "ssbDuration",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "bsChannelBandwidthUplink",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "bsChannelBwSupplUplink",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "cellResourceMappingId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "gNodeBId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "gNBDUId",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "attachment.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "nrSectorCarriers.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "networkSliceSubnetForNrCell.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "project.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "assignedNumbers.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "managedObjectIpRanges.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "gnbdu.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "numberRanges.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "nrFrequencyRelations.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "subsystemReferences.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "wirelessNetworks.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "rRmPolicyMemberAssignments.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "plmnInfoList.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "esdData.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "assignedIPAddress.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "gnbcucp.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "networkSliceForNrCell.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "nrFrequency.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lteFrequencyRelations.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "serviceMemberships.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "ExternalRef::FDN",
+            "value": "SubNetwork=RAN,MeContext=dedicated,ManagedElement=dedicated,GNBDUFunction=1,NRCellDU=dedicated_1",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "ExternalRef::id",
+            "value": "dedicated_1",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "RrpParameters::dlThptCapacity",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "RrpParameters::ulThptCapacity",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "RrpParameters::totalSpectrumShareDL",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "RrpParameters::totalSpectrumShareUL",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          }
+        ],
+        "nodeattributes": [
+          {
+            "name": "tosca_id",
+            "value": "nrCells_1",
+            "type": "string",
+            "description": "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+            "value_expression": null,
+            "raw_value": "nrCells_1"
+          },
+          {
+            "name": "tosca_name",
+            "value": "nrCells",
+            "type": "string",
+            "description": "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+            "value_expression": null,
+            "raw_value": "nrCells"
+          },
+          {
+            "name": "state",
+            "value": "started",
+            "type": "string",
+            "description": "The state of the node instance.",
+            "value_expression": null,
+            "raw_value": "started"
+          }
+        ],
+        "relationship": [
+          {
+            "target": "wirelessNetwork_1",
+            "requirementName": "wirelessNetworks",
+            "relationshipName": "tosca.relationships.Root",
+            "action": "noChange"
+          }
+        ]
+      },
+      {
+        "name": "nrCells_2",
+        "state": "started",
+        "action": "noChange",
+        "instanceIDs": [],
+        "directives": [
+          "select"
+        ],
+        "occurrences": [
+          1,
+          "UNBOUNDED"
+        ],
+        "artifacts": [],
+        "interfaces": [
+          {
+            "name": "Standard",
+            "inputs": [],
+            "operations": [
+              {
+                "name": "create",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "configure",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "start",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "stop",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "delete",
+                "inputs": [],
+                "implementation": null
+              }
+            ],
+            "notifications": []
+          }
+        ],
+        "nodetype": "topology.nodes.ctw.nrCell",
+        "parent_type": "topology.nodes.ctw.rfCell",
+        "nodeproperties": [
+          {
+            "name": "resourceType",
+            "value": null,
+            "required": true,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": "Resource"
+          },
+          {
+            "name": "externalId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "name",
+            "value": "dedicated_2",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "comments",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "objectInstId",
+            "value": 1530,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "aggregateEntities.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "createdOn",
+            "value": 1681811128258,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "createdBy",
+            "value": "sysadm",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "queryDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "modifyDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "decommissionDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "dueDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "inServiceDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "installedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "orderedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "scheduledDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "status",
+            "value": "operating",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lastModifiedOn",
+            "value": 1681811223670,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lastModifiedBy",
+            "value": "sysadm",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "isArchived",
+            "value": null,
+            "required": false,
+            "type": "boolean",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "archivedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "archivedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lockedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lockedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lockOwner",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "versionNumber",
+            "value": 2,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "cellType",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "motherCell",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "originalOnAirDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "sectorNumber",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "maximumOutputPower",
+            "value": null,
+            "required": false,
+            "type": "float",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "cabinetNumber",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "subrackNumber",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "slotNumber",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "revisionNumber",
+            "value": 1,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "administrativeState",
+            "value": "UNLOCKED",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "operationalState",
+            "value": "ENABLED",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "geographicSite.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "nrCellCuExternalId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "nrCellCuName",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "localCellIdNci",
+            "value": 280422,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "physicalCellIdentity",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "trackingAreaCode",
+            "value": 28042,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "downlinkEARFCN",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "uplinkEARFCN",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "supplementaryUplinkEARFCN",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "bsChannelBandwidthDownlink",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "ssbFrequency",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "ssbPeriodicity",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "ssbSubcarrierSpacing",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "ssbOffset",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "ssbDuration",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "bsChannelBandwidthUplink",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "bsChannelBwSupplUplink",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "cellResourceMappingId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "gNodeBId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "gNBDUId",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "attachment.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "nrSectorCarriers.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "networkSliceSubnetForNrCell.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "project.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "assignedNumbers.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "managedObjectIpRanges.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "gnbdu.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "numberRanges.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "nrFrequencyRelations.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "subsystemReferences.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "wirelessNetworks.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "rRmPolicyMemberAssignments.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "plmnInfoList.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "esdData.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "assignedIPAddress.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "gnbcucp.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "networkSliceForNrCell.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "nrFrequency.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lteFrequencyRelations.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "serviceMemberships.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "ExternalRef::FDN",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "ExternalRef::id",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "RrpParameters::dlThptCapacity",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "RrpParameters::ulThptCapacity",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "RrpParameters::totalSpectrumShareDL",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "RrpParameters::totalSpectrumShareUL",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          }
+        ],
+        "nodeattributes": [
+          {
+            "name": "tosca_id",
+            "value": "nrCells_2",
+            "type": "string",
+            "description": "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+            "value_expression": null,
+            "raw_value": "nrCells_2"
+          },
+          {
+            "name": "tosca_name",
+            "value": "nrCells",
+            "type": "string",
+            "description": "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+            "value_expression": null,
+            "raw_value": "nrCells"
+          },
+          {
+            "name": "state",
+            "value": "started",
+            "type": "string",
+            "description": "The state of the node instance.",
+            "value_expression": null,
+            "raw_value": "started"
+          }
+        ],
+        "relationship": [
+          {
+            "target": "wirelessNetwork_1",
+            "requirementName": "wirelessNetworks",
+            "relationshipName": "tosca.relationships.Root",
+            "action": "noChange"
+          }
+        ]
+      },
+      {
+        "name": "nrCells_3",
+        "state": "started",
+        "action": "noChange",
+        "instanceIDs": [],
+        "directives": [
+          "select"
+        ],
+        "occurrences": [
+          1,
+          "UNBOUNDED"
+        ],
+        "artifacts": [],
+        "interfaces": [
+          {
+            "name": "Standard",
+            "inputs": [],
+            "operations": [
+              {
+                "name": "create",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "configure",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "start",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "stop",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "delete",
+                "inputs": [],
+                "implementation": null
+              }
+            ],
+            "notifications": []
+          }
+        ],
+        "nodetype": "topology.nodes.ctw.nrCell",
+        "parent_type": "topology.nodes.ctw.rfCell",
+        "nodeproperties": [
+          {
+            "name": "resourceType",
+            "value": null,
+            "required": true,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": "Resource"
+          },
+          {
+            "name": "externalId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "name",
+            "value": "dedicated_3",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "comments",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "objectInstId",
+            "value": 1876,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "aggregateEntities.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "createdOn",
+            "value": 1681990827845,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "createdBy",
+            "value": "sysadm",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "queryDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "modifyDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "decommissionDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "dueDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "inServiceDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "installedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "orderedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "scheduledDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "status",
+            "value": "operating",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lastModifiedOn",
+            "value": 1682009559384,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lastModifiedBy",
+            "value": "sysadm",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "isArchived",
+            "value": null,
+            "required": false,
+            "type": "boolean",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "archivedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "archivedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lockedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lockedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lockOwner",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "versionNumber",
+            "value": 4,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "cellType",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "motherCell",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "originalOnAirDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "sectorNumber",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "maximumOutputPower",
+            "value": null,
+            "required": false,
+            "type": "float",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "cabinetNumber",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "subrackNumber",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "slotNumber",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "revisionNumber",
+            "value": 1,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "administrativeState",
+            "value": "UNLOCKED",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "operationalState",
+            "value": "ENABLED",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "geographicSite.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "nrCellCuExternalId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "nrCellCuName",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "localCellIdNci",
+            "value": 280423,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "physicalCellIdentity",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "trackingAreaCode",
+            "value": 28042,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "downlinkEARFCN",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "uplinkEARFCN",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "supplementaryUplinkEARFCN",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "bsChannelBandwidthDownlink",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "ssbFrequency",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "ssbPeriodicity",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "ssbSubcarrierSpacing",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "ssbOffset",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "ssbDuration",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "bsChannelBandwidthUplink",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "bsChannelBwSupplUplink",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "cellResourceMappingId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "gNodeBId",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "gNBDUId",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "attachment.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "nrSectorCarriers.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "networkSliceSubnetForNrCell.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "project.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "assignedNumbers.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "managedObjectIpRanges.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "gnbdu.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "numberRanges.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "nrFrequencyRelations.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "subsystemReferences.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "wirelessNetworks.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "rRmPolicyMemberAssignments.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "plmnInfoList.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "esdData.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "assignedIPAddress.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "gnbcucp.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "networkSliceForNrCell.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "nrFrequency.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lteFrequencyRelations.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "serviceMemberships.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "ExternalRef::FDN",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "ExternalRef::id",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "RrpParameters::dlThptCapacity",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "RrpParameters::ulThptCapacity",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "RrpParameters::totalSpectrumShareDL",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "RrpParameters::totalSpectrumShareUL",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          }
+        ],
+        "nodeattributes": [
+          {
+            "name": "tosca_id",
+            "value": "nrCells_3",
+            "type": "string",
+            "description": "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+            "value_expression": null,
+            "raw_value": "nrCells_3"
+          },
+          {
+            "name": "tosca_name",
+            "value": "nrCells",
+            "type": "string",
+            "description": "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+            "value_expression": null,
+            "raw_value": "nrCells"
+          },
+          {
+            "name": "state",
+            "value": "started",
+            "type": "string",
+            "description": "The state of the node instance.",
+            "value_expression": null,
+            "raw_value": "started"
+          }
+        ],
+        "relationship": [
+          {
+            "target": "wirelessNetwork_1",
+            "requirementName": "wirelessNetworks",
+            "relationshipName": "tosca.relationships.Root",
+            "action": "noChange"
+          }
+        ]
+      },
+      {
+        "name": "plmnInfo_1",
+        "state": "started",
+        "action": "noChange",
+        "instanceIDs": [],
+        "directives": [
+          "select"
+        ],
+        "occurrences": [
+          1,
+          1
+        ],
+        "artifacts": [],
+        "interfaces": [
+          {
+            "name": "Standard",
+            "inputs": [],
+            "operations": [
+              {
+                "name": "create",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "configure",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "start",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "stop",
+                "inputs": [],
+                "implementation": null
+              },
+              {
+                "name": "delete",
+                "inputs": [],
+                "implementation": null
+              }
+            ],
+            "notifications": []
+          }
+        ],
+        "nodetype": "topology.nodes.ctw.plmnInfo",
+        "parent_type": "topology.nodes.sdk.managedObject",
+        "nodeproperties": [
+          {
+            "name": "resourceType",
+            "value": null,
+            "required": true,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": "Resource"
+          },
+          {
+            "name": "plmn_mcc",
+            "value": 280,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "plmn_mnc",
+            "value": "42",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "sNSSAI_SST",
+            "value": 1,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "sNSSAI_SD",
+            "value": "1002",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "revisionNumber",
+            "value": 1,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lastModifiedOn",
+            "value": 1682332351246,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lastModifiedBy",
+            "value": "sysadm",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "queryDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "modifyDomainGroup",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "createdOn",
+            "value": 1682061046432,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "createdBy",
+            "value": "sysadm",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "name",
+            "value": "280_42_1_1002",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "comments",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "objectInstId",
+            "value": 380,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "decommissionDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "dueDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "inServiceDate",
+            "value": "2023-04-24T00:00:00.000Z",
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "installedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "orderedDate",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "scheduledDate",
+            "value": "2024-05-18T00:01:29.863Z",
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "status",
+            "value": "operating",
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "isArchived",
+            "value": null,
+            "required": false,
+            "type": "boolean",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "archivedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "archivedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lockedOn",
+            "value": null,
+            "required": false,
+            "type": "timestamp",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lockedBy",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lockOwner",
+            "value": null,
+            "required": false,
+            "type": "string",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "versionNumber",
+            "value": 2,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "serviceProfiles.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "lteCells.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "project.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "assignedSnssai.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "sliceProfiles.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "smf.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "amf.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "resourcePartitionMembers.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "nrCells.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "assignedPlmnId.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "esdData.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "gnbcuups.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "attachment.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          },
+          {
+            "name": "serviceMemberships.key",
+            "value": null,
+            "required": false,
+            "type": "integer",
+            "value_expression": null,
+            "raw_value": null
+          }
+        ],
+        "nodeattributes": [
+          {
+            "name": "tosca_id",
+            "value": "plmnInfo_1",
+            "type": "string",
+            "description": "A unique identifier of the realized instance of a Node Template that derives from any TOSCA normative type.",
+            "value_expression": null,
+            "raw_value": "plmnInfo_1"
+          },
+          {
+            "name": "tosca_name",
+            "value": "plmnInfo",
+            "type": "string",
+            "description": "This attribute reflects the name of the Node Template as defined in the TOSCA service template. This name is not unique to the realized instance model of corresponding deployed application as each template in the model can result in one or more instances (e.g., scaled) when orchestrated to a provider environment.",
+            "value_expression": null,
+            "raw_value": "plmnInfo"
+          },
+          {
+            "name": "state",
+            "value": "started",
+            "type": "string",
+            "description": "The state of the node instance.",
+            "value_expression": null,
+            "raw_value": "started"
+          }
+        ],
+        "relationship": [
+          {
+            "target": "nrCells_1",
+            "requirementName": "designDependency",
+            "relationshipName": "topology.relationships.DesignDependsOn",
+            "action": "noChange"
+          },
+          {
+            "target": "nrCells_2",
+            "requirementName": "designDependency",
+            "relationshipName": "topology.relationships.DesignDependsOn",
+            "action": "noChange"
+          },
+          {
+            "target": "nrCells_3",
+            "requirementName": "designDependency",
+            "relationshipName": "topology.relationships.DesignDependsOn",
+            "action": "noChange"
+          }
+        ]
+      }
+    ]
+  }
+}
